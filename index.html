@@ -126,6 +126,29 @@
 
     ::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:#fdfaf3;} ::-webkit-scrollbar-thumb{background:linear-gradient(#D4AF37,#C5A059);border-radius:4px;}
     .disclaimer-bar{background:#1a1510;border-top:1px solid rgba(212,175,55,0.20);}
+
+    /* ============ PRICING TABS ============ */
+    .pricing-tab{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.6rem 1.4rem;border-radius:2px;cursor:pointer;transition:all 0.25s ease;border:1.5px solid transparent;color:#6b7280;background:transparent;}
+    .pricing-tab.active{background:linear-gradient(to right,#D4AF37,#C5A059);color:#fff;box-shadow:0 4px 14px rgba(212,175,55,0.30);}
+    .pricing-tab:not(.active):hover{border-color:rgba(212,175,55,0.35);color:#C5A059;}
+    .pricing-panel{display:none;} .pricing-panel.active{display:block;}
+
+    /* Price table rows */
+    .price-row{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;border-bottom:1px solid rgba(212,175,55,0.08);transition:background 0.2s;}
+    .price-row:last-child{border-bottom:none;}
+    .price-row:hover{background:rgba(212,175,55,0.04);}
+    .price-amount{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:#C5A059;white-space:nowrap;}
+    .price-label{font-size:0.82rem;color:#374151;font-weight:500;}
+    .price-note{font-size:0.68rem;color:#9ca3af;margin-top:1px;}
+
+    /* MediSpa price card */
+    .spa-price-card{background:#fff;border:1px solid rgba(212,175,55,0.15);border-radius:12px;overflow:hidden;transition:all 0.3s ease;}
+    .spa-price-card:hover{box-shadow:0 8px 28px rgba(212,175,55,0.14);transform:translateY(-3px);border-color:rgba(212,175,55,0.35);}
+
+    /* Membership cards */
+    .mem-card{border-radius:16px;overflow:hidden;transition:all 0.3s ease;}
+    .mem-card:hover{transform:translateY(-5px);}
+    .mem-badge{display:inline-block;font-size:0.58rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:3px 12px;border-radius:20px;}
   </style>
 </head>
 <body>
@@ -135,14 +158,7 @@
   <nav class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <a href="#" class="flex items-center gap-3 flex-shrink-0">
-        <div class="w-10 h-10">
-          <svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="80" y2="90" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#D4AF37"/><stop offset="50%" stop-color="#F2D06B"/><stop offset="100%" stop-color="#C5A059"/></linearGradient></defs>
-            <circle cx="40" cy="10" r="9" stroke="url(#logoGrad)" stroke-width="5" fill="none"/>
-            <rect x="12" y="24" width="56" height="52" rx="14" stroke="url(#logoGrad)" stroke-width="5" fill="none"/>
-            <path d="M40 65 C40 65 22 54 22 43 C22 37 27 32 33 33 C36.5 33 39 35 40 37 C41 35 43.5 33 47 33 C53 32 58 37 58 43 C58 54 40 65 40 65Z" fill="url(#logoGrad)"/>
-          </svg>
-        </div>
+        <img src="1000191389-removebg-preview.png" alt="Integra Wellness & Cardiac Clinics logo" style="width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 0 transparent);">
         <div>
           <div class="font-display text-lg font-bold leading-tight gold-text tracking-wide">INTEGRA</div>
           <div class="text-xs text-gray-500 font-body tracking-widest leading-tight" style="font-size:0.55rem;">WELLNESS & CARDIAC CLINICS</div>
@@ -151,6 +167,7 @@
       <div class="hidden lg:flex items-center gap-8">
         <a href="#home" class="nav-link">Home</a>
         <a href="#services" class="nav-link">Services</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
@@ -168,6 +185,7 @@
       <div class="py-4 flex flex-col gap-1">
         <a href="#home" class="px-4 py-3 nav-link text-sm">Home</a>
         <a href="#services" class="px-4 py-3 nav-link text-sm">Services</a>
+        <a href="#pricing" class="px-4 py-3 nav-link text-sm">Pricing</a>
         <a href="#about" class="px-4 py-3 nav-link text-sm">About</a>
         <a href="#contact" class="px-4 py-3 nav-link text-sm">Contact</a>
         <div class="flex gap-3 px-4 pt-3 pb-2">
@@ -207,21 +225,21 @@
       <div class="relative animate-fadein delay-2">
         <div class="bg-white rounded-2xl shadow-2xl shadow-gold-400/10 border border-gold-400/15 p-8 relative z-10">
           <div class="grid grid-cols-2 gap-5 mb-6">
-            <div class="bg-warm rounded-xl p-5">
+            <div class="bg-warm rounded-xl p-5 cursor-pointer transition-all hover:shadow-md hover:bg-gold-50 hover:-translate-y-1 border border-transparent hover:border-gold-400/25" onclick="openModal('ecg')" title="Click for ECG details & pricing">
               <div class="icon-circle mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
               <div class="font-display text-3xl font-bold gold-text">ECG</div>
-              <div class="text-xs text-gray-500 mt-1">From ₦20,000</div>
+              <div class="text-xs text-gold-500 mt-1 font-semibold tracking-wide">Tap to view details →</div>
             </div>
-            <div class="bg-warm rounded-xl p-5">
-              <div class="icon-circle mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-              <div class="font-display text-3xl font-bold gold-text">Holter</div>
-              <div class="text-xs text-gray-500 mt-1">₦150,000</div>
+            <div class="bg-warm rounded-xl p-5 cursor-pointer transition-all hover:shadow-md hover:bg-gold-50 hover:-translate-y-1 border border-transparent hover:border-gold-400/25" onclick="openModal('echo')" title="Click for Echocardiography details & pricing">
+              <div class="icon-circle mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div class="font-display text-2xl font-bold gold-text leading-tight">Echo</div>
+              <div class="text-xs text-gold-500 mt-1 font-semibold tracking-wide">Tap to view details →</div>
             </div>
           </div>
           <div class="space-y-3">
-            <div class="flex items-center gap-3 bg-warm rounded-lg px-4 py-3"><div class="w-2 h-2 rounded-full bg-gold-400 flex-shrink-0"></div><span class="text-sm text-gray-700 font-medium">Executive Wellness from ₦95,000</span></div>
-            <div class="flex items-center gap-3 bg-warm rounded-lg px-4 py-3"><div class="w-2 h-2 rounded-full bg-gold-400 flex-shrink-0"></div><span class="text-sm text-gray-700 font-medium">MediSpa & 8+ Aesthetic Services</span></div>
-            <div class="flex items-center gap-3 bg-warm rounded-lg px-4 py-3"><div class="w-2 h-2 rounded-full bg-gold-400 flex-shrink-0"></div><span class="text-sm text-gray-700 font-medium">Chairman's Platinum — ₦2.5M/yr</span></div>
+            <div class="flex items-center gap-3 bg-warm rounded-lg px-4 py-3"><div class="w-2 h-2 rounded-full bg-gold-400 flex-shrink-0"></div><span class="text-sm text-gray-700 font-medium"><a href="#services">Executive Wellness</a></span></div>
+            <div class="flex items-center gap-3 bg-warm rounded-lg px-4 py-3"><div class="w-2 h-2 rounded-full bg-gold-400 flex-shrink-0"></div><span class="text-sm text-gray-700 font-medium"><a href="#services">MediSpa & 8+ Aesthetic Services</a></span></div>
+            <div class="flex items-center gap-3 bg-warm rounded-lg px-4 py-3"><div class="w-2 h-2 rounded-full bg-gold-400 flex-shrink-0"></div><span class="text-sm text-gray-700 font-medium"><a href="#services">Chairman's Platinum</a></span></div>
           </div>
           <div class="mt-6 pt-5 border-t border-gold-400/15 flex items-center justify-between">
             <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div><span class="text-xs text-gray-500">Open · Mon–Sat, 9am–5pm</span></div>
@@ -263,8 +281,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Cardiology Diagnostics</h3>
         <p class="text-xs text-gray-500 leading-relaxed">ECG, Holter, Echo, ABPM & Stress Tests for early detection and precise cardiac management.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">From ₦20,000</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 2: Executive Wellness -->
@@ -272,8 +289,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Executive Wellness Checks</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Tailored Silver, Gold & Platinum screening packages for executives seeking proactive health management.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">₦95,000 – ₦480,000</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 3: MediSpa -->
@@ -281,8 +297,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">MediSpa & Aesthetics</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Hydrafacial, IV Therapy, NAD+, Botox, Fillers & more for total rejuvenation and radiant confidence.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">₦30,000 – ₦600,000</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 4: Elite Membership (dark) -->
@@ -290,8 +305,7 @@
         <div class="icon-circle mb-4" style="background:rgba(212,175,55,0.15);border-color:rgba(212,175,55,0.4);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-white">Elite Membership</h3>
         <p class="text-xs text-gray-400 leading-relaxed">Chairman's Platinum: priority concierge health management, exclusive annual benefits, and VIP access.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">₦1.2M – ₦2.5M/yr</div>
-        <div class="click-hint" style="color:#D4AF37;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint" style="color:#D4AF37;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 5: Lifestyle & Wellness Coaching -->
@@ -299,8 +313,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Lifestyle & Wellness Coaching</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Personalised coaching integrating nutrition, activity, stress mastery, and habit design for lasting vitality.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">Contact for pricing</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 6: Medical Tourism Concierge -->
@@ -308,8 +321,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Medical Tourism Concierge</h3>
         <p class="text-xs text-gray-500 leading-relaxed">End-to-end facilitation for specialist care abroad: referrals, travel logistics, and international coordination.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">Bespoke packages</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 7: Executive Burnout Recovery -->
@@ -317,8 +329,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Executive Burnout Recovery</h3>
         <p class="text-xs text-gray-500 leading-relaxed">A structured, clinically supervised programme to identify, treat, and reverse chronic executive burnout.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">Multi-session programme</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 8: Precision Nutrition -->
@@ -326,8 +337,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Precision Nutrition & Genomics</h3>
         <p class="text-xs text-gray-500 leading-relaxed">DNA-informed dietary planning and metabolic profiling for optimised performance and disease prevention.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">Contact for assessment</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 9: Sleep Optimisation -->
@@ -335,8 +345,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Sleep Optimisation</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Clinical sleep assessment, apnoea screening, and personalised interventions to restore deep, restorative rest.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">Contact for programme</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 10: Longevity & Anti-Aging -->
@@ -344,8 +353,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Longevity & Anti-Aging</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Advanced biomarker testing, NAD+ infusions, and evidence-based protocols to slow biological ageing and maximise healthspan.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">Premium programme</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 11: Corporate Health Management -->
@@ -353,8 +361,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Corporate Health Management</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Retainer-based occupational health programmes, screenings, and consulting to build a healthier, higher-performing workforce.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">₦10M – ₦25M retainer</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 12: Mindfulness & Mental Fitness -->
@@ -362,8 +369,7 @@
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="12" r="10"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Mindfulness & Mental Fitness</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Structured resilience, cognitive performance, and mindfulness programmes for peak mental clarity and emotional balance.</p>
-        <div class="text-xs font-semibold gold-text tracking-wide mt-3">Contact for sessions</div>
-        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details</div>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
     </div>
@@ -372,53 +378,369 @@
 </section>
 
 <!-- ==================== PACKAGES ==================== -->
-<section class="py-24 bg-white">
+<section id="packages" class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center mb-14 reveal">
       <div class="section-tag mb-4">Executive Wellness</div>
       <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Choose Your <em class="gold-text not-italic">Health Package</em></h2>
+      <p class="text-gray-500 max-w-xl mx-auto text-sm">Curated cardiac screening programmes for high-performing professionals. Click any package for full details.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-6 items-start">
-      <div class="package-card rounded-2xl border border-gray-200 p-8 reveal">
-        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Silver</div>
-        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦95,000</div>
+
+      <!-- Silver -->
+      <div class="package-card rounded-2xl border border-gray-200 p-8 reveal cursor-pointer" onclick="openModal('silver')">
+        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Silver Heart Screening</div>
+        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦150,000</div>
         <div class="text-xs text-gray-400 mb-6">per package</div>
         <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Initial Consultation</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Cardiovascular Consultation</div>
           <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>ECG</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Lipid Profile</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Blood Glucose</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>BMI & Blood Pressure</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Lipid Profile & HbA1c</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>BMI & Blood Pressure Analysis</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Cardiovascular Risk Assessment</div>
         </div>
         <a href="#contact" class="btn-outline w-full block text-center">Get Started</a>
+        <div class="click-hint justify-center mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
       </div>
-      <div class="package-card package-featured rounded-2xl p-8 mt-4 lg:mt-0 shadow-2xl shadow-gold-400/20 reveal">
-        <div class="text-xs font-bold tracking-widest uppercase text-gold-400 mb-3">Gold</div>
-        <div class="font-display text-4xl font-bold text-white mb-1">₦250,000</div>
+
+      <!-- Gold (featured) -->
+      <div class="package-card package-featured rounded-2xl p-8 mt-4 lg:mt-0 shadow-2xl shadow-gold-400/20 reveal cursor-pointer" onclick="openModal('gold')">
+        <div class="text-xs font-bold tracking-widest uppercase text-gold-400 mb-3">Gold Executive Heart</div>
+        <div class="font-display text-4xl font-bold text-white mb-1">₦350,000</div>
         <div class="text-xs text-gray-500 mb-6">per package</div>
         <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Everything in Silver</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Echocardiography</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Full Blood Panels</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Dietitian Consultation</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Multi-visit Programme</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Consultation + ECG</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Echocardiogram</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Full Cardiac Blood Panel</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Kidney & Liver Panel</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Nutrition & Lifestyle Sheet</div>
         </div>
         <a href="#contact" class="btn-gold w-full block text-center">Book Gold Package</a>
+        <div class="click-hint justify-center mt-4" style="color:#D4AF37;opacity:0.8;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
       </div>
-      <div class="package-card rounded-2xl border border-gray-200 p-8 reveal">
-        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Platinum</div>
-        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦480,000</div>
+
+      <!-- Platinum -->
+      <div class="package-card rounded-2xl border border-gray-200 p-8 reveal cursor-pointer" onclick="openModal('platinum')">
+        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Platinum Comprehensive</div>
+        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦650,000</div>
         <div class="text-xs text-gray-400 mb-6">per package</div>
         <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Everything in Gold</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Cardiac Stress Test</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Metabolic Scan</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Lifestyle Medicine Session</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Full Priority Care</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>All Gold Package Services</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Stress Test (Treadmill ECG)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Advanced Metabolic Panel</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Body Composition Scan</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Personalized Executive Health Report</div>
         </div>
         <a href="#contact" class="btn-outline w-full block text-center">Get Started</a>
+        <div class="click-hint justify-center mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ==================== FULL PRICING (TABBED) ==================== -->
+<section id="pricing" class="py-24 bg-cream">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-12 reveal">
+      <div class="section-tag mb-4">Transparent Pricing</div>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Complete <em class="gold-text not-italic">Price List</em></h2>
+      <p class="text-gray-500 max-w-lg mx-auto text-sm">All prices in Nigerian Naira (₦). Subject to change — contact us for the latest rates.</p>
+    </div>
+
+    <!-- Tab buttons -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10 reveal">
+      <button class="pricing-tab active" onclick="switchTab('cardio', this)">Cardiology</button>
+      <button class="pricing-tab" onclick="switchTab('wellness', this)">Wellness Packages</button>
+      <button class="pricing-tab" onclick="switchTab('medispa', this)">MediSpa</button>
+      <button class="pricing-tab" onclick="switchTab('bodyproducts', this)">Signature Collection</button>
+      <button class="pricing-tab" onclick="switchTab('memberships', this)">Memberships</button>
+    </div>
+
+    <!-- ── Cardiology Panel ── -->
+    <div id="tab-cardio" class="pricing-panel active reveal">
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Consultations -->
+        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden">
+          <div class="px-6 py-4 border-b border-gold-400/10 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Consultations</div>
+          </div>
+          <div class="px-4 py-2">
+            <div class="price-row">
+              <div><div class="price-label">Initial Cardiology Consultation</div><div class="price-note">Includes cardiovascular risk & wellness assessment</div></div>
+              <div class="price-amount">₦50,000</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">Follow-Up Consultation</div><div class="price-note">Ongoing management & plan adjustment</div></div>
+              <div class="price-amount">₦25,000</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">Executive Priority Consultation</div><div class="price-note">Expedited access to senior cardiologist</div></div>
+              <div class="price-amount">₦75,000</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">Second Opinion Review</div><div class="price-note">Independent review of existing diagnosis</div></div>
+              <div class="price-amount">₦50,000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diagnostics -->
+        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden">
+          <div class="px-6 py-4 border-b border-gold-400/10 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Advanced Cardiac Diagnostics</div>
+          </div>
+          <div class="px-4 py-2">
+            <div class="price-row">
+              <div><div class="price-label">Electrocardiogram (ECG)</div><div class="price-note">Records electrical activity of the heart</div></div>
+              <div class="price-amount">₦30,000</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">Echocardiogram</div><div class="price-note">Ultrasound of heart structure & function</div></div>
+              <div class="price-amount">₦85,000</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">Stress Test (Treadmill ECG)</div><div class="price-note">Heart function under physical stress</div></div>
+              <div class="price-amount">₦75,000</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">24-Hour Holter Monitoring</div><div class="price-note">Continuous 24-hr rhythm recording</div></div>
+              <div class="price-amount">₦150,000</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">24-Hour BP Monitoring</div><div class="price-note">Comprehensive hypertension profiling</div></div>
+              <div class="price-amount">₦90,000</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">BP Monitor Caution Deposit</div><div class="price-note">Refundable equipment deposit</div></div>
+              <div class="price-amount">₦100,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Wellness Packages Panel ── -->
+    <div id="tab-wellness" class="pricing-panel">
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Silver -->
+        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gold-400/35 transition-all" onclick="openModal('silver')">
+          <div class="px-6 py-5 border-b border-gold-400/10" style="background:linear-gradient(135deg,#fdf9ee,#f8efcf);">
+            <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Silver</div>
+            <div class="font-display text-3xl font-bold text-gray-900">₦150,000</div>
+            <div class="text-xs text-gray-400">Heart Screening</div>
+          </div>
+          <div class="px-5 py-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Cardiovascular Consultation</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> ECG</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Lipid Profile & HbA1c</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> BMI & BP Analysis</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Cardiovascular Risk Assessment</div>
+          </div>
+          <div class="px-5 pb-5"><a href="#contact" class="btn-outline w-full block text-center text-xs">Book Now</a></div>
+        </div>
+
+        <!-- Gold -->
+        <div class="rounded-2xl overflow-hidden cursor-pointer hover:shadow-xl transition-all" style="background:linear-gradient(160deg,#1a1510,#2a1f08);border:1px solid rgba(212,175,55,0.30);" onclick="openModal('gold')">
+          <div class="px-6 py-5 border-b" style="border-color:rgba(212,175,55,0.15);">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-1">Gold · Most Popular</div>
+            <div class="font-display text-3xl font-bold text-white">₦350,000</div>
+            <div class="text-xs text-gray-400">Executive Heart Package</div>
+          </div>
+          <div class="px-5 py-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Consultation + ECG</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Echocardiogram</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Full Cardiac Blood Panel</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Kidney & Liver Panel</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Nutrition & Lifestyle Sheet</div>
+          </div>
+          <div class="px-5 pb-5"><a href="#contact" class="btn-gold w-full block text-center text-xs">Book Now</a></div>
+        </div>
+
+        <!-- Platinum -->
+        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gold-400/35 transition-all" onclick="openModal('platinum')">
+          <div class="px-6 py-5 border-b border-gold-400/10" style="background:linear-gradient(135deg,#fdf9ee,#f8efcf);">
+            <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Platinum</div>
+            <div class="font-display text-3xl font-bold text-gray-900">₦650,000</div>
+            <div class="text-xs text-gray-400">Comprehensive Assessment</div>
+          </div>
+          <div class="px-5 py-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> All Gold Package Services</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Stress Test (Treadmill ECG)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Advanced Metabolic Panel</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Body Composition Scan</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Lifestyle Medicine Session</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Personalized Executive Health Report</div>
+          </div>
+          <div class="px-5 pb-5"><a href="#contact" class="btn-outline w-full block text-center text-xs">Book Now</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MediSpa Panel ── -->
+    <div id="tab-medispa" class="pricing-panel">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Hammam -->
+        <div class="spa-price-card">
+          <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Traditional Hammam Baths</div>
+          </div>
+          <div class="px-4 py-2">
+            <div class="price-row"><div class="price-label">Traditional Hammam</div><div><div class="price-amount text-right">₦50,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Traditional Hammam</div><div><div class="price-amount text-right">₦55,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+            <div class="price-row"><div class="price-label">Soqla Hammam</div><div><div class="price-amount text-right">₦60,000</div><div class="text-xs text-gray-400 text-right">W / M</div></div></div>
+            <div class="price-row"><div class="price-label">Brightening Extra Hammam</div><div><div class="price-amount text-right">₦70,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Brightening Hammam</div><div><div class="price-amount text-right">₦75,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+            <div class="price-row"><div class="price-label">Cleopatra Hammam</div><div><div class="price-amount text-right">₦90,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Cleopatra Hammam</div><div><div class="price-amount text-right">₦100,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+            <div class="price-row"><div class="price-label">Medical Hammam</div><div><div class="price-amount text-right">₦80,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Medical Hammam</div><div><div class="price-amount text-right">₦85,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+            <div class="price-row"><div class="price-label">Glowing Hammam</div><div><div class="price-amount text-right">₦60,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Glowing Hammam</div><div><div class="price-amount text-right">₦65,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+          </div>
+        </div>
+
+        <!-- Facials -->
+        <div class="spa-price-card">
+          <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Advanced Facial Treatments</div>
+          </div>
+          <div class="px-4 py-2">
+            <div class="price-row"><div class="price-label">Doctor-led Skin Consultation</div><div class="price-amount">₦30,000</div></div>
+            <div class="price-row"><div class="price-label">Facial 24hrs Repairing</div><div class="price-amount">₦79,000</div></div>
+            <div class="price-row"><div class="price-label">Anti-Acne Facial</div><div class="price-amount">₦60,000</div></div>
+            <div class="price-row"><div class="price-label">Activating Firming Facial</div><div class="price-amount">₦100,000</div></div>
+            <div class="price-row"><div class="price-label">Collagen Energizing Facial</div><div class="price-amount">₦100,000</div></div>
+            <div class="price-row"><div class="price-label">Squalene Hydrating Facial</div><div class="price-amount">₦100,000</div></div>
+            <div class="price-row"><div class="price-label">Facial Hair Removal</div><div class="price-amount">₦25,000</div></div>
+            <div class="price-row"><div class="price-label">Dermafrac Needling Facial</div><div class="price-amount">₦150,000</div></div>
+            <div class="price-row"><div class="price-label">Microdermabrasion</div><div class="price-amount">₦65,000</div></div>
+            <div class="price-row"><div class="price-label">HydraFacial</div><div class="price-amount">₦85,000</div></div>
+            <div class="price-row"><div class="price-label">Chemical Peel</div><div class="price-amount">₦95,000</div></div>
+            <div class="price-row"><div class="price-label">Microneedling</div><div class="price-amount">₦120,000</div></div>
+          </div>
+        </div>
+
+        <!-- IV Therapy & Aesthetic Additions -->
+        <div class="space-y-5">
+          <div class="spa-price-card">
+            <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+              <div class="text-xs font-bold uppercase tracking-widest text-gold-500">IV Vitamin & Wellness Infusions</div>
+            </div>
+            <div class="px-4 py-2">
+              <div class="price-row"><div><div class="price-label">IV Vitamin Therapy</div><div class="price-note">Tailored to your needs</div></div><div class="price-amount">₦65k–₦120k</div></div>
+              <div class="price-row"><div class="price-label">Detox Drip</div><div class="price-amount">₦95,000</div></div>
+              <div class="price-row"><div><div class="price-label">NAD+ Therapy</div><div class="price-note">Cellular rejuvenation</div></div><div class="price-amount">₦250,000</div></div>
+            </div>
+          </div>
+          <div class="spa-price-card">
+            <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+              <div class="text-xs font-bold uppercase tracking-widest text-gold-500">High-Margin Aesthetic Procedures</div>
+            </div>
+            <div class="px-4 py-2">
+              <div class="price-row"><div><div class="price-label">Botox</div><div class="price-note">Per area · physician-administered</div></div><div class="price-amount">₦180k–₦250k</div></div>
+              <div class="price-row"><div><div class="price-label">Dermal Fillers</div><div class="price-note">Physician-supervised</div></div><div class="price-amount">₦350k–₦600k</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Signature Body Collection Panel ── -->
+    <div id="tab-bodyproducts" class="pricing-panel">
+      <div class="max-w-2xl mx-auto bg-white rounded-2xl border border-gold-400/15 overflow-hidden">
+        <div class="px-6 py-5 border-b border-gold-400/10 bg-warm text-center">
+          <div class="section-tag mb-2">Handcrafted Luxury Wellness Products</div>
+          <p class="text-xs text-gray-500">Extend the spa experience into your home with our curated Integra Signature Collection.</p>
+        </div>
+        <div class="px-6 py-3">
+          <div class="price-row"><div class="price-label">Herbal Detox Soak</div><div class="price-amount">₦25,000</div></div>
+          <div class="price-row"><div class="price-label">Relaxation Bath Salts</div><div class="price-amount">₦18,000</div></div>
+          <div class="price-row"><div class="price-label">Aromatherapy Oil</div><div class="price-amount">₦22,000</div></div>
+          <div class="price-row"><div class="price-label">Luxury Body Butter</div><div class="price-amount">₦20,000</div></div>
+          <div class="price-row"><div><div class="price-label">Stress Relief Gift Box</div><div class="price-note">Curated wellness gift set</div></div><div class="price-amount">₦75,000</div></div>
+          <div class="price-row"><div><div class="price-label">Executive Self-Care Hamper</div><div class="price-note">Premium collection for the discerning executive</div></div><div class="price-amount">₦180,000</div></div>
+        </div>
+        <div class="px-6 py-4 text-center border-t border-gold-400/10"><a href="#contact" class="btn-gold text-xs">Enquire About Products</a></div>
+      </div>
+    </div>
+
+    <!-- ── Memberships Panel ── -->
+    <div id="tab-memberships" class="pricing-panel">
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Integra Elite -->
+        <div class="mem-card border border-gold-400/20 bg-white cursor-pointer hover:shadow-xl transition-all" onclick="openModal('membership')">
+          <div class="px-7 py-6 border-b border-gold-400/12 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Annual Membership</div>
+            <div class="font-display text-2xl font-bold text-gray-900 mb-0.5">Integra Elite</div>
+            <div class="font-display text-4xl font-bold gold-text">₦1,200,000</div>
+            <div class="text-xs text-gray-400 mt-1">per year</div>
+          </div>
+          <div class="px-6 py-5 space-y-2.5 text-sm text-gray-600">
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 4 Cardiology Consultations</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Echo + ECG</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 Hammam Bath Sessions</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 20% MediSpa Discount</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Priority Booking</div>
+          </div>
+          <div class="px-6 pb-6"><a href="#contact" class="btn-outline w-full block text-center text-xs">Enquire Now</a></div>
+        </div>
+
+        <!-- Chairman's Platinum -->
+        <div class="mem-card cursor-pointer" style="background:linear-gradient(160deg,#1a1510,#2a1f08);border:1px solid rgba(212,175,55,0.35);" onclick="openModal('chairmanplatinum')">
+          <div class="px-7 py-6 border-b" style="border-color:rgba(212,175,55,0.15);">
+            <div class="mem-badge bg-gold-400 text-white mb-2">Most Exclusive</div>
+            <div class="font-display text-2xl font-bold text-white mb-0.5">Chairman's Platinum</div>
+            <div class="font-display text-4xl font-bold gold-text">₦2,500,000</div>
+            <div class="text-xs text-gray-400 mt-1">per year</div>
+          </div>
+          <div class="px-6 py-5 space-y-2.5 text-sm text-gray-300">
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 6 Cardiology Consultations</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Echo + ECG + Stress Test</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 Advanced Lab Panels</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 4 Hammam Bath Sessions</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 MediSpa Rejuvenation Sessions</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Dedicated Medical Liaison</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Same-Day Priority Results</div>
+          </div>
+          <div class="px-6 pb-6"><a href="#contact" class="btn-gold w-full block text-center text-xs">Enquire Now</a></div>
+        </div>
+
+        <!-- Diplomatic / Corporate Retainer -->
+        <div class="mem-card border border-gold-400/20 bg-white cursor-pointer hover:shadow-xl transition-all" onclick="openModal('membership')">
+          <div class="px-7 py-6 border-b border-gold-400/12 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Corporate / Diplomatic</div>
+            <div class="font-display text-2xl font-bold text-gray-900 mb-0.5">Retainer Programme</div>
+            <div class="font-display text-3xl font-bold gold-text">₦10M–₦25M</div>
+            <div class="text-xs text-gray-400 mt-1">per year</div>
+          </div>
+          <div class="px-6 py-5 space-y-2.5 text-sm text-gray-600">
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 24/7 Priority Access</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Screening (up to 10 people)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Quarterly On-Site Checkups</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Emergency Fast-Track Service</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Org. Health Report</div>
+          </div>
+          <div class="px-6 pb-6"><a href="#contact" class="btn-outline w-full block text-center text-xs">Contact Us</a></div>
+        </div>
+
+      </div>
+
+      <!-- Also add home visit -->
+      <div class="mt-6 bg-white rounded-2xl border border-gold-400/15 p-6 flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <div class="font-display text-lg font-semibold text-gray-900">Home Visit</div>
+          <div class="text-sm text-gray-500">Physician visit to your residence or office — on-demand concierge care.</div>
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="font-display text-2xl font-bold gold-text">₦200,000 <span class="text-sm font-body text-gray-400 font-normal">per visit</span></div>
+          <a href="#contact" class="btn-gold text-xs">Book a Visit</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -427,15 +749,10 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div class="relative reveal">
-        <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-[#2a1f08] to-[#1a1510] border border-gold-400/20 flex items-end p-8">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-32 h-32 rounded-full bg-gradient-to-br from-gold-400/20 to-gold-400/5 border border-gold-400/30 mx-auto mb-4 flex items-center justify-center"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-              <div class="text-gold-400/60 text-xs tracking-widest uppercase">Photo Coming Soon</div>
-            </div>
-          </div>
-          <div class="relative z-10 bg-black/40 backdrop-blur-sm rounded-xl p-4 border border-gold-400/20 w-full">
-            <div class="font-display text-xl text-white font-semibold">Dr. Maureen Omolola Chukwurah</div>
+        <div class="rounded-2xl overflow-hidden aspect-[4/5] border border-gold-400/20 relative flex items-end p-0" style="background:linear-gradient(160deg,#1a1510,#2a1f08);">
+          <img src="founder_photo.png" alt="Dr. Maureen Omolola Chukwura" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;">
+          <div class="relative z-10 bg-gradient-to-t from-black/70 to-transparent w-full px-6 pb-6 pt-16">
+            <div class="font-display text-xl text-white font-semibold">Dr. Maureen Omolola Chukwura</div>
             <div class="text-gold-400 text-xs tracking-wider uppercase mt-0.5">Founder & Managing Director · Cardiovascular Specialist</div>
           </div>
         </div>
@@ -446,7 +763,7 @@
         <div class="section-tag mb-6" style="color:#D4AF37;"><span style="background:linear-gradient(90deg,#D4AF37,#E8C84A);width:24px;height:1px;display:inline-block;"></span>Founder Spotlight<span style="background:linear-gradient(90deg,#D4AF37,#E8C84A);width:24px;height:1px;display:inline-block;"></span></div>
         <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">The Visionary Behind <em class="gold-text not-italic">Integra</em></h2>
         <div class="founder-quote mb-6">
-          <p class="text-gray-300 text-lg leading-relaxed relative z-10">A seasoned medical executive and cardiovascular specialist, Dr. Maureen founded Integra to address the critical need for integrated preventive cardiology and holistic wellness in Nigeria.</p>
+          <p class="text-gray-300 text-lg leading-relaxed relative z-10">A seasoned medical executive and cardiovascular specialist, Dr. Maureen Omolola Chukwura founded Integra to address the critical need for integrated preventive cardiology and holistic wellness in Nigeria.</p>
         </div>
         <p class="text-gray-400 leading-relaxed mb-8">Her approach combines state-of-the-art cardiac care with lifestyle medicine, nutrition, stress management, and personalised health coaching — empowering patients to prevent disease and optimise vitality. Under her leadership, Integra offers a unique one-stop model for heart health and overall wellness, serving professionals and executives seeking proactive, high-quality care.</p>
         <a href="#contact" class="btn-gold">Book with Dr. Maureen</a>
@@ -511,7 +828,7 @@
       <!-- Col 1: Brand + Social -->
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-9 h-9"><svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fGrad" x1="0" y1="0" x2="80" y2="90" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#D4AF37"/><stop offset="50%" stop-color="#F2D06B"/><stop offset="100%" stop-color="#C5A059"/></linearGradient></defs><circle cx="40" cy="10" r="9" stroke="url(#fGrad)" stroke-width="5" fill="none"/><rect x="12" y="24" width="56" height="52" rx="14" stroke="url(#fGrad)" stroke-width="5" fill="none"/><path d="M40 65 C40 65 22 54 22 43 C22 37 27 32 33 33 C36.5 33 39 35 40 37 C41 35 43.5 33 47 33 C53 32 58 37 58 43 C58 54 40 65 40 65Z" fill="url(#fGrad)"/></svg></div>
+          <img src="1000191389-removebg-preview.png" alt="Integra logo" style="width:36px;height:36px;object-fit:contain;filter:drop-shadow(0 0 0 transparent);">
           <div><div class="font-display font-bold text-sm gold-text tracking-wide">INTEGRA</div><div class="text-gray-600" style="font-size:0.5rem;letter-spacing:0.12em;">WELLNESS & CARDIAC CLINICS</div></div>
         </div>
         <p class="text-xs text-gray-500 leading-relaxed mb-5">Premier, physician-led outpatient center delivering advanced cardiology, preventive medicine, and integrative wellness in Abuja.</p>
@@ -667,12 +984,48 @@
   // ── MODAL DATA
   // ══════════════════════════════
   const modalData = {
+    ecg: {
+      tag: 'Cardiac Diagnostics',
+      title: 'Electrocardiogram (ECG)',
+      subtitle: 'A rapid, non-invasive recording of the heart\'s electrical activity — the essential first step in any cardiac assessment.',
+      price: 'ECG: ₦30,000 · Results same-day',
+      overview: 'An Electrocardiogram (ECG) measures the electrical signals that control the timing of each heartbeat. At Integra, every ECG is performed by trained clinical staff and interpreted personally by Dr. Maureen Omolola Chukwura, our Cardiovascular Specialist. It is the gold-standard first-line investigation for detecting a wide range of cardiac conditions, from rhythm disturbances to signs of prior heart attack.',
+      inclusions: [
+        '12-lead heart rhythm recording across standard limb and precordial leads',
+        'Full skin preparation and precise electrode placement by trained cardiac staff',
+        'Real-time trace capture with immediate quality verification',
+        'Preliminary interpretation and annotated written report by a cardiac specialist'
+      ],
+      benefits: ['Non-invasive, painless and completed in under 15 minutes', 'Immediate detection of arrhythmias, conduction defects, and ischaemic changes', 'Baseline cardiac record for ongoing health monitoring', 'Specialist interpretation — not just automated readings', 'Included in all Executive Wellness packages'],
+      expect: 'You will be asked to lie comfortably while small adhesive electrodes are placed on your chest, arms, and legs. The ECG machine records your heart\'s electrical activity over approximately 10 seconds. Results are printed immediately and reviewed by our cardiovascular specialist. You will receive a written report and, where clinically indicated, a recommendation for further investigations or a follow-up consultation.'
+    },
+    echo: {
+      tag: 'Cardiac Diagnostics',
+      title: 'Echocardiography',
+      subtitle: 'A real-time ultrasound imaging of the heart\'s structure and function — the definitive window into cardiac anatomy.',
+      price: 'Echocardiography: ₦85,000',
+      overview: 'Echocardiography uses high-frequency sound waves to produce live, moving images of your heart — revealing its chambers, valves, walls, and the vessels connected to it. At Integra, this is performed and interpreted by Dr. Maureen Omolola Chukwura, providing insights that no other single test can match. It is essential for diagnosing valve disease, cardiomyopathy, heart failure, and congenital defects.',
+      inclusions: [
+        'High-resolution 2D transthoracic ultrasound imaging of all four cardiac chambers',
+        'Colour and spectral Doppler flow analysis across all four heart valves',
+        'Regional and global wall motion assessment for ischaemia detection',
+        'Measurement of ejection fraction, chamber dimensions, and diastolic function — with a comprehensive written cardiac function report'
+      ],
+      benefits: ['Detailed visualisation of all four heart chambers and valves', 'Accurate measurement of cardiac function and ejection fraction', 'Detection of structural abnormalities, fluid around the heart, and wall motion defects', 'No radiation — completely safe and repeatable', 'Included in the Gold and Platinum Executive Wellness packages'],
+      expect: 'You will lie on your left side on an examination couch. A small amount of gel is applied to the chest, and the transducer (probe) is gently moved across the skin surface. The procedure typically takes 30–45 minutes. Our specialist will walk you through key findings during the session. A full written echo report will be issued, with clinical implications discussed in a dedicated consultation.'
+    },
     cardiology: {
       tag: 'Outpatient Services',
       title: 'Cardiology Diagnostics',
-      subtitle: 'State-of-the-art cardiac diagnostics led by Dr. Maureen Omolola Chukwurah, Cardiovascular Specialist.',
-      price: 'ECG from ₦20,000 · Holter ₦150,000 · Consultations ₦25,000–₦60,000',
+      subtitle: 'State-of-the-art cardiac diagnostics led by Dr. Maureen Omolola Chukwura, Cardiovascular Specialist.',
+      price: 'ECG ₦30,000 · Echo ₦85,000 · Stress Test ₦75,000 · Holter ₦150,000 · Consultations ₦25,000–₦75,000',
       overview: 'Our Outpatient Cardiology service provides comprehensive, non-invasive cardiac assessment using cutting-edge diagnostics. From routine electrocardiography to advanced ambulatory monitoring, every test is interpreted personally by our specialist to ensure accurate diagnosis and a care plan tailored to your unique cardiovascular profile.',
+      inclusions: [
+        '24/48-hour continuous ambulatory ECG recording via a lightweight wearable monitor',
+        'Full device setup, skin preparation, and patient diary instruction at the clinic',
+        'Automated arrhythmia detection with expert manual over-read of the complete recording',
+        'Detailed Holter analysis report identifying rhythm events, pauses, and rate trends — followed by a specialist review consultation'
+      ],
       benefits: ['Early detection of arrhythmias, ischaemia, and structural heart abnormalities', 'Personalised risk stratification and management plans', 'Reduced risk of acute cardiac events through proactive monitoring', 'Access to state-of-the-art diagnostic technology in Abuja', 'Continuity of care with specialist-led follow-up consultations'],
       expect: 'Your visit begins with a thorough medical history review and clinical assessment by our cardiovascular specialist. Depending on your risk profile, you may undergo an ECG (approximately 15 minutes), Holter monitor fitting for 24–48 hour ambulatory recording, Echocardiography, ABPM, or Cardiac Stress Testing. Results are discussed in detail during a follow-up consultation, along with a written report and a personalised action plan.'
     },
@@ -680,8 +1033,14 @@
       tag: 'Preventive Care',
       title: 'Executive Wellness Checks',
       subtitle: 'Curated health screening packages designed for high-performing professionals who demand proactive care.',
-      price: 'Silver ₦95,000 · Gold ₦250,000 · Platinum ₦480,000',
+      price: 'Silver ₦150,000 · Gold ₦350,000 · Platinum ₦650,000',
       overview: 'Our Executive Wellness Check packages are designed for time-conscious professionals who understand that peak performance begins with peak health. Each tier delivers a progressively comprehensive assessment — from foundational metabolic screening to full cardiovascular profiling, genomic risk analysis, and personalised lifestyle medicine sessions.',
+      inclusions: [
+        'Comprehensive head-to-toe physical examination by a consultant physician',
+        'Advanced blood chemistry panel covering metabolic, haematology, lipid, thyroid, and renal profiles',
+        'Cardiovascular risk profiling including ECG and blood pressure trend analysis',
+        'One-to-one lifestyle consultation with a personalised health roadmap and prioritised action steps'
+      ],
       benefits: ['Comprehensive health baseline established across key systems', 'Early identification of modifiable risk factors before symptoms emerge', 'Personalised prevention roadmap co-designed with your physician', 'Confidential, concierge-level experience with minimal wait times', 'Detailed executive health report suitable for insurance or employer records'],
       expect: 'Silver includes a consultation, ECG, lipid and glucose screening, and BMI/BP assessment — typically completed in two hours. Gold adds echocardiography, full blood panels, and a registered dietitian session across multiple visits. Platinum — our most comprehensive tier — incorporates a cardiac stress test, metabolic scan, and a dedicated lifestyle medicine session with follow-up coaching.'
     },
@@ -691,6 +1050,12 @@
       subtitle: 'Physician-supervised aesthetic treatments that restore radiance, confidence, and holistic self-care.',
       price: 'Treatments from ₦30,000 to ₦600,000 · Sessions 30–90 minutes',
       overview: 'The Integra MediSpa bridges clinical precision with luxury self-care. Every treatment is performed under physician oversight, ensuring safety, efficacy, and results that go far beyond the surface. Whether you seek skin renewal, body rejuvenation, or the restorative power of IV micronutrient therapy, our menu is curated for the discerning executive.',
+      inclusions: [
+        'Holistic skin analysis using medical-grade imaging and physician assessment',
+        'Medical-grade facial treatments: Hydrafacial, Chemical Peel, or Microneedling as clinically indicated',
+        'Stress-reduction and systemic therapies: IV Vitamin Drip, NAD+ infusion, or Detox Drip',
+        'Physician-supervised aesthetic procedures including Botox and/or Dermal Fillers where appropriate'
+      ],
       benefits: ['Clinically proven treatments supervised by qualified medical professionals', 'Improved skin texture, luminosity, and hydration', 'Systemic cellular rejuvenation via IV vitamin and NAD+ therapy', 'Reduction of fine lines, wrinkles, and volume loss', 'Holistic wellbeing benefits — improved energy, mood, and resilience'],
       expect: 'A personalised aesthetic consultation precedes all treatments. Your clinician will assess your skin type, health history, and aesthetic goals before recommending a tailored protocol. Treatments include: Hydrafacial (45 min), Chemical Peel (30–60 min), Microneedling (60–75 min), IV Vitamin Therapy / Detox Drip / NAD+ (45–90 min), Botox (30 min), and Dermal Fillers (45–60 min). Downtime is minimal for most procedures.'
     },
@@ -700,7 +1065,13 @@
       subtitle: 'Reserved for those who regard their health as their most important asset — a truly bespoke annual health partnership.',
       price: 'Elite ₦1,200,000/yr · Chairman\'s Platinum ₦2,500,000/yr',
       overview: 'Integra Elite Membership is our most prestigious offering — a year-round health partnership that places a dedicated medical team at your exclusive disposal. The Chairman\'s Platinum tier represents the pinnacle of concierge medicine in Nigeria: priority scheduling, annual comprehensive health management, VIP access to all Integra services, and proactive health surveillance calibrated to your lifestyle and ambitions.',
-      benefits: ['Unlimited priority access to Dr. Maureen and the Integra clinical team', 'Comprehensive annual cardiovascular and metabolic health review', 'Quarterly check-ins and health optimisation reviews', 'VIP access to all MediSpa treatments at preferential rates', 'Exclusive invitations to Integra health summits and wellness events', 'Personalised wellness product selections from the Integra Signature Collection'],
+      inclusions: [
+        'Priority 24/7 direct access to Dr. Maureen Omolola Chukwura and the full Integra clinical team',
+        'Comprehensive annual head-to-toe screening: cardiovascular, metabolic, and key oncology markers',
+        'Dedicated personal health concierge for scheduling, care coordination, and specialist referrals',
+        'Private VIP lounge access, zero waiting time, and a specialist-led annual preventative health strategy review'
+      ],
+      benefits: ['Unlimited priority access to Dr. Maureen Omolola Chukwura and the Integra clinical team', 'Comprehensive annual cardiovascular and metabolic health review', 'Quarterly check-ins and health optimisation reviews', 'VIP access to all MediSpa treatments at preferential rates', 'Exclusive invitations to Integra health summits and wellness events', 'Personalised wellness product selections from the Integra Signature Collection'],
       expect: 'Upon enrolment, a dedicated onboarding session establishes your comprehensive health baseline. You receive a personalised Annual Health Blueprint — a 12-month wellness roadmap aligned with your professional and personal goals. All services are coordinated through a single point of contact, ensuring seamless, confidential, and deeply personalised care throughout the year.'
     },
     lifestyle: {
@@ -709,6 +1080,12 @@
       subtitle: 'Evidence-based coaching that transforms daily habits into a foundation for exceptional long-term health.',
       price: 'Integrated in wellness packages · Standalone sessions available',
       overview: 'Lifestyle medicine is the cornerstone of true preventive health. Our coaching programme addresses the six pillars of lifestyle medicine — nutrition, physical activity, sleep, stress management, avoidance of harmful substances, and positive social connection — through a structured, personalised, and physician-endorsed framework.',
+      inclusions: [
+        'Comprehensive lifestyle assessment covering diet, physical activity, sleep, and stress patterns',
+        'Evidence-based six-pillar lifestyle medicine framework tailored to your profile',
+        'Scheduled individual coaching sessions (in-clinic or virtual) with a qualified lifestyle practitioner',
+        'Quarterly progress reviews against measurable biomarkers and wellbeing indicators'
+      ],
       benefits: ['Sustained behaviour change through evidence-based habit design', 'Reduced risk of lifestyle-related chronic diseases', 'Improved energy, cognitive clarity, and emotional resilience', 'Personalised protocols aligned with your work schedule and lifestyle', 'Accountability support through regular coach check-ins'],
       expect: 'Your coaching journey begins with a comprehensive lifestyle assessment covering diet, exercise habits, sleep patterns, stress levels, and personal health goals. A customised Lifestyle Medicine Plan is developed, followed by scheduled coaching sessions (in-clinic or virtual). Progress is tracked against measurable biomarkers and wellbeing indicators, with the plan refined quarterly.'
     },
@@ -718,6 +1095,12 @@
       subtitle: 'Seamless access to world-class specialist care abroad, managed entirely on your behalf.',
       price: 'Bespoke packages · Contact for assessment',
       overview: 'When the care you need is abroad, Integra\'s Medical Tourism Concierge ensures that every aspect of your international healthcare journey is expertly managed — from identifying the right specialist at the right institution to coordinating travel, accommodation, medical records, and post-return follow-up care.',
+      inclusions: [
+        'Trusted referral matching to leading specialists and accredited institutions in the UK, USA, UAE, India, and Europe',
+        'End-to-end logistics coordination: visa support, accommodation, airport transfers, and appointment scheduling',
+        'Medical records preparation, collation, and translation where required',
+        'Seamless continuity of care upon return — Integra receives full clinical notes and manages follow-up locally'
+      ],
       benefits: ['Access to leading specialists and centres of excellence globally', 'Trusted referral networks in the UK, USA, UAE, India, and Europe', 'End-to-end logistics: visas, accommodation, transfers, and scheduling', 'Medical records preparation and translation where required', 'Seamless continuity of care upon return to Nigeria'],
       expect: 'Following an initial clinical assessment at Integra, your case is reviewed and matched with an appropriate international specialist or institution. Our concierge team coordinates all pre-travel documentation, appointment scheduling, and on-ground logistics. Upon your return, Dr. Maureen\'s team receives full clinical notes and manages any recommended follow-up locally.'
     },
@@ -727,6 +1110,12 @@
       subtitle: 'A clinically structured programme to identify, treat, and reverse chronic occupational burnout in high-performance professionals.',
       price: 'Multi-session programme · Contact for pricing',
       overview: 'Burnout is not weakness — it is a clinical condition arising from chronic, unmanaged occupational stress. Our Executive Burnout Recovery Programme is a multi-disciplinary intervention combining physician assessment, psychophysiological testing, restorative lifestyle medicine, and targeted wellness therapies to guide you from exhaustion to restored capacity.',
+      inclusions: [
+        'Validated clinical burnout assessment with cortisol profiling and psychophysiological testing',
+        'Cardiovascular and metabolic health evaluation as part of the baseline workup',
+        'Structured 8–12 week multidisciplinary recovery programme: medical, nutritional, and therapeutic components',
+        'Fortnightly progress reviews with plan refinement — plus IV nutrient therapy and mindfulness-based stress reduction'
+      ],
       benefits: ['Clinical diagnosis and objective measurement of burnout severity', 'Restoration of energy, concentration, and emotional regulation', 'Evidence-based strategies to prevent recurrence', 'Improved cardiovascular and immune health markers', 'Return to high performance with sustainable, long-term habits'],
       expect: 'Your programme begins with a comprehensive clinical evaluation — including cortisol profiling, cardiovascular assessment, and validated burnout screening tools. A structured recovery plan is then co-designed, typically spanning 8–12 weeks and incorporating medical intervention, lifestyle optimisation, IV nutrient therapy, sleep restoration, and mindfulness-based stress reduction. Progress is reviewed at two-week intervals.'
     },
@@ -736,6 +1125,12 @@
       subtitle: 'Dietary and metabolic strategies guided by your unique genetic profile for optimised performance and disease prevention.',
       price: 'Contact for genomic assessment pricing',
       overview: 'Precision Nutrition at Integra moves beyond generic dietary advice. By integrating genomic testing, comprehensive metabolic profiling, and advanced biomarker analysis, our nutrition specialists design dietary strategies that work with your individual biology — optimising energy, metabolism, inflammation, and long-term disease risk.',
+      inclusions: [
+        'Comprehensive nutritional health assessment and genomic test via a non-invasive saliva sample',
+        'Cross-referenced analysis of genetic variants, blood biomarkers, and medical history',
+        'Precision Nutrition Blueprint: a detailed dietary plan with food protocols and supplementation guidance',
+        'Scheduled reassessment to track metabolic improvements and refine the nutritional strategy'
+      ],
       benefits: ['Personalised nutrition based on your unique genetic variants', 'Improved metabolic efficiency and body composition', 'Reduced risk of diet-related chronic diseases (diabetes, cardiovascular disease)', 'Optimised micronutrient status and gut health', 'Performance nutrition protocols for peak cognitive and physical output'],
       expect: 'The programme begins with a comprehensive nutritional health assessment and genomic test (saliva sample). Results are analysed by our specialist and cross-referenced with your blood biomarkers and medical history. You receive a Precision Nutrition Blueprint — a detailed, practical dietary plan with food protocols, supplementation guidance, and a timeline for reassessment.'
     },
@@ -745,6 +1140,12 @@
       subtitle: 'Clinical assessment and personalised intervention to restore the deep, restorative sleep that fuels peak performance.',
       price: 'Contact for programme details',
       overview: 'Chronic sleep deficiency is one of the most underestimated health risks facing modern executives. Integra\'s Sleep Optimisation programme takes a clinical approach — assessing sleep architecture, identifying disorders such as obstructive sleep apnoea, and implementing evidence-based interventions to restore quality sleep as a pillar of long-term health.',
+      inclusions: [
+        'Detailed sleep history intake, validated sleep questionnaires, and wearable sleep tracking analysis',
+        'Clinical screening for obstructive sleep apnoea and insomnia using standardised diagnostic criteria',
+        'Overnight polysomnography or home sleep apnoea test where clinically indicated',
+        'Comprehensive Sleep Optimisation Plan combining medical therapy, CBT-I protocols, and lifestyle interventions'
+      ],
       benefits: ['Objective assessment of sleep quality and architecture', 'Diagnosis and management of obstructive sleep apnoea and insomnia', 'Improved daytime alertness, mood, and cognitive performance', 'Reduced cardiovascular risk associated with chronic poor sleep', 'Practical, sustainable sleep hygiene protocols'],
       expect: 'Your journey begins with a detailed sleep history, validated questionnaires, and wearable sleep tracking analysis. Depending on clinical findings, you may undergo an overnight sleep study (polysomnography) or a home sleep apnoea test. A comprehensive Sleep Optimisation Plan is then implemented — combining medical therapy where indicated, cognitive behavioural therapy for insomnia (CBT-I), and lifestyle interventions.'
     },
@@ -754,6 +1155,12 @@
       subtitle: 'Evidence-based protocols designed to extend your healthspan, slow biological ageing, and optimise vitality at every decade.',
       price: 'Premium programme · Contact for assessment',
       overview: 'Longevity medicine at Integra is grounded in the latest science on ageing biology. We go beyond symptomatic treatment to address the root biological mechanisms of ageing — including mitochondrial function, inflammation, oxidative stress, and telomere health — using a combination of advanced diagnostics, therapeutic interventions, and precision lifestyle medicine.',
+      inclusions: [
+        'Longevity Biomarker Panel: telomere length, inflammatory cytokines, mitochondrial function, and hormone profiles',
+        'IV NAD+ therapy and mitochondrial restoration protocols tailored to biological age findings',
+        'Personalised anti-inflammatory, antioxidant, and hormone optimisation protocols where clinically indicated',
+        'Periodic biomarker reassessment to objectively track biological age improvement over time'
+      ],
       benefits: ['Comprehensive biological age assessment against chronological age', 'NAD+ and mitochondrial restoration therapy', 'Personalised anti-inflammatory and antioxidant protocols', 'Hormone optimisation where clinically indicated', 'Sustained high energy, mental sharpness, and physical resilience'],
       expect: 'Your programme begins with a Longevity Biomarker Panel — measuring key ageing markers including telomere length, inflammatory cytokines, mitochondrial function, and hormone profiles. A personalised Longevity Blueprint is developed, incorporating IV NAD+ therapy, targeted supplementation, dietary optimisation, exercise physiology, and periodic biomarker reassessment to track biological age improvement.'
     },
@@ -763,6 +1170,12 @@
       subtitle: 'Retainer-based occupational health programmes that build healthier, higher-performing organisations.',
       price: 'Annual retainer: ₦10,000,000 – ₦25,000,000',
       overview: 'Integra\'s Corporate Health Management programme partners with forward-thinking organisations to implement evidence-based workplace health strategies. From on-site executive screening days to sustained health education and physician consulting, we help leadership teams build a culture of health that reduces absenteeism, lowers healthcare costs, and drives organisational performance.',
+      inclusions: [
+        'Organisational Health Assessment to define workforce health profile and key risk areas',
+        'Quarterly on-site executive health screening days with individual confidential reports',
+        'Bespoke health education workshops and seminars delivered by Integra clinical staff',
+        'Dedicated corporate health liaison and annual programme review for continuous alignment with organisational goals'
+      ],
       benefits: ['Measurable reduction in employee absenteeism and presenteeism', 'Early identification of high-risk employees for targeted intervention', 'Improved employee retention through visible health investment', 'Customised health education workshops and seminars', 'Confidential individual reporting with aggregated organisational insights'],
       expect: 'Engagement begins with an Organisational Health Assessment to understand your workforce profile, existing health challenges, and strategic objectives. A customised Corporate Health Plan is then designed — typically combining quarterly on-site health screening days, educational seminars, access to Integra\'s outpatient services for senior staff, and a dedicated corporate health liaison. Annual programme reviews ensure continuous alignment with your organisational goals.'
     },
@@ -772,10 +1185,92 @@
       subtitle: 'Structured programmes to sharpen cognitive performance, build emotional resilience, and sustain mental clarity under pressure.',
       price: 'Individual & group sessions · Contact for programme details',
       overview: 'Mental fitness is the competitive edge of the modern executive. Integra\'s Mindfulness & Mental Fitness programme draws on validated mindfulness-based interventions, cognitive performance techniques, and neuroscience-informed practices to help you lead with greater clarity, manage stress adaptively, and build the psychological resilience demanded by high-stakes environments.',
+      inclusions: [
+        'Personalised cognitive performance assessment and HRV-based stress physiology measurement',
+        'Tailored Mindfulness & Mental Fitness Plan with individual structured sessions',
+        'Group executive resilience workshops and leadership mindfulness intensives where applicable',
+        'Ongoing practitioner support and plan refinement coordinated with the Integra clinical team'
+      ],
       benefits: ['Measurable improvement in attention, working memory, and decision-making', 'Reduced cortisol levels and physiological stress responses', 'Enhanced emotional regulation and leadership presence', 'Improved sleep quality as a downstream benefit of stress reduction', 'Greater overall sense of purpose, wellbeing, and life satisfaction'],
       expect: 'The programme is available in individual and group formats. Individual sessions include personalised cognitive performance assessment, stress physiology measurement (HRV analysis), and a tailored Mindfulness & Mental Fitness Plan. Group formats are ideal for executive teams and include facilitated workshops, team resilience programmes, and leadership mindfulness intensives. All sessions are led by qualified facilitators working in close collaboration with Integra\'s clinical team.'
+    },
+    silver: {
+      tag: 'Executive Wellness · Silver',
+      title: 'Silver Heart Screening',
+      subtitle: 'A foundational cardiovascular screening package focusing on key cardiac indicators — ideal for first-time health checks.',
+      price: '₦150,000 per package',
+      overview: 'The Silver Heart Screening provides a focused, efficient cardiovascular and metabolic risk assessment designed for individuals seeking a clear baseline understanding of their heart health. In a single visit, you receive an expert consultation, electrocardiogram, and a targeted set of blood tests that together reveal your overall cardiovascular risk profile.',
+      inclusions: [
+        'Comprehensive cardiovascular risk and wellness assessment consultation',
+        'Electrocardiogram (ECG) — recording of the heart\'s electrical activity',
+        'Lipid Profile — total cholesterol, LDL, HDL, and triglycerides',
+        'HbA1c — three-month blood glucose control marker',
+        'BMI & Blood Pressure Analysis with interpretation and clinical recommendations'
+      ],
+      benefits: ['Fast, focused cardiac risk assessment in a single visit', 'Identifies key metabolic risk factors (cholesterol, blood glucose, BP)', 'Written summary with clear next steps and recommendations', 'Ideal entry point for proactive cardiac health management', 'Can be upgraded to Gold or Platinum for deeper assessment'],
+      expect: 'Your visit typically takes 2–3 hours. You will begin with a consultation covering your medical history and cardiovascular risk factors. An ECG is performed and interpreted on the day. Blood samples are taken for the lipid and HbA1c panels. Results and a written summary are provided at a follow-up discussion with the specialist.'
+    },
+    gold: {
+      tag: 'Executive Wellness · Gold',
+      title: 'Gold Executive Heart Package',
+      subtitle: 'An enhanced package offering a deeper dive into cardiac health, organ function, and metabolic performance.',
+      price: '₦350,000 per package',
+      overview: 'The Gold Executive Heart Package is our most popular comprehensive assessment, combining advanced cardiac imaging with a full metabolic and organ function workup. Designed for high-performing professionals, it goes beyond the Silver tier to include echocardiography and a holistic blood panel covering heart, kidney, and liver health.',
+      inclusions: [
+        'Cardiovascular consultation and wellness assessment',
+        'Electrocardiogram (ECG)',
+        'Echocardiogram — ultrasound imaging of heart structure and function',
+        'Full Cardiac Blood Panel — including cardiac enzymes and advanced lipid markers',
+        'Kidney & Liver Panel — renal function, liver enzymes, and metabolic markers',
+        'Nutrition & Lifestyle Management Sheet — personalised dietary and lifestyle guidance'
+      ],
+      benefits: ['Comprehensive cardiac, renal, and hepatic health snapshot in one package', 'Echocardiogram reveals structural heart issues not detected by ECG alone', 'Full metabolic panel for holistic organ function assessment', 'Personalised nutrition and lifestyle recommendations included', 'Ideal for executives aged 35+ or those with family history of heart disease'],
+      expect: 'The Gold package spans two visits. Visit 1 includes your consultation, ECG, and echocardiogram (60–90 min). Blood samples are taken for lab analysis. Visit 2 covers a full results consultation where all findings are reviewed, your personalised Nutrition & Lifestyle Management Sheet is presented, and a forward care plan is agreed. Total programme typically completed within one week.'
+    },
+    platinum: {
+      tag: 'Executive Wellness · Platinum',
+      title: 'Platinum Comprehensive Assessment',
+      subtitle: 'Our most extensive wellness package — a holistic, in-depth evaluation of cardiovascular and overall health.',
+      price: '₦650,000 per package',
+      overview: 'The Platinum Comprehensive Assessment is Integra\'s flagship wellness programme. It builds on the Gold package with a cardiac stress test, advanced metabolic profiling, body composition scanning, and a dedicated lifestyle medicine session — culminating in a personalized Executive Health Report. This is the gold standard in preventive cardiac and wellness care in Nigeria.',
+      inclusions: [
+        'All services included in the Gold Executive Heart Package',
+        'Stress Test (Treadmill ECG) — cardiac function under controlled physical exertion',
+        'Advanced Metabolic Panel — comprehensive hormonal, inflammatory, and metabolic biomarkers',
+        'Body Composition Scan — precise measurement of fat mass, lean mass, and visceral fat',
+        'Lifestyle Medicine Session — structured one-on-one consultation on nutrition, activity, stress, and sleep',
+        'Personalized Executive Health Report — a detailed, branded document suitable for personal, insurance, or employer records'
+      ],
+      benefits: ['Deepest-level cardiovascular and metabolic health assessment available at Integra', 'Stress test detects exercise-induced ischaemia not visible at rest', 'Body composition scan provides precise visceral fat and lean mass data', 'Lifestyle medicine session translates findings into actionable daily habits', 'Comprehensive Executive Health Report — ideal for high-level professionals and corporate requirements'],
+      expect: 'The Platinum programme spans 2–3 visits over approximately 1–2 weeks. Visit 1 includes consultation, ECG, echocardiogram, and blood sampling. Visit 2 covers the treadmill stress test and body composition scan. The final visit delivers your Executive Health Report alongside a lifestyle medicine session and a personalised forward health plan co-designed with Dr. Maureen\'s team.'
+    },
+    chairmanplatinum: {
+      tag: 'Ultra-Luxury · Annual Membership',
+      title: "Chairman's Platinum Executive Program",
+      subtitle: 'The pinnacle of concierge medicine in Nigeria — an annual health partnership reserved for those who accept nothing less than exceptional.',
+      price: '₦2,500,000 per year',
+      overview: "The Chairman's Platinum Executive Program is Integra's most prestigious annual membership tier. Combining the depth of comprehensive medical care with the seamless convenience of a dedicated medical liaison, it is designed for C-suite executives, diplomats, and high-net-worth individuals who require elite-level healthcare access year-round.",
+      inclusions: [
+        '6 Cardiology Consultations annually — priority scheduling, no waiting',
+        'Annual Echocardiogram + ECG + Cardiac Stress Test',
+        '2 Advanced Lab Panels — comprehensive metabolic, hormonal, and cardiac biomarker panels',
+        '4 Hammam Bath Sessions at the Integra MediSpa',
+        '2 MediSpa Rejuvenation Sessions — choice of facial or IV therapy',
+        'Dedicated Medical Liaison — single point of contact for all appointments, referrals, and queries',
+        'Same-Day Priority Results on all diagnostic investigations'
+      ],
+      benefits: ['Unrivalled priority access to Dr. Maureen and the full Integra clinical team', 'Most comprehensive annual cardiac monitoring programme available', 'Dedicated medical liaison manages all your health coordination', 'Same-day results eliminate waiting for critical diagnostic findings', 'Included MediSpa sessions for holistic rejuvenation', 'Discreet, confidential, concierge-level service at all times'],
+      expect: "Membership begins with a full onboarding health baseline assessment and an introductory meeting with your dedicated Medical Liaison. You will receive a personalised Annual Health Blueprint — a 12-month health strategy aligned with your lifestyle and goals. All six consultations, diagnostics, lab panels, and MediSpa sessions are coordinated proactively by your liaison, ensuring you never have to chase results, re-book, or wait."
     }
-  };
+  }; // ← END modalData
+
+  // ── Pricing tab switcher
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.pricing-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.pricing-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + tabId).classList.add('active');
+    btn.classList.add('active');
+  }
 
   // ── Modal open/close
   const overlay = document.getElementById('modalOverlay');
@@ -802,6 +1297,21 @@
         <p class="text-gray-600 text-sm leading-relaxed">${d.overview}</p>
       </div>
 
+      ${d.inclusions && d.inclusions.length ? `
+      <div style="margin-bottom:1.25rem;">
+        <div class="modal-section-title">What this service entails</div>
+        <ul style="list-style:none;margin:0;padding:0;">
+          ${d.inclusions.map(item => `
+            <li style="display:flex;align-items:flex-start;gap:10px;padding:0.45rem 0;border-bottom:1px solid rgba(212,175,55,0.07);">
+              <span style="flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:3px;background:linear-gradient(135deg,#D4AF37,#C5A059);display:flex;align-items:center;justify-content:center;">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span style="font-size:0.8125rem;line-height:1.55;color:#374151;">${item}</span>
+            </li>`).join('')}
+        </ul>
+      </div>
+      <div style="height:1px;background:linear-gradient(to right,rgba(212,175,55,0.30),transparent);margin-bottom:1.35rem;"></div>
+      ` : ''}
       <div class="mb-6">
         <div class="modal-section-title">Key Benefits</div>
         <div class="space-y-0">
@@ -844,14 +1354,18 @@
     if (e.target === overlay || e.target.classList.contains('modal-backdrop')) closeModal();
   }
 
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  // ── WhatsApp
+  // ── Escape key closes modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ── WhatsApp handler
   function openWhatsApp(serviceName) {
-    const service = serviceName || currentService || 'your services';
-    const phone = '2348023021753';
-    const msg = encodeURIComponent(`Hello Integra, I would like to inquire about your ${service} package.`);
-    window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+    var service = serviceName || currentService || 'your services';
+    var phone = '2348023021753';
+    var msg = encodeURIComponent('Hello, I would like to enquire about ' + service + ' at Integra Wellness & Cardiac Clinics.');
+    window.open('https://wa.me/' + phone + '?text=' + msg, '_blank');
   }
 </script>
 </body>
