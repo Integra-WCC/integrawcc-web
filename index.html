@@ -372,6 +372,33 @@
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
+
+      <!-- Card 13: Basic Life Support (BLS) -->
+      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('bls')">
+        <div class="icon-circle mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            <path d="M17 3h4v4" stroke="#D4AF37" stroke-width="2"/><path d="M21 3l-4 4" stroke="#D4AF37" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Basic Life Support (BLS)</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">AHA/RCA-aligned CPR training, AED operation, and choking relief for healthcare workers and lay responders.</p>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
+      </div>
+
+      <!-- Card 14: Advanced Life Support (ALS) -->
+      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('als')">
+        <div class="icon-circle mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            <rect x="15" y="2" width="7" height="5" rx="1"/>
+            <line x1="17" y1="4.5" x2="20" y2="4.5"/><line x1="18.5" y1="3" x2="18.5" y2="6"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Advanced Life Support (ALS)</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Advanced airway management, cardiac rhythm interpretation, and emergency pharmacology for clinical professionals.</p>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
+      </div>
     </div>
     <div class="text-center mt-12"><a href="#contact" class="btn-gold">Book Any Service</a></div>
   </div>
@@ -454,6 +481,7 @@
       <button class="pricing-tab" onclick="switchTab('medispa', this)">MediSpa</button>
       <button class="pricing-tab" onclick="switchTab('bodyproducts', this)">Signature Collection</button>
       <button class="pricing-tab" onclick="switchTab('memberships', this)">Memberships</button>
+      <button class="pricing-tab" onclick="switchTab('training', this)">Life Support Training</button>
     </div>
 
     <!-- ── Cardiology Panel ── -->
@@ -817,6 +845,82 @@
         </div>
       </div>
     </div>
+    <!-- ── Life Support Training Panel ── -->
+    <div id="tab-training" class="pricing-panel">
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- BLS Card -->
+        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gold-400/35 transition-all" onclick="openModal('bls')">
+          <div class="px-6 py-5 border-b border-gold-400/10 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-500 mb-1">Basic Life Support</div>
+            <div class="font-display text-3xl font-bold text-gray-900">₦45,000</div>
+            <div class="text-xs text-gray-400">per individual</div>
+          </div>
+          <div class="px-5 py-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> CPR — Adult, Child & Infant</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> AED Operation & Defibrillation</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Choking Relief (Heimlich + Back Blows)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Two-Rescuer CPR & BVM Ventilation</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> AHA-aligned Certification (2-year validity)</div>
+          </div>
+          <div class="px-5 py-3 border-t border-gold-400/10">
+            <div class="price-row" style="padding:0.4rem 0;">
+              <div class="price-label">Recertification</div><div class="price-amount">₦30,000</div>
+            </div>
+            <div class="price-row" style="padding:0.4rem 0;">
+              <div class="price-label">Group (up to 10)</div><div class="price-amount">₦250,000</div>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2">
+            <a href="#contact" class="btn-gold w-full block text-center text-xs">Enquire & Book</a>
+            <div class="click-hint justify-center mt-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full BLS Details</div>
+          </div>
+        </div>
+
+        <!-- ALS Card -->
+        <div class="rounded-2xl overflow-hidden cursor-pointer hover:shadow-xl transition-all" style="background:linear-gradient(160deg,#1a1510,#2a1f08);border:1px solid rgba(212,175,55,0.30);" onclick="openModal('als')">
+          <div class="px-6 py-5 border-b" style="border-color:rgba(212,175,55,0.15);">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-1">Advanced Life Support</div>
+            <div class="font-display text-3xl font-bold text-white">₦85,000</div>
+            <div class="text-xs text-gray-400">per individual</div>
+          </div>
+          <div class="px-5 py-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Advanced Airway Management (ETT, LMA, i-gel)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> 12-Lead ECG & Shockable Rhythm Interpretation</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Emergency Pharmacology (Adrenaline, Amiodarone)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Full ALS Algorithms: VF/pVT, PEA, Asystole</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Team Leader Megacode Assessment</div>
+          </div>
+          <div class="px-5 py-3 border-t" style="border-color:rgba(212,175,55,0.12);">
+            <div class="price-row" style="padding:0.4rem 0;border-color:rgba(212,175,55,0.08);">
+              <div class="price-label" style="color:#9ca3af;">Recertification</div><div class="price-amount" style="color:#D4AF37;">₦55,000</div>
+            </div>
+            <div class="price-row" style="padding:0.4rem 0;border-color:rgba(212,175,55,0.08);">
+              <div class="price-label" style="color:#9ca3af;">Group (up to 8)</div><div class="price-amount" style="color:#D4AF37;">₦480,000</div>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2">
+            <a href="#contact" class="btn-gold w-full block text-center text-xs">Enquire & Book</a>
+            <div class="click-hint justify-center mt-3" style="color:#D4AF37;opacity:0.8;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full ALS Details</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- On-site note -->
+      <div class="mt-6 bg-white rounded-2xl border border-gold-400/15 p-6 flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <div class="font-display text-lg font-semibold text-gray-900">On-Site Corporate Training</div>
+          <div class="text-sm text-gray-500 mt-0.5">BLS or ALS delivered at your premises. Ideal for hospitals, clinics, corporate offices, and schools. Custom cohort sizes available.</div>
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="font-display text-lg font-bold gold-text">Custom Pricing</div>
+          <a href="#contact" class="btn-gold text-xs">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </section>
 
@@ -939,7 +1043,7 @@
 </div>
 
 <!-- ==================== SCRIPTS ==================== -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── Navbar scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
@@ -1194,6 +1298,50 @@
       benefits: ['Measurable improvement in attention, working memory, and decision-making', 'Reduced cortisol levels and physiological stress responses', 'Enhanced emotional regulation and leadership presence', 'Improved sleep quality as a downstream benefit of stress reduction', 'Greater overall sense of purpose, wellbeing, and life satisfaction'],
       expect: 'The programme is available in individual and group formats. Individual sessions include personalised cognitive performance assessment, stress physiology measurement (HRV analysis), and a tailored Mindfulness & Mental Fitness Plan. Group formats are ideal for executive teams and include facilitated workshops, team resilience programmes, and leadership mindfulness intensives. All sessions are led by qualified facilitators working in close collaboration with Integra\'s clinical team.'
     },
+    bls: {
+      tag: 'Emergency Training',
+      title: 'Basic Life Support (BLS)',
+      subtitle: 'AHA/RCA-aligned certification equipping individuals to respond confidently to cardiac arrest, airway obstruction, and respiratory emergencies.',
+      price: 'Individual: ₦45,000 | Group (up to 10): ₦250,000 | Recertification: ₦30,000',
+      overview: 'The Integra BLS programme delivers AHA (American Heart Association) and RCA-aligned Basic Life Support training for both healthcare professionals and motivated lay responders. Led by certified instructors, the course combines evidence-based theory with hands-on mannequin practice and AED simulation — ensuring every participant leaves with the competence and confidence to act decisively in a cardiac or airway emergency.',
+      inclusions: [
+        'High-quality CPR training on adult, child, and infant mannequins with real-time feedback devices',
+        'Automated External Defibrillator (AED) operation: device familiarisation, pad placement, and safe shock delivery',
+        'Choking relief for conscious and unconscious adults, children, and infants — Heimlich manoeuvre and back blows',
+        'Two-rescuer CPR coordination and bag-valve-mask (BVM) ventilation technique',
+        'Internationally recognised certification card issued on successful completion (valid 2 years)'
+      ],
+      benefits: [
+        'Gain a globally recognised BLS certification aligned with current AHA resuscitation guidelines',
+        'Build the muscle memory and confidence to act within the critical 3-5 minute window of cardiac arrest',
+        'Mandatory requirement met for healthcare workers, school staff, corporate safety officers, and first aiders',
+        'Small-group format with low instructor-to-student ratio ensures individualised skill assessment',
+        'Immediate recertification pathway available to maintain compliance with institutional requirements'
+      ],
+      expect: 'The BLS course runs for approximately 4-6 hours structured as a blend of instructional content, group discussion, and high-volume practical skill stations. Participants rotate through CPR (adult, child, infant), AED scenarios, and choking relief drills under direct instructor supervision. A written knowledge check and observed skills assessment are completed at the end. Successful candidates receive their certification card on the day. Corporate groups can arrange on-site delivery at their premises.'
+    },
+    als: {
+      tag: 'Emergency Training',
+      title: 'Advanced Life Support (ALS)',
+      subtitle: 'Physician and nurse-level resuscitation training covering complex cardiac arrest algorithms, advanced airway techniques, and emergency pharmacology.',
+      price: 'Individual: ₦85,000 | Group (up to 8): ₦480,000 | Recertification: ₦55,000',
+      overview: 'The Integra ALS programme is designed for doctors, nurses, paramedics, and senior allied health professionals requiring mastery of advanced resuscitation beyond the scope of BLS. Developed in alignment with the European Resuscitation Council (ERC) and AHA ACLS frameworks, the course covers the full spectrum of in-hospital cardiac arrest management — from rhythm recognition and shockable rhythm treatment to post-resuscitation care and team leadership.',
+      inclusions: [
+        'Advanced airway management: endotracheal intubation, supraglottic airway devices (LMA, i-gel), and waveform capnography interpretation',
+        '12-lead ECG interpretation focused on shockable rhythms (VF, pVT), non-shockable rhythms (PEA, asystole), and peri-arrest arrhythmias',
+        'Emergency pharmacology: indications, doses, and administration routes for adrenaline, amiodarone, atropine, and sodium bicarbonate',
+        'Advanced resuscitation algorithms: in-hospital cardiac arrest, peri-arrest tachycardia, bradycardia, and post-resuscitation care protocols',
+        'Team leadership, closed-loop communication, and structured debrief using the ALS Team Leader framework'
+      ],
+      benefits: [
+        'Achieve an internationally recognised ALS/ACLS-aligned certification meeting hospital credentialing and regulatory requirements',
+        'Develop systematic ECG interpretation skills for rapid rhythm classification and decisive defibrillation decisions',
+        'Master advanced airway techniques that reduce hypoxia and improve neurological outcomes in cardiac arrest',
+        'Build evidence-based emergency pharmacology knowledge directly applicable to ICU, ED, and anaesthetics practice',
+        'Enhance team leadership and resuscitation team coordination through high-fidelity simulation scenarios'
+      ],
+      expect: 'The ALS course spans 1-2 full days structured around escalating simulation scenarios. Day 1 covers core theory (rhythm recognition, algorithms, pharmacology) and skills stations (airway, IV access, defibrillation). Day 2 is scenario-intensive — candidates manage full resuscitation simulations as both team member and team leader, with structured faculty feedback after each scenario. Assessment includes a written multi-choice exam and a summative team leader megacode. Certification is issued upon successful completion.'
+    },
     silver: {
       tag: 'Executive Wellness · Silver',
       title: 'Silver Heart Screening',
@@ -1360,13 +1508,14 @@
     if (e.key === 'Escape') closeModal();
   });
 
-  // ── WhatsApp handler
+  // WhatsApp handler
   function openWhatsApp(serviceName) {
     var service = serviceName || currentService || 'your services';
     var phone = '2348023021753';
-    var msg = encodeURIComponent('Hello, I would like to enquire about ' + service + ' at Integra Wellness & Cardiac Clinics.');
+    var msg = encodeURIComponent('Hello Integra, I would like to inquire about your ' + service + ' package.');
     window.open('https://wa.me/' + phone + '?text=' + msg, '_blank');
   }
+
 </script>
 </body>
 </html>
