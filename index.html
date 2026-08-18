@@ -316,10 +316,10 @@
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
-      <!-- Card 6: Medical Tourism Concierge -->
+      <!-- Card 6: Medical Tourism -->
       <div class="service-card rounded-xl p-6 reveal" onclick="openModal('tourism')">
         <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Medical Tourism Concierge</h3>
+        <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Medical Tourism</h3>
         <p class="text-xs text-gray-500 leading-relaxed">End-to-end facilitation for specialist care abroad: referrals, travel logistics, and international coordination.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
@@ -372,7 +372,6 @@
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
-
       <!-- Card 13: Basic Life Support (BLS) -->
       <div class="service-card rounded-xl p-6 reveal" onclick="openModal('bls')">
         <div class="icon-circle mb-4">
@@ -399,6 +398,20 @@
         <p class="text-xs text-gray-500 leading-relaxed">Advanced airway management, cardiac rhythm interpretation, and emergency pharmacology for clinical professionals.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
+
+      <!-- Card 15: AHA Heartsaver First Aid CPR AED (AHA Heartsaver) -->
+      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('aha_heartsaver')">
+        <div class="icon-circle mb-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            <rect x="15" y="2" width="7" height="5" rx="1"/>
+            <line x1="17" y1="4.5" x2="20" y2="4.5"/><line x1="18.5" y1="3" x2="18.5" y2="6"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">AHA Heartsaver First Aid CPR AED (Heartsaver)</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Layperson-level resuscitation and first aid training covering life-threatening emergencies, CPR techniques, and AED operation for workplace and community safety.</p>
+        <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
+      </div>
     </div>
     <div class="text-center mt-12"><a href="#contact" class="btn-gold">Book Any Service</a></div>
   </div>
@@ -408,7 +421,7 @@
 <section id="packages" class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center mb-14 reveal">
-      <div class="section-tag mb-4">Executive Wellness</div>
+      <div class="section-tag mb-4">Executive Wellness Packages</div>
       <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Choose Your <em class="gold-text not-italic">Health Package</em></h2>
       <p class="text-gray-500 max-w-xl mx-auto text-sm">Curated cardiac screening programmes for high-performing professionals. Click any package for full details.</p>
     </div>
@@ -416,8 +429,8 @@
 
       <!-- Silver -->
       <div class="package-card rounded-2xl border border-gray-200 p-8 reveal cursor-pointer" onclick="openModal('silver')">
-        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Silver Heartwell Panel</div>
-        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦113,500</div>
+        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Silver Heart Screening</div>
+        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦275,400</div>
         <div class="text-xs text-gray-400 mb-6">per package</div>
         <div class="space-y-3 mb-8">
           <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Lipid Profile</div>
@@ -432,11 +445,11 @@
 
       <!-- Gold (featured) -->
       <div class="package-card package-featured rounded-2xl p-8 mt-4 lg:mt-0 shadow-2xl shadow-gold-400/20 reveal cursor-pointer" onclick="openModal('gold')">
-        <div class="text-xs font-bold tracking-widest uppercase text-gold-400 mb-3">Gold Heartwell Panel</div>
-        <div class="font-display text-4xl font-bold text-white mb-1">₦882,120</div>
+        <div class="text-xs font-bold tracking-widest uppercase text-gold-400 mb-3">Gold Executive Heart Screening</div>
+        <div class="font-display text-4xl font-bold text-white mb-1">₦750,000</div>
         <div class="text-xs text-gray-500 mb-6">per package</div>
         <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Silver Panel</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>+ Silver Heart Screening</div>
           <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Echocardiogram</div>
           <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HbA1c</div>
           <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Liver Function Test</div>
@@ -451,11 +464,11 @@
 
       <!-- Platinum -->
       <div class="package-card rounded-2xl border border-gray-200 p-8 reveal cursor-pointer" onclick="openModal('platinum')">
-        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Platinum Heartwell Panel</div>
-        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦1,417,220</div>
+        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Platinum Comprehensive Assessment</div>
+        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦2,150,000</div>
         <div class="text-xs text-gray-400 mb-6">per package</div>
         <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>+ Gold Heartwell Panel</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>+ Gold Executive Heart Screening</div>
           <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Stress Test (Treadmill ECG)</div>
           <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Vitamin D3</div>
           <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Body Composition Scan</div>
@@ -467,6 +480,82 @@
       </div>
     </div>
   </div>
+
+  <div class="grid md:grid-cols-2 gap-4 items-start">
+
+      <!-- Comprehensive Wellwoman Screening Package -->
+      <div class="package-card rounded-2xl border border-gray-200 p-8 reveal cursor-pointer" onclick="openModal('comprehensive-wellwoman')">
+        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Comprehensive Wellwoman Screening</div>
+        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦1,365,000</div>
+        <div class="text-xs text-gray-400 mb-6">per package</div>
+        <div class="space-y-3 mb-8">
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Rest ECG (Electrocardiogram)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Carotid Doppler</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Abdomino Pelvic Scan</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Echocardiography</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Chest X-ray</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Mammography</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Pap Smear (Papanicolaou Test)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Liver Function Test (LFT)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Lipid Profile (FLP)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Plasma Glucose (FPG)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Electrolyte, Urea and Creatinine (E/U/Cr)eGFR</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Urine Analysis</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Uric Acid</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HbA1c (Glycated Hemoglobin)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Oral Glucose Tolerance Test (OGTT)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Thyroid Function Test (TFT)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>ESR</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Blood Grouping (ABO/Rh) (optional)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Genotype (optional)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Urine M/C/S</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Stool M/C/S</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>FOB (Occult Blood)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HIV Screening</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HBsAG</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HCV</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>VDRL</div>
+        </div>
+        <a href="#contact" class="btn-outline w-full block text-center">Get Started</a>
+        <div class="click-hint justify-center mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
+      </div>
+
+      <!-- Comprehensive Wellman Screening Package -->
+      <div class="package-card rounded-2xl border border-gray-200 p-8 reveal cursor-pointer" onclick="openModal('comprehensive-wellman')">
+        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Comprehensive Wellman Screening</div>
+        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦1,410,000</div>
+        <div class="text-xs text-gray-400 mb-6">per package</div>
+        <div class="space-y-3 mb-8">
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Rest ECG (Electrocardiogram)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Carotid Doppler</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Abdomino Pelvic Scan</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Echocardiography</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Chest X-ray</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Prostate Specific Antigen (PSA) -Total</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Prostate Specific Antigen (PSA) - Free</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Liver Function Test (LFT)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Lipid Profile (FLP)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Plasma Glucose (FPG)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Electrolyte, Urea and Creatinine (E/U/Cr)eGFR</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Urine Analysis</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Uric Acid</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HbA1c (Glycated Hemoglobin)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Oral Glucose Tolerance Test (OGTT)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Thyroid Function Test (TFT)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>ESR</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Blood Grouping (ABO/Rh) (optional)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Genotype (optional)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Urine M/C/S</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Stool M/C/S</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>FOB (Occult Blood)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HIV Screening</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HBsAG</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HCV</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>VDRL</div>
+        </div>
+        <a href="#contact" class="btn-outline w-full block text-center">Get Started</a>
+        <div class="click-hint justify-center mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
+      </div>
 </section>
 
 <!-- ==================== FULL PRICING (TABBED) ==================== -->
@@ -475,7 +564,7 @@
     <div class="text-center mb-12 reveal">
       <div class="section-tag mb-4">Transparent Pricing</div>
       <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Complete <em class="gold-text not-italic">Price List</em></h2>
-      <p class="text-gray-500 max-w-lg mx-auto text-sm">All prices in Nigerian Naira (₦). Subject to change — contact us for the latest rates.</p>
+      <p class="text-gray-500 max-w-lg mx-auto text-sm">All prices in Nigerian Naira and are subjected to TAXES (₦).<P>Contact us for the latest rates.</P></p>
     </div>
 
     <!-- Tab buttons -->
@@ -508,10 +597,18 @@
             </div>
             <div class="price-row">
               <div><div class="price-label">Executive Priority Consultation</div><div class="price-note">Expedited access to senior cardiologist</div></div>
-              <div class="price-amount">₦75,000</div>
+              <div class="price-amount">₦60,000</div>
             </div>
             <div class="price-row">
               <div><div class="price-label">Second Opinion Review</div><div class="price-note">Independent review of existing diagnosis</div></div>
+              <div class="price-amount">To be determined based on SPECIALTY</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">Admissions (12 hours maximum)</div><div class="price-note">Bed and nursing care for up to 12 hours</div></div>
+              <div class="price-amount">₦50,000</div>
+            </div>
+            <div class="price-row">
+              <div><div class="price-label">Observation (12 hours maximum)</div><div class="price-note">Continuous monitoring of patient condition</div></div>
               <div class="price-amount">₦50,000</div>
             </div>
           </div>
@@ -529,11 +626,11 @@
             </div>
             <div class="price-row">
               <div><div class="price-label">Echocardiogram</div><div class="price-note">Ultrasound of heart structure & function</div></div>
-              <div class="price-amount">₦85,000</div>
+              <div class="price-amount">₦180,000</div>
             </div>
             <div class="price-row">
               <div><div class="price-label">Stress Test (Treadmill ECG)</div><div class="price-note">Heart function under physical stress</div></div>
-              <div class="price-amount">₦75,000</div>
+              <div class="price-amount">₦275,000</div>
             </div>
             <div class="price-row">
               <div><div class="price-label">24-Hour Holter Monitoring</div><div class="price-note">Continuous 24-hr rhythm recording</div></div>
@@ -541,7 +638,7 @@
             </div>
             <div class="price-row">
               <div><div class="price-label">24-Hour BP Monitoring</div><div class="price-note">Comprehensive hypertension profiling</div></div>
-              <div class="price-amount">₦90,000</div>
+              <div class="price-amount">₦150,000</div>
             </div>
             <div class="price-row">
               <div><div class="price-label">BP Monitor Caution Deposit</div><div class="price-note">Refundable equipment deposit</div></div>
@@ -559,8 +656,8 @@
         <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gold-400/35 transition-all" onclick="openModal('silver')">
           <div class="px-6 py-5 border-b border-gold-400/10" style="background:linear-gradient(135deg,#fdf9ee,#f8efcf);">
             <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Silver</div>
-            <div class="font-display text-3xl font-bold text-gray-900">₦113,500</div>
-            <div class="text-xs text-gray-400">Heart Screening</div>
+            <div class="font-display text-3xl font-bold text-gray-900">₦275,400</div>
+            <div class="text-xs text-gray-400">Silver Heart Screening</div>
           </div>
           <div class="px-5 py-4 space-y-2.5">
             <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Fasting Lipid Profile</div>
@@ -576,11 +673,11 @@
         <div class="rounded-2xl overflow-hidden cursor-pointer hover:shadow-xl transition-all" style="background:linear-gradient(160deg,#1a1510,#2a1f08);border:1px solid rgba(212,175,55,0.30);" onclick="openModal('gold')">
           <div class="px-6 py-5 border-b" style="border-color:rgba(212,175,55,0.15);">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-1">Gold · Most Popular</div>
-            <div class="font-display text-3xl font-bold text-white">₦882,120</div>
-            <div class="text-xs text-gray-400">Executive Heart Package</div>
+            <div class="font-display text-3xl font-bold text-white">₦750,000</div>
+            <div class="text-xs text-gray-400">Gold Executive Heart Screening Package</div>
           </div>
           <div class="px-5 py-4 space-y-2.5">
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Silver Panel</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Silver Heart Screening</div>
             <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Echocardiogram</div>
             <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> HbA1c</div>
             <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Liver Function Test</div>
@@ -595,12 +692,12 @@
         <!-- Platinum -->
         <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gold-400/35 transition-all" onclick="openModal('platinum')">
           <div class="px-6 py-5 border-b border-gold-400/10" style="background:linear-gradient(135deg,#fdf9ee,#f8efcf);">
-            <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Platinum</div>
-            <div class="font-display text-3xl font-bold text-gray-900">₦1,417,220</div>
+            <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Platinum Comprehensive Assessment</div>
+            <div class="font-display text-3xl font-bold text-gray-900">₦2,150,000</div>
             <div class="text-xs text-gray-400">Comprehensive Assessment</div>
           </div>
           <div class="px-5 py-4 space-y-2.5">
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Gold Panel</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Gold Executive Heart Screening Package</div>
             <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Stress Test (Treadmill ECG)</div>
             <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Vitamin D3</div>
             <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Body Composition Scan</div>
@@ -619,22 +716,22 @@
         <!-- Hammam -->
         <div class="spa-price-card">
           <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
-            <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Traditional Hammam Baths</div>
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Traditional Hammam Services</div>
           </div>
           <div class="px-4 py-2">
-            <div class="price-row"><div class="price-label">Traditional Hammam</div><div><div class="price-amount text-right">₦50,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
-            <div class="price-row"><div class="price-label">Traditional Hammam</div><div><div class="price-amount text-right">₦55,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
-            <div class="price-row"><div class="price-label">Soqla Hammam</div><div><div class="price-amount text-right">₦60,000</div><div class="text-xs text-gray-400 text-right">Woman</div></div></div>
-            <div class="price-row"><div class="price-label">Soqla Hammam</div><div><div class="price-amount text-right">₦65,000</div><div class="text-xs text-gray-400 text-right">Man</div></div></div>
-            <div class="price-row"><div class="price-label">Brightening Extra Hammam</div><div><div class="price-amount text-right">₦70,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
-            <div class="price-row"><div class="price-label">Brightening Hammam</div><div><div class="price-amount text-right">₦75,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
-            <div class="price-row"><div class="price-label">Cleopatra Hammam</div><div><div class="price-amount text-right">₦90,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
-            <div class="price-row"><div class="price-label">Cleopatra Hammam</div><div><div class="price-amount text-right">₦100,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
-            <div class="price-row"><div class="price-label">Medical Hammam</div><div><div class="price-amount text-right">₦80,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
-            <div class="price-row"><div class="price-label">Medical Hammam</div><div><div class="price-amount text-right">₦85,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
-            <div class="price-row"><div class="price-label">Glowing Hammam</div><div><div class="price-amount text-right">₦60,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
-            <div class="price-row"><div class="price-label">Glowing Hammam</div><div><div class="price-amount text-right">₦65,000</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
-            <div class="price-row"><div class="price-label">Steaming</div><div><div class="price-amount text-right">₦25,000</div><div class="text-xs text-gray-400 text-right">W / M</div></div></div>
+            <div class="price-row"><div class="price-label">Traditional Hammam</div><div><div class="price-amount text-right">₦53,750</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Traditional Hammam</div><div><div class="price-amount text-right">₦59,125</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+            <div class="price-row"><div class="price-label">Soqla Hammam</div><div><div class="price-amount text-right">₦64,500</div><div class="text-xs text-gray-400 text-right">Woman</div></div></div>
+            <div class="price-row"><div class="price-label">Soqla Hammam</div><div><div class="price-amount text-right">₦69,875</div><div class="text-xs text-gray-400 text-right">Man</div></div></div>
+            <div class="price-row"><div class="price-label">Brightening Extra Hammam</div><div><div class="price-amount text-right">₦75,250</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Brightening Hammam</div><div><div class="price-amount text-right">₦80,625</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+            <div class="price-row"><div class="price-label">Cleopatra Hammam</div><div><div class="price-amount text-right">₦96,750</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Cleopatra Hammam</div><div><div class="price-amount text-right">₦107,500</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+            <div class="price-row"><div class="price-label">Medical Hammam</div><div><div class="price-amount text-right">₦86,000</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Medical Hammam</div><div><div class="price-amount text-right">₦91,375</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+            <div class="price-row"><div class="price-label">Glowing Hammam</div><div><div class="price-amount text-right">₦64,500</div><div class="text-xs text-gray-400 text-right">Women</div></div></div>
+            <div class="price-row"><div class="price-label">Glowing Hammam</div><div><div class="price-amount text-right">₦69,875</div><div class="text-xs text-gray-400 text-right">Men</div></div></div>
+            <div class="price-row"><div class="price-label">Steaming</div><div><div class="price-amount text-right">₦26,875</div><div class="text-xs text-gray-400 text-right">W / M</div></div></div>
           </div>
         </div>
 
@@ -644,21 +741,73 @@
             <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Advanced Facial Treatments</div>
           </div>
           <div class="px-4 py-2">
-            <div class="price-row"><div class="price-label">Doctor-led Skin Consultation</div><div class="price-amount">₦30,000</div></div>
-            <div class="price-row"><div class="price-label">Facial 24hrs Repairing</div><div class="price-amount">₦79,000</div></div>
-            <div class="price-row"><div class="price-label">Anti-Acne Facial</div><div class="price-amount">₦60,000</div></div>
-            <div class="price-row"><div class="price-label">Activating Firming Facial</div><div class="price-amount">₦100,000</div></div>
-            <div class="price-row"><div class="price-label">Collagen Energizing Facial</div><div class="price-amount">₦100,000</div></div>
-            <div class="price-row"><div class="price-label">Squalene Hydrating Facial</div><div class="price-amount">₦100,000</div></div>
-            <div class="price-row"><div class="price-label">Anti Wrinkle Facial</div><div class="price-amount">₦100,000</div></div>
-            <div class="price-row"><div class="price-label">Korean Facial</div><div class="price-amount">₦150,000</div></div>
-            <div class="price-row"><div class="price-label">Facial Hair Removal</div><div class="price-amount">₦25,000</div></div>
-            <div class="price-row"><div class="price-label">Dermafrac Needling Facial</div><div class="price-amount">₦150,000</div></div>
-            <div class="price-row"><div class="price-label">Microdermabrasion</div><div class="price-amount">₦65,000</div></div>
-            <div class="price-row"><div class="price-label">HydraFacial</div><div class="price-amount">₦85,000</div></div>
-            <div class="price-row"><div class="price-label">Chemical Peel</div><div class="price-amount">₦95,000</div></div>
-            <div class="price-row"><div class="price-label">Microneedling</div><div class="price-amount">₦120,000</div></div>
-            <div class="price-row"><div class="price-label">LED Laser</div><div class="price-amount">₦25,000</div></div>
+            <div class="price-row"><div class="price-label">Doctor-led Skin Consultation</div><div class="price-amount">₦32,250</div></div>
+            <div class="price-row"><div class="price-label">Facial 24hrs Repairing</div><div class="price-amount">₦84,925</div></div>
+            <div class="price-row"><div class="price-label">Anti-Acne Facial</div><div class="price-amount">₦64,500</div></div>
+            <div class="price-row"><div class="price-label">Activating Firming Facial</div><div class="price-amount">₦107,500</div></div>
+            <div class="price-row"><div class="price-label">Collagen Energizing Facial</div><div class="price-amount">₦107,500</div></div>
+            <div class="price-row"><div class="price-label">Squalene Hydrating Facial</div><div class="price-amount">₦107,500</div></div>
+            <div class="price-row"><div class="price-label">Anti Wrinkle Facial</div><div class="price-amount">₦107,500</div></div>
+            <div class="price-row"><div class="price-label">Korean Facial</div><div class="price-amount">₦161,250</div></div>
+            <div class="price-row"><div class="price-label">Facial Hair Removal</div><div class="price-amount">₦26,875</div></div>
+            <div class="price-row"><div class="price-label">Dermafrac Needling Facial</div><div class="price-amount">₦161,250</div></div>
+            <div class="price-row"><div class="price-label">Microdermabrasion</div><div class="price-amount">₦91,375</div></div>
+            <div class="price-row"><div class="price-label">HydraFacial</div><div class="price-amount">₦102,125</div></div>
+            <div class="price-row"><div class="price-label">Chemical Peel</div><div class="price-amount">₦150,500</div></div>
+            <div class="price-row"><div class="price-label">Micro Needling</div><div class="price-amount">₦129,000</div></div>
+            <div class="price-row"><div class="price-label">LED Laser</div><div class="price-amount">₦26,875</div></div>
+          </div>
+        </div>
+        
+        <!-- Integra Massage -->
+        <div class="spa-price-card">
+          <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Integra Massage</div>
+          </div>
+          <div class="px-4 py-2">
+            <div class="price-row"><div class="price-label">Deep Tissue Massage Woman</div><div class="price-amount">₦37,625</div></div>
+            <div class="price-row"><div class="price-label">Deep Tissue Massage Man</div><div class="price-amount">₦48,375</div></div>
+            <div class="price-row"><div class="price-label">Relaxation Massage Woman</div><div class="price-amount">₦43,000</div></div>
+            <div class="price-row"><div class="price-label">Relaxation Massage Man</div><div class="price-amount">₦48,375</div></div>
+            <div class="price-row"><div class="price-label">Head Neck Shoulder Massage</div><div class="price-amount">₦22,575</div></div>
+            <div class="price-row"><div class="price-label">Foot Massage Woman</div><div class="price-amount">₦20,425</div></div>
+            <div class="price-row"><div class="price-label">Foot Massage Man</div><div class="price-amount">₦22,575</div></div>
+            <div class="price-row"><div class="price-label">Wood Therapy Massage Woman</div><div class="price-amount">₦66,650</div></div>
+            <div class="price-row"><div class="price-label">Wood Therapy Massage Man</div><div class="price-amount">₦72,025</div></div>
+            <div class="price-row"><div class="price-label">Abdominal Massage Woman</div><div class="price-amount">₦32,250</div></div>
+            <div class="price-row"><div class="price-label">Abdominal Massage Man</div><div class="price-amount">₦37,625</div></div>
+            <div class="price-row"><div class="price-label">Swedish Massage Woman</div><div class="price-amount">₦47,300</div></div>
+            <div class="price-row"><div class="price-label">Swedish Massage Man</div><div class="price-amount">₦50,525</div></div>
+            <div class="price-row"><div class="price-label">Aromatherapy Massage (45 mins)</div><div class="price-amount">₦63,425</div></div>
+            <div class="price-row"><div class="price-label">Aromatherapy Massage (90 mins)</div><div class="price-amount">₦126,850</div></div>
+            <div class="price-row"><div class="price-label">Therapeutic Massage (Yoga)</div><div class="price-amount">₦161,250</div></div>
+          </div>
+        </div>
+
+        <!-- Integra Wax -->
+        <div class="spa-price-card">
+          <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Integra Wax</div>
+          </div>
+          <div class="px-4 py-2">
+            <div class="price-row"><div class="price-label">Upper Lip</div><div class="price-amount">₦10,212.50</div></div>
+            <div class="price-row"><div class="price-label">Half Arms</div><div class="price-amount">₦13,437.50</div></div>
+            <div class="price-row"><div class="price-label">Full Arms</div><div class="price-amount">₦21,231.25</div></div>
+            <div class="price-row"><div class="price-label">Face</div><div class="price-amount">₦22,037.50</div></div>
+            <div class="price-row"><div class="price-label">Brazillian Woman</div><div class="price-amount">₦29,562.50</div></div>
+            <div class="price-row"><div class="price-label">Brazillian Man</div><div class="price-amount">₦32,787.50</div></div>
+            <div class="price-row"><div class="price-label">Full Bikini</div><div class="price-amount">₦22,575.00</div></div>
+            <div class="price-row"><div class="price-label">Under Arm</div><div class="price-amount">₦16,125.00</div></div>
+            <div class="price-row"><div class="price-label">Back Woman</div><div class="price-amount">₦22,037.50</div></div>
+            <div class="price-row"><div class="price-label">Back Man</div><div class="price-amount">₦25,262.50</div></div>
+            <div class="price-row"><div class="price-label">Whole Body</div><div class="price-amount">₦107,500</div></div>
+            <div class="price-row"><div class="price-label">Eye Brow</div><div class="price-amount">₦8,062.50</div></div>
+            <div class="price-row"><div class="price-label">Half Leg</div><div class="price-amount">₦13,437.50</div></div>
+            <div class="price-row"><div class="price-label">Full Leg</div><div class="price-amount">₦26,875.00</div></div>
+            <div class="price-row"><div class="price-label">Tummy</div><div class="price-amount">₦18,812.50</div></div>
+            <div class="price-row"><div class="price-label">Nipple</div><div class="price-amount">₦8,062.50</div></div>
+            <div class="price-row"><div class="price-label">Chest</div><div class="price-amount">₦16,662.50</div></div>
+            <div class="price-row"><div class="price-label">Chin</div><div class="price-amount">₦22,037.50</div></div>
           </div>
         </div>
 
@@ -669,9 +818,9 @@
               <div class="text-xs font-bold uppercase tracking-widest text-gold-500">IV Vitamin & Wellness Infusions</div>
             </div>
             <div class="px-4 py-2">
-              <div class="price-row"><div><div class="price-label">IV Vitamin Therapy</div><div class="price-note">Tailored to your needs</div></div><div class="price-amount">₦120,000</div></div>
-              <div class="price-row"><div class="price-label">Detox Drip</div><div class="price-amount">₦95,000</div></div>
-              <div class="price-row"><div><div class="price-label">NAD+ Therapy</div><div class="price-note">Cellular rejuvenation</div></div><div class="price-amount">₦250,000</div></div>
+              <div class="price-row"><div><div class="price-label">IV Vitamin Therapy</div><div class="price-note">Tailored to your needs</div></div><div class="price-amount">₦129,000</div></div>
+              <div class="price-row"><div class="price-label">Detox Drip</div><div class="price-amount">₦102,125</div></div>
+              <div class="price-row"><div><div class="price-label">NAD+ Therapy</div><div class="price-note">Cellular rejuvenation</div></div><div class="price-amount">₦268,750</div></div>
             </div>
           </div>
           <div class="spa-price-card">
@@ -682,6 +831,22 @@
               <div class="price-row"><div><div class="price-label">Botox</div><div class="price-note">Per area · physician-administered</div></div><div class="price-amount">₦180k–₦250k</div></div>
               <div class="price-row"><div><div class="price-label">Dermal Fillers</div><div class="price-note">Physician-supervised</div></div><div class="price-amount">₦350k–₦600k</div></div>
             </div>
+          </div>
+        </div>  
+
+        <!-- New Face Machine Slimming -->
+        <div class="space-y-5">     
+          <div class="spa-price-card">
+            <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+              <div class="text-xs font-bold uppercase tracking-widest text-gold-500">New Face Machine Slimming</div>
+            </div>
+            <div class="px-4 py-2">
+              <div class="price-row"><div><div class="price-label">Abdominal</div><div class="price-note"></div></div><div class="price-amount">₦75,250</div></div>
+              <div class="price-row"><div><div class="price-label">Torso</div><div class="price-note"></div></div><div class="price-amount">₦75,250</div></div>
+              <div class="price-row"><div><div class="price-label">Upper Arm</div><div class="price-note"></div></div><div class="price-amount">₦75,250</div></div>
+              <div class="price-row"><div><div class="price-label">Thigh</div><div class="price-note"></div></div><div class="price-amount">₦75,250</div></div>
+              <div class="price-row"><div><div class="price-label">Chin</div><div class="price-note"></div></div><div class="price-amount">₦75,250</div></div>
+              <div class="price-row"><div><div class="price-label">Neck</div><div class="price-note"></div></div><div class="price-amount">₦75,250</div></div>
           </div>
         </div>
       </div>
@@ -696,10 +861,9 @@
         </div>
         <div class="px-6 py-3">
           
-          <div class="price-row"><div class="price-label">Aromatherapy Oil</div><div class="price-amount">₦50,000</div></div>
-          <div class="price-row"><div class="price-label">Luxury Body Butter</div><div class="price-amount">₦20,000</div></div>
-          <div class="price-row"><div><div class="price-label">Stress Relief Gift Box</div><div class="price-note">Curated wellness gift set</div></div><div class="price-amount">₦250,000</div></div>
-          <div class="price-row"><div><div class="price-label">Executive Self-Care Hamper</div><div class="price-note">Premium collection for the discerning executive</div></div><div class="price-amount">₦500,000</div></div>
+          <div class="price-row"><div class="price-label">Aromatherapy Oil</div><div class="price-amount">₦23,650</div></div>
+          <div class="price-row"><div><div class="price-label">Stress Relief Gift Box</div><div class="price-note">Curated wellness gift set</div></div><div class="price-amount">₦268,750</div></div>
+          <div class="price-row"><div><div class="price-label">Executive Self-Care Hamper</div><div class="price-note">Premium collection for the discerning executive</div></div><div class="price-amount">₦537,500</div></div>
         </div>
         <div class="px-6 py-4 text-center border-t border-gold-400/10"><a href="#contact" class="btn-gold text-xs">Enquire About Products</a></div>
       </div>
@@ -707,23 +871,28 @@
 
     <!-- ── Memberships Panel ── -->
     <div id="tab-memberships" class="pricing-panel">
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
         <!-- Integra Elite -->
         <div class="mem-card border border-gold-400/20 bg-white cursor-pointer hover:shadow-xl transition-all" onclick="openModal('membership')">
           <div class="px-7 py-6 border-b border-gold-400/12 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Annual Membership</div>
             <div class="font-display text-2xl font-bold text-gray-900 mb-0.5">Integra Elite</div>
-            <div class="font-display text-4xl font-bold gold-text">₦1,200,000</div>
+            <div class="font-display text-4xl font-bold gold-text">₦1,500,000</div>
             <div class="text-xs text-gray-400 mt-1">per year</div>
           </div>
           <div class="px-6 py-5 space-y-2.5 text-sm text-gray-600">
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 4 Cardiology Consultations</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Echo + ECG</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 IV Therapies</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 20% MediSpa Discount</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Priority Booking</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Private Lounge Access</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span>Consultations (4 visits/1 quarterly)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span>Electrocardiogram (ECG)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Rejuvenation Therapy (IV Optimization Therapies - 2 visits)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Fasting Lipid Profile</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Fasting Blood Sugar</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Echocardiogram (Echo)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> HbA1c</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> E/U/Cr + eGFR</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Uric Acid</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Integrated Cardiovascular RiskAssessment</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Med Spa (Optional Massage Therapy Max. ₦150,000)</div>
           </div>
           <div class="px-6 pb-6"><a href="#contact" class="btn-outline w-full block text-center text-xs">Enquire Now</a></div>
         </div>
@@ -733,18 +902,28 @@
           <div class="px-7 py-6 border-b" style="border-color:rgba(212,175,55,0.15);">
             <div class="mem-badge bg-gold-400 text-white mb-2">Most Exclusive</div>
             <div class="font-display text-2xl font-bold text-white mb-0.5">Chairman's Platinum</div>
-            <div class="font-display text-4xl font-bold gold-text">₦2,500,000</div>
+            <div class="font-display text-4xl font-bold gold-text">₦2,800,000</div>
             <div class="text-xs text-gray-400 mt-1">per year</div>
           </div>
           <div class="px-6 py-5 space-y-2.5 text-sm text-gray-300">
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 6 Cardiology Consultations</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Echo + ECG + Stress Test</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 Advanced Lab Panels</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 4 IV Optimization Therapies</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 MediSpa Rejuvenation Sessions</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Dedicated Medical Liaison</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Same-Day Priority Results</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Home Visit </div><div class="price-amount">₦200,000 per visit</div></div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Consultations (4 visits)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Electrocardiogram (ECG)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Rejuvenation Therapy (IV Optimization Therapies - 4 visits)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Liver Function Test (LFT)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Fasting Blood Sugar</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Echocardiogram (Echo)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> HbA1c</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> E/U/Cr + eGFR</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Uric Acid</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Urine Analysis</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Stress Test</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Abdomino Pelvic Scan</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> PSA</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Mammography</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Pap Smear</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> CRP</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Thyroid Function Test</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 MediSpa  Rejuvenation sessions(1 facial + 1 Exfoliating)</div>
           </div>
           <div class="px-6 pb-6"><a href="#contact" class="btn-gold w-full block text-center text-xs">Enquire Now</a></div>
         </div>
@@ -754,21 +933,41 @@
           <div class="px-7 py-6 border-b border-gold-400/12 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Corporate / Diplomatic</div>
             <div class="font-display text-2xl font-bold text-gray-900 mb-0.5">Retainer Programme</div>
-            <div class="font-display text-3xl font-bold gold-text">₦10M–₦25M</div>
+            <div class="font-display text-3xl font-bold gold-text">₦4,000,000</div>
             <div class="text-xs text-gray-400 mt-1">per year</div>
           </div>
           <div class="px-6 py-5 space-y-2.5 text-sm text-gray-600">
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 24/7 Priority Access</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Screening (up to 10 people)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Quarterly On-Site Checkups</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Emergency Fast-Track Service</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Org. Health Report</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Consultations (4 visits)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Executive Screening</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Electrocardiogram (ECG)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Rejuvenation Therapy (IV Optimization Therapies)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Liver Function Test (LFT)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Fasting Blood Sugar</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Echocardiogram (Echo)</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> HbA1c</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> E/U/Cr + eGFR</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Uric Acid</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Urine Analysis</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Stress Test</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Abdomino Pelvic Scan</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> PSA</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Mammography</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Pap Smear</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> CRP</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Thyroid Function Test</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Vitamin D3</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Homocysteine + Lipoprotein A</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Carotid Doppler</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Troponin T</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> BNP -Nt Pro-BNP</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Quarterly On Site Visit</div>
+            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 MediSpa  Rejuvenation sessions(1 facial + 1 Exfoliating)</div>
           </div>
           <div class="px-6 pb-6"><a href="#contact" class="btn-outline w-full block text-center text-xs">Contact Us</a></div>
         </div>
-
       </div>
-
+    </div>
+    
       <!-- Also add home visit -->
       <div class="mt-6 bg-white rounded-2xl border border-gold-400/15 p-6 flex items-center justify-between flex-wrap gap-4">
         <div>
@@ -866,8 +1065,7 @@
         <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gold-400/35 transition-all" onclick="openModal('bls')">
           <div class="px-6 py-5 border-b border-gold-400/10 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-500 mb-1">Basic Life Support</div>
-            <div class="font-display text-3xl font-bold text-gray-900">₦80,000 + Electronic Manual</div>
-            <div class="font-display text-3xl font-bold text-gray-900">₦100,000 + Hardcopy Manual</div>
+            <div class="font-display text-3xl font-bold text-gray-900">₦218,550 + Hardcopy Manual</div>
             <div class="text-xs text-gray-400">per individual</div>
           </div>
           <div class="px-5 py-4 space-y-2.5">
@@ -879,10 +1077,10 @@
           </div>
           <div class="px-5 py-3 border-t border-gold-400/10">
             <div class="price-row" style="padding:0.4rem 0;">
-              <div class="price-label">Recertification</div><div class="price-amount">₦80,000</div>
+              <div class="price-label">Recertification</div><div class="price-amount">₦175,000</div>
             </div>
             <div class="price-row" style="padding:0.4rem 0;">
-              <div class="price-label">Group (up to 10)</div><div class="price-amount">₦800,000</div>
+              <div class="price-label">Group (up to 10)</div><div class="price-amount">₦2,185,500</div>
             </div>
           </div>
           <div class="px-5 pb-5 pt-2">
@@ -895,8 +1093,7 @@
         <div class="rounded-2xl overflow-hidden cursor-pointer hover:shadow-xl transition-all" style="background:linear-gradient(160deg,#1a1510,#2a1f08);border:1px solid rgba(212,175,55,0.30);" onclick="openModal('als')">
           <div class="px-6 py-5 border-b" style="border-color:rgba(212,175,55,0.15);">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-1">Advanced Life Support</div>
-            <div class="font-display text-3xl font-bold text-white">₦150,000 + Electronic Manual</div>
-            <div class="font-display text-3xl font-bold text-white">₦170,000 + Electronic Manual</div>
+            <div class="font-display text-3xl font-bold text-white">₦390,000 + Hardcopy Manual</div>
             <div class="text-xs text-gray-400">per individual</div>
           </div>
           <div class="px-5 py-4 space-y-2.5">
@@ -908,10 +1105,10 @@
           </div>
           <div class="px-5 py-3 border-t" style="border-color:rgba(212,175,55,0.12);">
             <div class="price-row" style="padding:0.4rem 0;border-color:rgba(212,175,55,0.08);">
-              <div class="price-label" style="color:#9ca3af;">Recertification</div><div class="price-amount" style="color:#D4AF37;">₦150,000</div>
+              <div class="price-label" style="color:#9ca3af;">Recertification</div><div class="price-amount" style="color:#D4AF37;">₦330,000</div>
             </div>
             <div class="price-row" style="padding:0.4rem 0;border-color:rgba(212,175,55,0.08);">
-              <div class="price-label" style="color:#9ca3af;">Group (up to 10)</div><div class="price-amount" style="color:#D4AF37;">₦1,500,000</div>
+              <div class="price-label" style="color:#9ca3af;">Group (up to 10)</div><div class="price-amount" style="color:#D4AF37;">₦3,900,000</div>
             </div>
           </div>
           <div class="px-5 pb-5 pt-2">
@@ -954,7 +1151,7 @@
         <!-- Social icons -->
         <div class="flex gap-2.5">
           <!-- Instagram -->
-          <a href="https://instagram.com/integrawcc_ng" target="_blank" aria-label="Instagram" title="@Integrawcc" class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center transition-all hover:border-gold-400/60 hover:bg-gold-400/10 group">
+          <a href="https://instagram.com/integrawcc" target="_blank" aria-label="Instagram" title="@Integrawcc" class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center transition-all hover:border-gold-400/60 hover:bg-gold-400/10 group">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="transition-colors" stroke="#6b7280" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" class="group-hover:stroke-gold-400" style="transition:stroke 0.2s"/><circle cx="12" cy="12" r="4" class="group-hover:stroke-gold-400" style="transition:stroke 0.2s"/><circle cx="17.5" cy="6.5" r="0.5" fill="#6b7280" class="group-hover:fill-gold-400" style="transition:fill 0.2s"/></svg>
           </a>
           <!-- Facebook -->
@@ -1002,8 +1199,8 @@
       <div>
         <div class="text-xs font-bold uppercase tracking-widest text-gold-500 mb-4">Contact</div>
         <ul class="space-y-3 text-xs">
-          <li class="text-gray-500 leading-relaxed">Plot 1372 Cadastral Zone BO7 Katampe By Yemi Osinbanjo road,<br>Katampe District, Abuja, Nigeria</li>
-          <li><a href="tel:+2348023021753" class="hover:text-gold-400 transition-colors">+234 814 441 4536</a></li>
+          <li class="text-gray-500 leading-relaxed">Penthouse 1 Monarch Residence Plot 1372 Cadastral Zone B07, Ajah Nwabueze close,<br>Gishiri road off Yemi Osinbajo Blvd, Katampe, Abuja, Nigeria</li>
+          <li><a href="tel:+2348144414536, +2342092200551" class="hover:text-gold-400 transition-colors">+234 814 441 4536, +234 209 220 0551</a></li>
           <li><a href="mailto:integrawcc@gmail.com" class="hover:text-gold-400 transition-colors">integrawcc@gmail.com</a></li>
           <li class="text-gray-600">Mon–Sat: 9:00 AM – 9:00 PM</li>
           <li class="text-gray-700">Sunday: Closed</li>
@@ -1122,7 +1319,7 @@
       tag: 'Cardiac Diagnostics',
       title: 'Echocardiography',
       subtitle: 'A real-time ultrasound imaging of the heart\'s structure and function — the definitive window into cardiac anatomy.',
-      price: 'Echocardiography: ₦85,000',
+      price: 'Echocardiography: ₦180,000',
       overview: 'Echocardiography uses high-frequency sound waves to produce live, moving images of your heart — revealing its chambers, valves, walls, and the vessels connected to it. At Integra, this is performed and interpreted by a renowned physician, providing insights that no other single test can match. It is essential for diagnosing valve disease, cardiomyopathy, heart failure, and congenital defects.',
       inclusions: [
         'High-resolution 2D transthoracic ultrasound imaging of all four cardiac chambers',
@@ -1137,7 +1334,7 @@
       tag: 'Outpatient Services',
       title: 'Cardiology Diagnostics',
       subtitle: 'State-of-the-art cardiac diagnostics led by a Cardiovascular Specialist.',
-      price: 'ECG ₦30,000 · Echo ₦85,000 · Stress Test ₦75,000 · Holter ₦150,000 · Consultations ₦25,000–₦75,000',
+      price: 'ECG ₦30,000 · Echo ₦180,000 · Stress Test ₦270,000 · Holter ₦150,000 · Consultations ₦40,000–₦100,000',
       overview: 'Our Outpatient Cardiology service provides comprehensive, non-invasive cardiac assessment using cutting-edge diagnostics. From routine electrocardiography to advanced ambulatory monitoring, every test is interpreted personally by our specialist to ensure accurate diagnosis and a care plan tailored to your unique cardiovascular profile.',
       inclusions: [
         '24/48-hour continuous ambulatory ECG recording via a lightweight wearable monitor',
@@ -1152,7 +1349,7 @@
       tag: 'Preventive Care',
       title: 'Executive Wellness Checks',
       subtitle: 'Curated health screening packages designed for high-performing professionals who demand proactive care.',
-      price: 'Silver ₦113,500 · Gold ₦882,120 · Platinum ₦1,417,220',
+      price: 'Silver ₦275,400 · Gold ₦750,000 · Platinum ₦2,150,000 · Comprehensive Wellwoman Screening ₦1,365,000 · Comprehensive Wellman Screening ₦1,410,000',
       overview: 'Our Executive Wellness Check packages are designed for time-conscious professionals who understand that peak performance begins with peak health. Each tier delivers a progressively comprehensive assessment — from foundational metabolic screening to full cardiovascular profiling, genomic risk analysis, and personalised lifestyle medicine sessions.',
       inclusions: [
         'Comprehensive head-to-toe physical examination by a consultant physician',
@@ -1182,7 +1379,7 @@
       tag: 'Ultra-Luxury Programme',
       title: 'Elite Membership',
       subtitle: 'Reserved for those who regard their health as their most important asset — a truly bespoke annual health partnership.',
-      price: 'Elite ₦1,200,000/yr · Chairman\'s Platinum ₦2,500,000/yr',
+      price: 'Elite ₦1,500,000/yr · Chairman\'s Platinum ₦2,800,000/yr · Diplomatic/Corporate Retainer ₦4,000,000/yr',
       overview: 'Integra Elite Membership is our most prestigious offering — a year-round health partnership that places a dedicated medical team at your exclusive disposal. The Chairman\'s Platinum tier represents the pinnacle of concierge medicine in Nigeria: priority scheduling, annual comprehensive health management, VIP access to all Integra services, and proactive health surveillance calibrated to your lifestyle and ambitions.',
       inclusions: [
         'Priority 24/7 direct access to the Medical Director and the full Integra clinical team',
@@ -1210,10 +1407,10 @@
     },
     tourism: {
       tag: 'Global Health Access',
-      title: 'Medical Tourism Concierge',
+      title: 'Medical Tourism',
       subtitle: 'Seamless access to world-class specialist care abroad, managed entirely on your behalf.',
       price: 'Bespoke packages · Contact for assessment',
-      overview: 'When the care you need is abroad, Integra\'s Medical Tourism Concierge ensures that every aspect of your international healthcare journey is expertly managed — from identifying the right specialist at the right institution to coordinating travel, accommodation, medical records, and post-return follow-up care.',
+      overview: 'When the care you need is abroad, Integra\'s Medical Tourism ensures that every aspect of your international healthcare journey is expertly managed — from identifying the right specialist at the right institution to coordinating travel, accommodation, medical records, and post-return follow-up care.',
       inclusions: [
         'Trusted referral matching to leading specialists and accredited institutions in the UK, USA, UAE, India, and Europe',
         'End-to-end logistics coordination: visa support, accommodation, airport transfers, and appointment scheduling',
@@ -1227,7 +1424,7 @@
       tag: 'Recovery Programme',
       title: 'Executive Burnout Recovery',
       subtitle: 'A clinically structured programme to identify, treat, and reverse chronic occupational burnout in high-performance professionals.',
-      price: 'Multi-session programme · Contact for pricing',
+      price: 'Multi-session programme · ₦2,500,000',
       overview: 'Burnout is not weakness — it is a clinical condition arising from chronic, unmanaged occupational stress. Our Executive Burnout Recovery Programme is a multi-disciplinary intervention combining physician assessment, psychophysiological testing, restorative lifestyle medicine, and targeted wellness therapies to guide you from exhaustion to restored capacity.',
       inclusions: [
         'Validated clinical burnout assessment with cortisol profiling and psychophysiological testing',
@@ -1242,7 +1439,7 @@
       tag: 'Precision Medicine',
       title: 'Precision Nutrition & Genomics',
       subtitle: 'Dietary and metabolic strategies guided by your unique genetic profile for optimised performance and disease prevention.',
-      price: 'Contact for genomic assessment pricing',
+      price: '₦2,500,000',
       overview: 'Precision Nutrition at Integra moves beyond generic dietary advice. By integrating genomic testing, comprehensive metabolic profiling, and advanced biomarker analysis, our nutrition specialists design dietary strategies that work with your individual biology — optimising energy, metabolism, inflammation, and long-term disease risk.',
       inclusions: [
         'Comprehensive nutritional health assessment and genomic test via a non-invasive saliva sample',
@@ -1317,8 +1514,8 @@
       tag: 'Emergency Training',
       title: 'Basic Life Support (BLS)',
       subtitle: 'AHA/RCA-aligned certification equipping individuals to respond confidently to cardiac arrest, airway obstruction, and respiratory emergencies.',
-      price: 'Individual: ₦80,000 + E-Manual | ₦100,000 + Hardcopy | Group (up to 10): ₦800,000 | Recertification: ₦80,000',
-      overview: 'The Integra BLS programme delivers AHA (American Heart Association) and RCA-aligned Basic Life Support training for both healthcare professionals and motivated lay responders. Led by certified instructors, the course combines evidence-based theory with hands-on mannequin practice and AED simulation — ensuring every participant leaves with the competence and confidence to act decisively in a cardiac or airway emergency.',
+      price: 'Individual: ₦218,550 + Hardcopy Manual| Group (up to 10): ₦2,185,500 | Recertification: ₦175,000',
+      overview: 'The Integra BLS programme is a 1-day course that delivers AHA (American Heart Association) and RCA-aligned Basic Life Support training for both healthcare professionals and motivated lay responders. Led by certified instructors, the course combines evidence-based theory with hands-on mannequin practice and AED simulation — ensuring every participant leaves with the competence and confidence to act decisively in a cardiac or airway emergency.',
       inclusions: [
         'High-quality CPR training on adult, child, and infant mannequins with real-time feedback devices',
         'Automated External Defibrillator (AED) operation: device familiarisation, pad placement, and safe shock delivery',
@@ -1333,14 +1530,14 @@
         'Small-group format with low instructor-to-student ratio ensures individualised skill assessment',
         'Immediate recertification pathway available to maintain compliance with institutional requirements'
       ],
-      expect: 'The BLS course runs for approximately 4-6 hours structured as a blend of instructional content, group discussion, and high-volume practical skill stations. Participants rotate through CPR (adult, child, infant), AED scenarios, and choking relief drills under direct instructor supervision. A written knowledge check and observed skills assessment are completed at the end. Successful candidates receive their certification card on the day. Corporate groups can arrange on-site delivery at their premises.'
+      expect: 'The BLS course runs for approximately 6-10 hours structured as a blend of instructional content, group discussion, and high-volume practical skill stations. Participants rotate through CPR (adult, child, infant), AED scenarios, and choking relief drills under direct instructor supervision. A written knowledge check and observed skills assessment are completed at the end. Successful candidates receive their certification card on the day. Corporate groups can arrange on-site delivery at their premises.'
     },
     als: {
       tag: 'Emergency Training',
       title: 'Advanced Life Support (ALS)',
       subtitle: 'Physician and nurse-level resuscitation training covering complex cardiac arrest algorithms, advanced airway techniques, and emergency pharmacology.',
-      price: 'Individual: ₦150,000 + E-Manual |₦170,000 + Hardcopy | Group (up to 8): ₦1,500,000 | Recertification: ₦150,000',
-      overview: 'The Integra ALS programme is designed for doctors, nurses, paramedics, and senior allied health professionals requiring mastery of advanced resuscitation beyond the scope of BLS. Developed in alignment with the European Resuscitation Council (ERC) and AHA ACLS frameworks, the course covers the full spectrum of in-hospital cardiac arrest management — from rhythm recognition and shockable rhythm treatment to post-resuscitation care and team leadership.',
+      price: 'Individual: ₦390,000 + Hardcopy Manual | Group (up to 10): ₦3,900,000 | Recertification: ₦330,000',
+      overview: 'The Integra ALS programme is a 3-day course designed for doctors, nurses, paramedics, and senior allied health professionals requiring mastery of advanced resuscitation beyond the scope of BLS. Developed in alignment with the European Resuscitation Council (ERC) and AHA ACLS frameworks, the course covers the full spectrum of in-hospital cardiac arrest management — from rhythm recognition and shockable rhythm treatment to post-resuscitation care and team leadership.',
       inclusions: [
         'Advanced airway management: endotracheal intubation, supraglottic airway devices (LMA, i-gel), and waveform capnography interpretation',
         '12-lead ECG interpretation focused on shockable rhythms (VF, pVT), non-shockable rhythms (PEA, asystole), and peri-arrest arrhythmias',
@@ -1355,14 +1552,36 @@
         'Build evidence-based emergency pharmacology knowledge directly applicable to ICU, ED, and anaesthetics practice',
         'Enhance team leadership and resuscitation team coordination through high-fidelity simulation scenarios'
       ],
-      expect: 'The ALS course spans 1-2 full days structured around escalating simulation scenarios. Day 1 covers core theory (rhythm recognition, algorithms, pharmacology) and skills stations (airway, IV access, defibrillation). Day 2 is scenario-intensive — candidates manage full resuscitation simulations as both team member and team leader, with structured faculty feedback after each scenario. Assessment includes a written multi-choice exam and a summative team leader megacode. Certification is issued upon successful completion.'
+      expect: 'The ALS course spans 3 full days structured around escalating simulation scenarios. Day 1 covers core theory (rhythm recognition, algorithms, pharmacology) and skills stations (airway, IV access, defibrillation). Days 2 and 3 are scenario-intensive — candidates manage full resuscitation simulations as both team member and team leader, with structured faculty feedback after each scenario. Assessment includes a written multi-choice exam and a summative team leader megacode. Certification is issued upon successful completion.'
     },
+    aha_heartsaver: {
+    tag: 'Emergency Training',
+    title: 'AHA Heartsaver First Aid CPR AED',
+    subtitle: 'Layperson-level resuscitation and first aid training covering life-threatening emergencies, CPR techniques, and AED operation for workplace and community safety.',
+    price: 'Individual: ₦328,000 + Hardcopy Manual | Group (up to 10): ₦3,280,000 | Recertification: ₦275,000',
+    overview: 'The Integra Heartsaver programme is 2 days long and designed for individuals with little or no medical training who require a course completion card for job, regulatory, or personal requirements. Developed in alignment with the latest American Heart Association (AHA) guidelines, this comprehensive course empowers participants to act with confidence in emergency situations—covering everything from basic first aid and choking relief to high-quality CPR and the effective use of an Automated External Defibrillator (AED).',
+    inclusions: [
+      'First aid basics: recognizing emergencies, calling for help, and scene safety protocols',
+      'Medical emergencies: management of choking, heart attack, stroke, seizures, and allergic reactions (EpiPen use)',
+      'Injury emergencies: control of external bleeding, splinting, and care for burns, head injuries, and broken bones',
+      'Environmental emergencies: response to bites, stings, heatstroke, hypothermia, and poison exposure',
+      'High-quality CPR and AED: hands-on practice for adults, children, and infants, including relief of choking'
+    ],
+    benefits: [
+      'Gain an internationally recognized AHA certification that meets OSHA and workplace regulatory requirements',
+      'Acquire the confidence to provide immediate, life-saving assistance before professional help arrives',
+      'Master the use of an Automated External Defibrillator (AED) to significantly increase survival rates in cardiac arrest',
+      'Learn versatile first aid skills applicable to the office, school, home, and industrial environments',
+      'Participate in hands-on, video-based learning that ensures high skill retention and practical readiness'
+    ],
+    expect: 'The Heartsaver course is a two-day, intensive programme focused on hands-on skill mastery. The session combines video-based instruction with practical stations where candidates practice CPR on manikins and use trainer AEDs. Faculty provide real-time coaching to ensure techniques meet AHA standards. Assessment includes a skills test for CPR, AED use, and first aid components. Upon successful completion, participants receive a Heartsaver First Aid CPR AED certification valid for two years.'
+   },
     silver: {
       tag: 'Executive Wellness · Silver',
-      title: 'Silver Heartwell Panel',
+      title: 'Silver Heart Screening Package',
       subtitle: 'A foundational cardiovascular screening package focusing on key cardiac indicators — ideal for first-time health checks.',
-      price: '₦113,500 per package',
-      overview: 'The Silver Heartwell Panel provides a focused, efficient cardiovascular and metabolic risk assessment designed for individuals seeking a clear baseline understanding of their heart health. In a single visit, you receive an expert consultation, electrocardiogram, and a targeted set of blood tests that together reveal your overall cardiovascular risk profile.',
+      price: '₦275,400 per package',
+      overview: 'The Silver Heart Screening Package provides a focused, efficient cardiovascular and metabolic risk assessment designed for individuals seeking a clear baseline understanding of their heart health. In a single visit, you receive an expert consultation, electrocardiogram, and a targeted set of blood tests that together reveal your overall cardiovascular risk profile.',
       inclusions: [
         'Fasting Blood Glucose',
         'Electrocardiogram (ECG) — recording of the heart\'s electrical activity',
@@ -1374,12 +1593,12 @@
     },
     gold: {
       tag: 'Executive Wellness · Gold',
-      title: 'Gold Executive Heart Package',
+      title: 'Gold Executive Heart Screening Package',
       subtitle: 'An enhanced package offering a deeper dive into cardiac health, organ function, and metabolic performance.',
-      price: '₦882,120 per package',
-      overview: 'The Gold Executive Heart Package is our most popular comprehensive assessment, combining advanced cardiac imaging with a full metabolic and organ function workup. Designed for high-performing professionals, it goes beyond the Silver tier to include echocardiography and a holistic blood panel covering heart, kidney, and liver health.',
+      price: '₦750,000 per package',
+      overview: 'The Gold Executive Heart Screening Package is our most popular comprehensive assessment, combining advanced cardiac imaging with a full metabolic and organ function workup. Designed for high-performing professionals, it goes beyond the Silver tier to include echocardiography and a holistic blood panel covering heart, kidney, and liver health.',
       inclusions: [
-        'Silver Heartwell Panel',
+        'Silver Heart Screening Package',
         'Echocardiogram — ultrasound imaging of heart structure and function',
         'HbA1c — three-month blood glucose control marker',
         'Kidney & Liver Panel — renal function, liver enzymes, and metabolic markers',
@@ -1394,10 +1613,10 @@
       tag: 'Executive Wellness · Platinum',
       title: 'Platinum Comprehensive Assessment',
       subtitle: 'Our most extensive wellness package — a holistic, in-depth evaluation of cardiovascular and overall health.',
-      price: '₦1,417,220 per package',
+      price: '₦2,150,000 per package',
       overview: 'The Platinum Comprehensive Assessment is Integra\'s flagship wellness programme. It builds on the Gold package with a cardiac stress test, advanced metabolic profiling, body composition scanning, and a dedicated lifestyle medicine session — culminating in a personalized Executive Health Report. This is the gold standard in preventive cardiac and wellness care in Nigeria.',
       inclusions: [
-        'All services included in the Gold Heartwell Panel',
+        'All services included in the Gold Heart Screening Package',
         'Stress Test (Treadmill ECG) — cardiac function under controlled physical exertion',
         'Vitamin D3',
         'Carotid Doppler',
@@ -1406,6 +1625,22 @@
         'Personalized Executive Health Report — a detailed, branded document suitable for personal, insurance, or employer records'
       ],
       benefits: ['Deepest-level cardiovascular and metabolic health assessment available at Integra', 'Stress test detects exercise-induced ischaemia not visible at rest', 'Body composition scan provides precise visceral fat and lean mass data', 'Lifestyle medicine session translates findings into actionable daily habits', 'Comprehensive Executive Health Report — ideal for high-level professionals and corporate requirements'],
+      expect: 'The Platinum programme spans 2–3 visits over approximately 1–2 weeks. Visit 1 includes consultation, ECG, echocardiogram, and blood sampling. Visit 2 covers the treadmill stress test and body composition scan. The final visit delivers your Executive Health Report alongside a lifestyle medicine session and a personalised forward health plan co-designed with the Medical Director\'s team.'
+    },
+      wellwoman: {
+      tag: 'Comprehensive Wellwoman Assessment · Wellwoman',
+      title: 'Platinum Comprehensive Assessment',
+      subtitle: 'Our most extensive wellness package — a holistic, in-depth evaluation of cardiovascular and overall health.',
+      price: '₦1,360,000 per package',
+      overview: 'The Platinum Comprehensive Assessment is Integra\'s flagship wellness programme. It builds on the Gold package with a cardiac stress test, advanced metabolic profiling, body composition scanning, and a dedicated lifestyle medicine session — culminating in a personalized Executive Health Report. This is the gold standard in preventive cardiac and wellness care in Nigeria.',
+      expect: 'The Platinum programme spans 2–3 visits over approximately 1–2 weeks. Visit 1 includes consultation, ECG, echocardiogram, and blood sampling. Visit 2 covers the treadmill stress test and body composition scan. The final visit delivers your Executive Health Report alongside a lifestyle medicine session and a personalised forward health plan co-designed with the Medical Director\'s team.'
+    },
+    wellman: {
+      tag: 'Comprehensive Wellman Assessment · Wellman',
+      title: 'Platinum Comprehensive Assessment',
+      subtitle: 'Our most extensive wellness package — a holistic, in-depth evaluation of cardiovascular and overall health.',
+      price: '₦1,410,000 per package',
+      overview: 'The Platinum Comprehensive Assessment is Integra\'s flagship wellness programme. It builds on the Gold package with a cardiac stress test, advanced metabolic profiling, body composition scanning, and a dedicated lifestyle medicine session — culminating in a personalized Executive Health Report. This is the gold standard in preventive cardiac and wellness care in Nigeria.',
       expect: 'The Platinum programme spans 2–3 visits over approximately 1–2 weeks. Visit 1 includes consultation, ECG, echocardiogram, and blood sampling. Visit 2 covers the treadmill stress test and body composition scan. The final visit delivers your Executive Health Report alongside a lifestyle medicine session and a personalised forward health plan co-designed with the Medical Director\'s team.'
     },
     chairmanplatinum: {
