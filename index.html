@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Integra Wellness & Cardiac Clinics | Abuja, Nigeria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,96 +13,118 @@
         extend: {
           colors: {
             gold: { 50:'#fdf9ee',100:'#f8efcf',200:'#f0da96',300:'#e6c05a',400:'#D4AF37',500:'#C5A059',600:'#a8852e',700:'#8a6922',800:'#6e5220',900:'#5a431e' },
-            cream: '#FDFAF3',
-            warm: '#F7F3EA',
+            cream: '#FFFFFF',
+            warm: '#F4F4F3',
           },
-          fontFamily: { display:['Cormorant Garamond','serif'], body:['DM Sans','sans-serif'] },
+          fontFamily: { display:['Manrope','sans-serif'], body:['DM Sans','sans-serif'] },
         }
       }
     }
   </script>
   <style>
-    :root { --gold:#D4AF37; --gold-light:#E8C84A; --gold-dark:#C5A059; --cream:#FDFAF3; --warm:#F7F3EA; }
+    :root { --gold:#D4AF37; --gold-light:#E8C84A; --gold-dark:#C5A059; --cream:#FFFFFF; --warm:#F4F4F3; }
     *{box-sizing:border-box;} html{scroll-behavior:smooth;}
     body{font-family:'DM Sans',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden;}
 
     .gold-text{background:linear-gradient(135deg,#D4AF37 0%,#F2D06B 45%,#C5A059 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 
-    /* Navbar */
-    .navbar{background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,175,55,0.18);transition:all 0.3s ease;}
-    .navbar.scrolled{box-shadow:0 4px 32px rgba(212,175,55,0.10);}
+    /* Navbar — solid dark over the hero, switches to solid light once past it */
+    .navbar{background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease;}
+    .navbar.scrolled{background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,0.08);box-shadow:0 4px 32px rgba(0,0,0,0.06);}
+    .nav-sub{color:rgba(255,255,255,0.60);transition:color 0.3s ease;}
+    .navbar.scrolled .nav-sub{color:#8a8a86;}
+    #navbar #bar1,#navbar #bar2,#navbar #bar3{background:#fff;transition:background 0.3s ease;}
+    #navbar.scrolled #bar1,#navbar.scrolled #bar2,#navbar.scrolled #bar3{background:#2a2a28;}
+    .navbar:not(.scrolled) .btn-outline{border-color:rgba(255,255,255,0.55);color:#fff;}
+    .navbar:not(.scrolled) .btn-outline:hover{background:#fff;color:#0a0a0a;}
 
     /* Buttons */
-    .btn-gold{background:linear-gradient(to right,#D4AF37,#C5A059);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:0.72rem;padding:0.75rem 1.8rem;border-radius:2px;transition:all 0.3s ease;box-shadow:0 4px 18px rgba(212,175,55,0.30);position:relative;overflow:hidden;display:inline-block;cursor:pointer;}
-    .btn-gold::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.28),transparent);transition:left 0.5s ease;}
-    .btn-gold:hover::after{left:150%;} .btn-gold:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(212,175,55,0.40);}
-    .btn-outline{border:1.5px solid #D4AF37;color:#C5A059;font-family:'DM Sans',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:0.72rem;padding:0.72rem 1.8rem;border-radius:2px;transition:all 0.3s ease;background:transparent;display:inline-block;}
-    .btn-outline:hover{background:rgba(212,175,55,0.07);transform:translateY(-1px);}
+    .btn-gold{background:#0a0a0a;color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:0.72rem;padding:0.75rem 1.9rem;border-radius:999px;transition:all 0.3s ease;box-shadow:0 4px 16px rgba(0,0,0,0.18);position:relative;overflow:hidden;display:inline-block;cursor:pointer;}
+    .btn-gold::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.16),transparent);transition:left 0.5s ease;}
+    .btn-gold:hover::after{left:150%;} .btn-gold:hover{transform:translateY(-1px);background:#1a1a1a;box-shadow:0 8px 24px rgba(0,0,0,0.28);}
+    .btn-outline{border:1.5px solid #0a0a0a;color:#0a0a0a;font-family:'DM Sans',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:0.72rem;padding:0.72rem 1.8rem;border-radius:999px;transition:all 0.3s ease;background:transparent;display:inline-block;}
+    .btn-outline:hover{background:#0a0a0a;color:#fff;transform:translateY(-1px);}
+    .btn-outline-invert{border:1.5px solid rgba(255,255,255,0.55);color:#fff;font-family:'DM Sans',sans-serif;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:0.72rem;padding:0.72rem 1.8rem;border-radius:999px;transition:all 0.3s ease;background:transparent;display:inline-block;}
+    .btn-outline-invert:hover{background:rgba(255,255,255,0.1);border-color:#fff;}
+    .btn-gold-solid{background:linear-gradient(120deg,#D4AF37,#E8C84A);color:#0a0a0a;font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;font-size:0.72rem;padding:0.75rem 1.9rem;border-radius:999px;transition:all 0.3s ease;box-shadow:0 4px 16px rgba(212,175,55,0.35);display:inline-block;cursor:pointer;}
+    .btn-gold-solid:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(212,175,55,0.45);background:linear-gradient(120deg,#E8C84A,#D4AF37);}
 
     /* Hero */
-    .hero{min-height:100vh;background:linear-gradient(160deg,#FDFAF3 0%,#F7F3EA 40%,#fff 100%);position:relative;overflow:hidden;}
-    .hero::before{content:'';position:absolute;top:-120px;right:-120px;width:600px;height:600px;background:radial-gradient(circle,rgba(212,175,55,0.09) 0%,transparent 70%);pointer-events:none;}
-    .hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(212,175,55,0.06) 0%,transparent 70%);pointer-events:none;}
+    .hero{background:linear-gradient(160deg,#0a0a0a 0%,#121212 55%,#0a0a0a 100%);position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;top:-120px;right:-120px;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%);pointer-events:none;}
+    .hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,0.03) 0%,transparent 70%);pointer-events:none;}
+    .hero-ecg-line{position:absolute;left:0;right:0;top:50%;width:100%;transform:translateY(-50%);opacity:0.08;pointer-events:none;}
+
+    /* Hero badge */
+    .hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:0.55rem 1.2rem 0.55rem 0.65rem;font-size:0.78rem;color:#e9e6dd;transition:all 0.25s ease;}
+    .hero-badge:hover{background:rgba(255,255,255,0.11);border-color:rgba(255,255,255,0.4);}
+    .hero-badge .badge-dot{width:7px;height:7px;border-radius:50%;background:#D4AF37;flex-shrink:0;box-shadow:0 0 0 4px rgba(212,175,55,0.16);}
+
+    /* Quick-access chip bar */
+    .quick-chip{display:inline-flex;align-items:center;gap:6px;background:#F4F4F3;border:1px solid transparent;border-radius:999px;padding:0.55rem 1.1rem;font-size:0.78rem;font-weight:500;color:#2a2a28;transition:all 0.25s ease;cursor:pointer;white-space:nowrap;}
+    .quick-chip:hover{background:#fdf9ee;border-color:rgba(212,175,55,0.4);color:#8a6922;}
 
     /* Service cards */
-    .service-card{background:#fff;border:1px solid rgba(212,175,55,0.15);transition:all 0.35s ease;position:relative;overflow:hidden;cursor:pointer;}
+    .service-card{background:#fff;border:1px solid #ececea;transition:all 0.35s ease;position:relative;overflow:hidden;cursor:pointer;}
     .service-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,#D4AF37,#C5A059);transform:scaleY(0);transform-origin:top;transition:transform 0.35s ease;}
     .service-card:hover{box-shadow:0 12px 40px rgba(212,175,55,0.18);transform:translateY(-5px);border-color:rgba(212,175,55,0.40);}
     .service-card:hover::before{transform:scaleY(1);}
-    .service-card-dark{background:linear-gradient(160deg,#1a1510 0%,#2a1f08 100%);border:1px solid rgba(212,175,55,0.25);}
+    .service-card-dark{background:linear-gradient(160deg,#0a0a0a 0%,#171717 100%);border:1px solid rgba(212,175,55,0.25);}
     .service-card-dark:hover{box-shadow:0 12px 40px rgba(212,175,55,0.25);}
 
     /* Click hint */
-    .click-hint{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#C5A059;opacity:0.7;margin-top:0.75rem;display:flex;align-items:center;gap:4px;}
+    .click-hint{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:#6b7280;opacity:0.85;margin-top:0.75rem;display:flex;align-items:center;gap:4px;}
     .click-hint svg{width:10px;height:10px;}
 
     /* Package cards */
     .package-card{transition:all 0.3s ease;} .package-card:hover{transform:translateY(-6px);}
-    .package-featured{background:linear-gradient(160deg,#1a1510 0%,#2a1f08 100%);position:relative;}
+    .package-featured{background:linear-gradient(160deg,#0a0a0a 0%,#171717 100%);position:relative;}
     .package-featured::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(to right,#D4AF37,#C5A059);color:#fff;font-size:0.6rem;font-weight:700;letter-spacing:0.15em;padding:3px 16px;border-radius:20px;white-space:nowrap;}
 
     /* Founder */
-    .founder-section{background:linear-gradient(135deg,#1a1510 0%,#2a1f08 60%,#1a1510 100%);}
+    .founder-section{background:linear-gradient(135deg,#0a0a0a 0%,#171717 60%,#0a0a0a 100%);}
     .founder-quote{position:relative;}
-    .founder-quote::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:8rem;line-height:1;color:rgba(212,175,55,0.15);position:absolute;top:-2rem;left:-1rem;}
+    .founder-quote::before{content:'\201C';font-family:'Manrope',sans-serif;font-size:8rem;line-height:1;color:rgba(0,0,0,0.08);position:absolute;top:-2rem;left:-1rem;}
 
     /* Stats */
-    .stat-item{border-right:1px solid rgba(212,175,55,0.20);}
+    .stat-item{border-right:1px solid rgba(0,0,0,0.10);}
     .stat-item:last-child{border-right:none;}
 
     /* Mobile menu */
-    .mobile-menu{max-height:0;overflow:hidden;transition:max-height 0.4s ease;}
-    .mobile-menu.open{max-height:500px;}
+    .mobile-menu{max-height:0;overflow:hidden;transition:max-height 0.4s ease;background:#fff;}
+    .mobile-menu.open{max-height:600px;box-shadow:0 12px 32px rgba(0,0,0,0.08);}
+    #mobileMenu .nav-link{color:#2a2a28;}
 
     /* Nav links */
-    .nav-link{position:relative;color:#3a3228;font-weight:500;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-link{position:relative;color:#fff;font-weight:500;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s ease;}
+    .navbar.scrolled .nav-link{color:#3a3a38;}
     .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:linear-gradient(90deg,#D4AF37,#E8C84A);transition:width 0.3s ease;}
-    .nav-link:hover{color:#C5A059;} .nav-link:hover::after{width:100%;}
+    .nav-link:hover{color:#D4AF37;} .nav-link:hover::after{width:100%;}
 
     /* Section tag */
     .section-tag{display:inline-flex;align-items:center;gap:8px;font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C5A059;}
     .section-tag::before,.section-tag::after{content:'';display:inline-block;width:24px;height:1px;background:#D4AF37;}
 
     /* Icon circle */
-    .icon-circle{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,rgba(212,175,55,0.12),rgba(212,175,55,0.06));border:1px solid rgba(212,175,55,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .icon-circle{width:52px;height:52px;border-radius:50%;background:transparent;border:1.5px solid #0a0a0a;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 
     /* ============ MODAL ============ */
     .modal-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;visibility:hidden;transition:opacity 0.35s ease,visibility 0.35s ease;}
     .modal-overlay.active{opacity:1;visibility:visible;}
     .modal-backdrop{position:absolute;inset:0;background:rgba(10,8,5,0.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
-    .modal-box{position:relative;z-index:1;background:#fff;border-radius:16px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,0.30),0 0 0 1px rgba(212,175,55,0.20);transform:translateY(28px) scale(0.97);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);}
+    .modal-box{position:relative;z-index:1;background:#fff;border-radius:16px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,0.30),0 0 0 1px rgba(0,0,0,0.06);transform:translateY(28px) scale(0.97);transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);}
     .modal-overlay.active .modal-box{transform:translateY(0) scale(1);}
-    .modal-header{background:linear-gradient(135deg,#1a1510,#2a1f08);padding:2rem 2rem 1.5rem;border-radius:16px 16px 0 0;position:relative;}
-    .modal-header-gold{height:3px;background:linear-gradient(to right,#D4AF37,#C5A059);border-radius:3px 3px 0 0;position:absolute;top:0;left:0;right:0;}
+    .modal-header{background:linear-gradient(135deg,#0a0a0a,#171717);padding:2rem 2rem 1.5rem;border-radius:16px 16px 0 0;position:relative;}
+    .modal-header-gold{height:3px;background:#0a0a0a;border-radius:3px 3px 0 0;position:absolute;top:0;left:0;right:0;}
     .modal-body{padding:2rem;}
     .modal-section-title{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C5A059;margin-bottom:0.6rem;display:flex;align-items:center;gap:6px;}
-    .modal-section-title::after{content:'';flex:1;height:1px;background:linear-gradient(to right,rgba(212,175,55,0.3),transparent);}
-    .modal-benefit-item{display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;border-bottom:1px solid rgba(212,175,55,0.08);}
+    .modal-section-title::after{content:'';flex:1;height:1px;background:linear-gradient(to right,rgba(0,0,0,0.10),transparent);}
+    .modal-benefit-item{display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;border-bottom:1px solid rgba(0,0,0,0.06);}
     .modal-benefit-item:last-child{border-bottom:none;}
     .modal-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.2s;}
     .modal-close:hover{background:rgba(255,255,255,0.2);}
     /* Scrollbar inside modal */
-    .modal-box::-webkit-scrollbar{width:4px;} .modal-box::-webkit-scrollbar-track{background:transparent;} .modal-box::-webkit-scrollbar-thumb{background:#D4AF37;border-radius:4px;}
+    .modal-box::-webkit-scrollbar{width:4px;} .modal-box::-webkit-scrollbar-track{background:transparent;} .modal-box::-webkit-scrollbar-thumb{background:#c4c4be;border-radius:4px;}
 
     /* ============ WHATSAPP FLOAT ============ */
     .wa-float{position:fixed;bottom:28px;right:28px;z-index:900;display:flex;align-items:center;gap:10px;}
@@ -110,7 +132,7 @@
     .wa-btn:hover{transform:scale(1.08);}
     .wa-pulse{position:absolute;inset:0;border-radius:50%;background:rgba(37,211,102,0.4);animation:waPulse 2.2s ease-out infinite;}
     @keyframes waPulse{0%{transform:scale(1);opacity:0.8;}70%{transform:scale(1.6);opacity:0;}100%{transform:scale(1.6);opacity:0;}}
-    .wa-tooltip{background:linear-gradient(135deg,#1a1510,#2a1f08);border:1px solid rgba(212,175,55,0.3);color:#fff;font-size:0.72rem;padding:6px 14px;border-radius:20px;white-space:nowrap;opacity:0;transform:translateX(8px);transition:all 0.25s ease;pointer-events:none;}
+    .wa-tooltip{background:linear-gradient(135deg,#0a0a0a,#171717);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:0.72rem;padding:6px 14px;border-radius:20px;white-space:nowrap;opacity:0;transform:translateX(8px);transition:all 0.25s ease;pointer-events:none;}
     .wa-float:hover .wa-tooltip{opacity:1;transform:translateX(0);}
 
     /* Fade-in scroll animations */
@@ -124,25 +146,25 @@
     .animate-fadein{animation:fadeIn 1s ease forwards;}
     .delay-1{animation-delay:0.15s;opacity:0;} .delay-2{animation-delay:0.30s;opacity:0;} .delay-3{animation-delay:0.45s;opacity:0;} .delay-4{animation-delay:0.60s;opacity:0;}
 
-    ::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:#fdfaf3;} ::-webkit-scrollbar-thumb{background:linear-gradient(#D4AF37,#C5A059);border-radius:4px;}
-    .disclaimer-bar{background:#1a1510;border-top:1px solid rgba(212,175,55,0.20);}
+    ::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-track{background:#ffffff;} ::-webkit-scrollbar-thumb{background:#c4c4be;border-radius:4px;}
+    .disclaimer-bar{background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.08);}
 
     /* ============ PRICING TABS ============ */
-    .pricing-tab{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.6rem 1.4rem;border-radius:2px;cursor:pointer;transition:all 0.25s ease;border:1.5px solid transparent;color:#6b7280;background:transparent;}
-    .pricing-tab.active{background:linear-gradient(to right,#D4AF37,#C5A059);color:#fff;box-shadow:0 4px 14px rgba(212,175,55,0.30);}
-    .pricing-tab:not(.active):hover{border-color:rgba(212,175,55,0.35);color:#C5A059;}
+    .pricing-tab{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.6rem 1.4rem;border-radius:999px;cursor:pointer;transition:all 0.25s ease;border:1.5px solid transparent;color:#6b7280;background:transparent;}
+    .pricing-tab.active{background:#0a0a0a;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,0.20);}
+    .pricing-tab:not(.active):hover{border-color:rgba(10,10,10,0.25);color:#0a0a0a;}
     .pricing-panel{display:none;} .pricing-panel.active{display:block;}
 
     /* Price table rows */
-    .price-row{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;border-bottom:1px solid rgba(212,175,55,0.08);transition:background 0.2s;}
+    .price-row{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;border-bottom:1px solid rgba(0,0,0,0.06);transition:background 0.2s;}
     .price-row:last-child{border-bottom:none;}
-    .price-row:hover{background:rgba(212,175,55,0.04);}
-    .price-amount{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:#C5A059;white-space:nowrap;}
+    .price-row:hover{background:rgba(0,0,0,0.02);}
+    .price-amount{font-family:'Manrope',sans-serif;font-size:1.05rem;font-weight:700;color:#C5A059;white-space:nowrap;}
     .price-label{font-size:0.82rem;color:#374151;font-weight:500;}
     .price-note{font-size:0.68rem;color:#9ca3af;margin-top:1px;}
 
     /* MediSpa price card */
-    .spa-price-card{background:#fff;border:1px solid rgba(212,175,55,0.15);border-radius:12px;overflow:hidden;transition:all 0.3s ease;}
+    .spa-price-card{background:#fff;border:1px solid #ececea;border-radius:12px;overflow:hidden;transition:all 0.3s ease;}
     .spa-price-card:hover{box-shadow:0 8px 28px rgba(212,175,55,0.14);transform:translateY(-3px);border-color:rgba(212,175,55,0.35);}
 
     /* Membership cards */
@@ -161,12 +183,13 @@
         <img src="1000191389-removebg-preview.png" alt="Integra Wellness & Cardiac Clinics logo" style="width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 0 transparent);">
         <div>
           <div class="font-display text-lg font-bold leading-tight gold-text tracking-wide">INTEGRA</div>
-          <div class="text-xs text-gray-500 font-body tracking-widest leading-tight" style="font-size:0.55rem;">WELLNESS & CARDIAC CLINICS</div>
+          <div class="nav-sub font-body tracking-widest leading-tight" style="font-size:0.55rem;">WELLNESS & CARDIAC CLINICS</div>
         </div>
       </a>
       <div class="hidden lg:flex items-center gap-8">
         <a href="#home" class="nav-link">Home</a>
         <a href="#services" class="nav-link">Services</a>
+        <a href="#training-gallery" class="nav-link">Training</a>
         <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -176,15 +199,16 @@
         <a href="#contact" class="btn-gold">Book Consultation</a>
       </div>
       <button id="menuToggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all" id="bar1"></span>
-        <span class="block w-6 h-0.5 bg-gray-700 transition-all" id="bar2"></span>
-        <span class="block w-5 h-0.5 bg-gray-700 transition-all self-end" id="bar3"></span>
+        <span class="block w-6 h-0.5 transition-all" id="bar1"></span>
+        <span class="block w-6 h-0.5 transition-all" id="bar2"></span>
+        <span class="block w-5 h-0.5 transition-all self-end" id="bar3"></span>
       </button>
     </div>
-    <div id="mobileMenu" class="mobile-menu lg:hidden border-t border-gold-400/10">
+    <div id="mobileMenu" class="mobile-menu lg:hidden border-t border-gray-100">
       <div class="py-4 flex flex-col gap-1">
         <a href="#home" class="px-4 py-3 nav-link text-sm">Home</a>
         <a href="#services" class="px-4 py-3 nav-link text-sm">Services</a>
+        <a href="#training-gallery" class="px-4 py-3 nav-link text-sm">Training</a>
         <a href="#pricing" class="px-4 py-3 nav-link text-sm">Pricing</a>
         <a href="#about" class="px-4 py-3 nav-link text-sm">About</a>
         <a href="#contact" class="px-4 py-3 nav-link text-sm">Contact</a>
@@ -198,63 +222,58 @@
 </header>
 
 <!-- ==================== HERO ==================== -->
-<section id="home" class="hero flex items-center pt-20">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32 w-full">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <div>
-        <div class="section-tag mb-6 animate-fadeup">Premier Cardiac & Wellness Care · Abuja</div>
-        <h1 class="font-display text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fadeup delay-1">
-          Redefining <em class="gold-text not-italic">Preventive</em> Healthcare &amp; Heart Health <span class="text-gray-400 font-normal">in Nigeria</span>
-        </h1>
-        <p class="text-gray-500 text-lg leading-relaxed mb-10 max-w-lg animate-fadeup delay-2">
-          We combine evidence-based cardiology with personalized integrative wellness — empowering executives and professionals to prevent disease, enhance vitality, and take control of their long-term health.
-        </p>
-        <div class="flex flex-wrap gap-4 animate-fadeup delay-3">
-          <a href="#contact" class="btn-gold text-sm">Book Your Consultation Today</a>
-          <a href="#membership" class="btn-outline text-sm">Join Elite Membership</a>
-        </div>
-        <div class="flex items-center gap-6 mt-12 animate-fadeup delay-4">
-          <div class="flex -space-x-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gold-300 to-gold-500 border-2 border-white flex items-center justify-center"><svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/></svg></div>
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gold-300 to-gold-500 border-2 border-white flex items-center justify-center"><svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/></svg></div>
-            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gold-300 to-gold-500 border-2 border-white flex items-center justify-center"><svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/></svg></div>
-          </div>
-          <p class="text-xs text-gray-400 leading-tight">Physician-led · Evidence-based · <span class="text-gold-500 font-semibold">Abuja's Premier Wellness Hub</span></p>
-        </div>
+<section id="home" class="hero flex items-center pt-20 min-h-screen">
+  <svg class="hero-ecg-line" viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,110 L50,110 L62,96 L74,110 L90,110 L100,165 L112,15 L124,150 L140,110 L155,90 L168,110 L180,110 L180,110 L230,110 L242,96 L254,110 L270,110 L280,165 L292,15 L304,150 L320,110 L335,90 L348,110 L360,110 L360,110 L410,110 L422,96 L434,110 L450,110 L460,165 L472,15 L484,150 L500,110 L515,90 L528,110 L540,110 L540,110 L590,110 L602,96 L614,110 L630,110 L640,165 L652,15 L664,150 L680,110 L695,90 L708,110 L720,110 L720,110 L770,110 L782,96 L794,110 L810,110 L820,165 L832,15 L844,150 L860,110 L875,90 L888,110 L900,110 L900,110 L950,110 L962,96 L974,110 L990,110 L1000,165 L1012,15 L1024,150 L1040,110 L1055,90 L1068,110 L1080,110 L1080,110 L1130,110 L1142,96 L1154,110 L1170,110 L1180,165 L1192,15 L1204,150 L1220,110 L1235,90 L1248,110 L1260,110 L1260,110 L1310,110 L1322,96 L1334,110 L1350,110 L1360,165 L1372,15 L1384,150 L1400,110 L1415,90 L1428,110 L1440,110" fill="none" stroke="#fff" stroke-width="2"/>
+  </svg>
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 py-32 lg:py-36 w-full relative z-10 text-center">
+    <a href="#training-gallery" class="hero-badge mb-8 animate-fadeup">
+      <span class="badge-dot"></span>
+      New: AHA Heartsaver CPR &amp; AED training completed
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <h1 class="font-display text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 text-white animate-fadeup delay-1">
+      Redefining <em class="gold-text not-italic">Preventive</em> Healthcare &amp; Heart Health <span class="text-gray-400 font-normal">in Nigeria</span>
+    </h1>
+    <p class="text-gray-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto animate-fadeup delay-2">
+      We combine evidence-based cardiology with personalized integrative wellness — empowering executives and professionals to prevent disease, enhance vitality, and take control of their long-term health.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 animate-fadeup delay-3">
+      <a href="#contact" class="btn-gold-solid text-sm">Book Your Consultation Today</a>
+      <a href="#membership" class="btn-outline-invert text-sm">Join Elite Membership</a>
+    </div>
+    <div class="flex items-center justify-center gap-6 mt-12 animate-fadeup delay-4">
+      <div class="flex -space-x-2">
+        <div class="w-8 h-8 rounded-full bg-white/10 border border-white/25 backdrop-blur-sm flex items-center justify-center"><svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/></svg></div>
+        <div class="w-8 h-8 rounded-full bg-white/10 border border-white/25 backdrop-blur-sm flex items-center justify-center"><svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/></svg></div>
+        <div class="w-8 h-8 rounded-full bg-white/10 border border-white/25 backdrop-blur-sm flex items-center justify-center"><svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/></svg></div>
       </div>
-      <div class="relative animate-fadein delay-2">
-        <div class="bg-white rounded-2xl shadow-2xl shadow-gold-400/10 border border-gold-400/15 p-8 relative z-10">
-          <div class="grid grid-cols-2 gap-5 mb-6">
-            <div class="bg-warm rounded-xl p-5 cursor-pointer transition-all hover:shadow-md hover:bg-gold-50 hover:-translate-y-1 border border-transparent hover:border-gold-400/25" onclick="openModal('ecg')" title="Click for ECG details & pricing">
-              <div class="icon-circle mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-              <div class="font-display text-3xl font-bold gold-text">ECG</div>
-              <div class="text-xs text-gold-500 mt-1 font-semibold tracking-wide">Tap to view details →</div>
-            </div>
-            <div class="bg-warm rounded-xl p-5 cursor-pointer transition-all hover:shadow-md hover:bg-gold-50 hover:-translate-y-1 border border-transparent hover:border-gold-400/25" onclick="openModal('echo')" title="Click for Echocardiography details & pricing">
-              <div class="icon-circle mb-3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/><circle cx="12" cy="12" r="3"/></svg></div>
-              <div class="font-display text-2xl font-bold gold-text leading-tight">Echo</div>
-              <div class="text-xs text-gold-500 mt-1 font-semibold tracking-wide">Tap to view details →</div>
-            </div>
-          </div>
-          <div class="space-y-3">
-            <div class="flex items-center gap-3 bg-warm rounded-lg px-4 py-3"><div class="w-2 h-2 rounded-full bg-gold-400 flex-shrink-0"></div><span class="text-sm text-gray-700 font-medium"><a href="#services">Executive Wellness</a></span></div>
-            <div class="flex items-center gap-3 bg-warm rounded-lg px-4 py-3"><div class="w-2 h-2 rounded-full bg-gold-400 flex-shrink-0"></div><span class="text-sm text-gray-700 font-medium"><a href="#services">MediSpa & 8+ Aesthetic Services</a></span></div>
-            <div class="flex items-center gap-3 bg-warm rounded-lg px-4 py-3"><div class="w-2 h-2 rounded-full bg-gold-400 flex-shrink-0"></div><span class="text-sm text-gray-700 font-medium"><a href="#services">Chairman's Platinum</a></span></div>
-          </div>
-          <div class="mt-6 pt-5 border-t border-gold-400/15 flex items-center justify-between">
-            <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div><span class="text-xs text-gray-500">Open · Mon–Sat, 9am–9pm</span></div>
-            <a href="tel:+2348144414536" class="text-xs font-semibold text-gold-500 hover:text-gold-400">+234 814 441 4536</a>
-          </div>
-        </div>
-        <div class="absolute -top-5 -right-5 w-48 h-48 rounded-2xl bg-gradient-to-br from-gold-400/10 to-gold-200/5 -z-10 border border-gold-400/10"></div>
-        <div class="absolute -bottom-5 -left-5 w-32 h-32 rounded-2xl bg-gradient-to-tr from-gold-300/8 to-transparent -z-10"></div>
+      <p class="text-xs text-gray-400 leading-tight">Physician-led · Evidence-based · <span class="text-gold-400 font-semibold">Abuja's Premier Wellness Hub</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== HERO QUICK-ACCESS BAR ==================== -->
+<section class="bg-white border-b border-gray-100 py-5 relative z-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex flex-wrap items-center justify-between gap-5">
+      <div class="flex flex-wrap items-center gap-2.5">
+        <button onclick="openModal('ecg')" class="quick-chip">ECG</button>
+        <button onclick="openModal('echo')" class="quick-chip">Echo</button>
+        <a href="#services" class="quick-chip">Executive Wellness</a>
+        <a href="#services" class="quick-chip">MediSpa &amp; 8+ Aesthetic Services</a>
+        <a href="#membership" class="quick-chip">Chairman's Platinum</a>
+      </div>
+      <div class="flex items-center gap-5 flex-shrink-0">
+        <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div><span class="text-xs text-gray-500">Open · Mon–Sat, 9am–9pm</span></div>
+        <a href="tel:+2348144414536" class="text-xs font-semibold text-gold-500 hover:text-gold-400">+234 814 441 4536</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ==================== STATS ==================== -->
-<section class="bg-white border-y border-gold-400/15 py-10">
+<section class="bg-white border-y border-gray-200 py-10">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gold-400/15">
       <div class="stat-item px-6 lg:px-10 py-4 text-center"><div class="font-display text-4xl font-bold gold-text">12+</div><div class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Specialist Services</div></div>
@@ -278,7 +297,7 @@
 
       <!-- Card 1: Cardiology Diagnostics -->
       <div class="service-card rounded-xl p-6 reveal" onclick="openModal('cardiology')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Cardiology Diagnostics</h3>
         <p class="text-xs text-gray-500 leading-relaxed">ECG, Holter, Echo, ABPM & Stress Tests for early detection and precise cardiac management.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
@@ -286,7 +305,7 @@
 
       <!-- Card 2: Executive Wellness -->
       <div class="service-card rounded-xl p-6 reveal" onclick="openModal('wellness')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Executive Wellness Checks</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Tailored Silver, Gold & Platinum screening packages for executives seeking proactive health management.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
@@ -294,7 +313,7 @@
 
       <!-- Card 3: MediSpa -->
       <div class="service-card rounded-xl p-6 reveal" onclick="openModal('medispa')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">MediSpa & Aesthetics</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Hydrafacial, IV Therapy, NAD+, Botox, Fillers & more for total rejuvenation and radiant confidence.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
@@ -302,82 +321,87 @@
 
       <!-- Card 4: Elite Membership (dark) -->
       <div class="service-card service-card-dark rounded-xl p-6 reveal" id="membership" onclick="openModal('membership')">
-        <div class="icon-circle mb-4" style="background:rgba(212,175,55,0.15);border-color:rgba(212,175,55,0.4);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="icon-circle mb-4" style="background:#ffffff;border:1.5px solid #D4AF37;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-white">Elite Membership</h3>
         <p class="text-xs text-gray-400 leading-relaxed">Chairman's Platinum: priority concierge health management, exclusive annual benefits, and VIP access.</p>
-        <div class="click-hint" style="color:#D4AF37;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
+        <div class="click-hint" style="color:rgba(255,255,255,0.65);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
+      </div>
+
+      <!-- Show more / show less toggle (top position) -->
+      <div class="col-span-full flex justify-center reveal" id="servicesToggleTop">
+        <button type="button" onclick="toggleServices()" class="btn-outline text-xs">Show More Services</button>
       </div>
 
       <!-- Card 5: Lifestyle & Wellness Coaching -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('lifestyle')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg></div>
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('lifestyle')">
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Lifestyle & Wellness Coaching</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Personalised coaching integrating nutrition, activity, stress mastery, and habit design for lasting vitality.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 6: Medical Tourism -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('tourism')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('tourism')">
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Medical Tourism</h3>
         <p class="text-xs text-gray-500 leading-relaxed">End-to-end facilitation for specialist care abroad: referrals, travel logistics, and international coordination.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 7: Executive Burnout Recovery -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('burnout')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('burnout')">
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Executive Burnout Recovery</h3>
         <p class="text-xs text-gray-500 leading-relaxed">A structured, clinically supervised programme to identify, treat, and reverse chronic executive burnout.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 8: Precision Nutrition -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('nutrition')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('nutrition')">
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Precision Nutrition & Genomics</h3>
         <p class="text-xs text-gray-500 leading-relaxed">DNA-informed dietary planning and metabolic profiling for optimised performance and disease prevention.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 9: Sleep Optimisation -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('sleep')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('sleep')">
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Sleep Optimisation</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Clinical sleep assessment, apnoea screening, and personalised interventions to restore deep, restorative rest.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 10: Longevity & Anti-Aging -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('longevity')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('longevity')">
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Longevity & Anti-Aging</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Advanced biomarker testing, NAD+ infusions, and evidence-based protocols to slow biological ageing and maximise healthspan.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 11: Corporate Health Management -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('corporate')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('corporate')">
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Corporate Health Management</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Retainer-based occupational health programmes, screenings, and consulting to build a healthier, higher-performing workforce.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 12: Mindfulness & Mental Fitness -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('mindfulness')">
-        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="12" r="10"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('mindfulness')">
+        <div class="icon-circle mb-4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="12" r="10"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Mindfulness & Mental Fitness</h3>
         <p class="text-xs text-gray-500 leading-relaxed">Structured resilience, cognitive performance, and mindfulness programmes for peak mental clarity and emotional balance.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
 
       <!-- Card 13: Basic Life Support (BLS) -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('bls')">
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('bls')">
         <div class="icon-circle mb-4">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            <path d="M17 3h4v4" stroke="#D4AF37" stroke-width="2"/><path d="M21 3l-4 4" stroke="#D4AF37" stroke-width="2"/>
+            <path d="M17 3h4v4" stroke="#0a0a0a" stroke-width="2"/><path d="M21 3l-4 4" stroke="#0a0a0a" stroke-width="2"/>
           </svg>
         </div>
         <h3 class="font-display text-lg font-semibold mb-2 text-gray-900">Basic Life Support (BLS)</h3>
@@ -386,9 +410,9 @@
       </div>
 
       <!-- Card 14: Advanced Life Support (ALS) -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('als')">
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('als')">
         <div class="icon-circle mb-4">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
             <rect x="15" y="2" width="7" height="5" rx="1"/>
             <line x1="17" y1="4.5" x2="20" y2="4.5"/><line x1="18.5" y1="3" x2="18.5" y2="6"/>
@@ -400,9 +424,9 @@
       </div>
 
       <!-- Card 15: AHA Heartsaver First Aid CPR AED (AHA Heartsaver) -->
-      <div class="service-card rounded-xl p-6 reveal" onclick="openModal('aha_heartsaver')">
+      <div class="service-card service-extra rounded-xl p-6 reveal" style="display:none;" onclick="openModal('aha_heartsaver')">
         <div class="icon-circle mb-4">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
             <rect x="15" y="2" width="7" height="5" rx="1"/>
             <line x1="17" y1="4.5" x2="20" y2="4.5"/><line x1="18.5" y1="3" x2="18.5" y2="6"/>
@@ -412,8 +436,55 @@
         <p class="text-xs text-gray-500 leading-relaxed">Layperson-level resuscitation and first aid training covering life-threatening emergencies, CPR techniques, and AED operation for workplace and community safety.</p>
         <div class="click-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Details & Pricing</div>
       </div>
+
+      <!-- Show more / show less toggle (bottom position, after last card) -->
+      <div class="col-span-full flex justify-center reveal" id="servicesToggleBottom" style="display:none;">
+        <button type="button" onclick="toggleServices()" class="btn-outline text-xs">Show Less</button>
+      </div>
     </div>
     <div class="text-center mt-12"><a href="#contact" class="btn-gold">Book Any Service</a></div>
+  </div>
+</section>
+
+<!-- ==================== TRAINING GALLERY ==================== -->
+<section id="training-gallery" class="py-24 bg-warm">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <div class="section-tag mb-4">Certified Training · AHA Heartsaver</div>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Heartsaver Training, <em class="gold-text not-italic">In Action</em></h2>
+      <p class="text-gray-500 max-w-2xl mx-auto text-base">In partnership with Code.Red Emergency Medical Services, an American Heart Association Authorized Training Center, our team completed hands-on AHA Heartsaver First Aid CPR AED certification — covering adult, child and infant CPR, AED operation, and choking response.</p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 reveal">
+      <div class="relative rounded-2xl overflow-hidden group aspect-square lg:aspect-auto lg:col-span-2 lg:row-span-2 border border-gray-100">
+        <img src="assets/training/training-6.jpg" alt="Instructor leading an AHA Heartsaver CPR and AED training session" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      </div>
+      <div class="relative rounded-2xl overflow-hidden group aspect-square lg:aspect-auto lg:row-span-2 border border-gray-100">
+        <img src="assets/training/training-1.jpg" alt="Trainee reviewing CPR technique beside training manikins" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      </div>
+      <div class="relative rounded-2xl overflow-hidden group aspect-square lg:aspect-auto lg:row-span-2 border border-gray-100">
+        <img src="assets/training/training-3.jpg" alt="Participant practicing chest compressions during Heartsaver certification" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      </div>
+      <div class="relative rounded-2xl overflow-hidden group aspect-square border border-gray-100">
+        <img src="assets/training/training-4.jpg" alt="Hands-on CPR compression practice with an instructor observing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      </div>
+      <div class="relative rounded-2xl overflow-hidden group aspect-square border border-gray-100">
+        <img src="assets/training/training-5.jpg" alt="Infant CPR technique practice on a training manikin" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      </div>
+      <div class="relative rounded-2xl overflow-hidden group aspect-square border border-gray-100">
+        <img src="assets/training/training-2.jpg" alt="Group CPR and AED practice session with training manikins" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      </div>
+      <div class="relative rounded-2xl overflow-hidden group aspect-square border border-gray-100">
+        <img src="assets/training/training-7.jpg" alt="Cohort practicing CPR skills in small groups" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      </div>
+    </div>
+
+    <div class="text-center mt-12 reveal">
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#contact" class="btn-gold">Book Your Team's Training</a>
+        <a href="#pricing" class="btn-outline" onclick="goToTrainingPricing(event)">See Training Pricing</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -433,11 +504,11 @@
         <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦275,400</div>
         <div class="text-xs text-gray-400 mb-6">per package</div>
         <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Lipid Profile</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>ECG</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Blood Glucose</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>BMI & Blood Pressure Analysis</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Integrated Cardiovascular and Lifestyle Analysis Assessment</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>Fasting Lipid Profile</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>ECG</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>Fasting Blood Glucose</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>BMI & Blood Pressure Analysis</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>Integrated Cardiovascular and Lifestyle Analysis Assessment</div>
         </div>
         <a href="#contact" class="btn-outline w-full block text-center">Get Started</a>
         <div class="click-hint justify-center mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
@@ -449,17 +520,17 @@
         <div class="font-display text-4xl font-bold text-white mb-1">₦750,000</div>
         <div class="text-xs text-gray-500 mb-6">per package</div>
         <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>+ Silver Heart Screening</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Echocardiogram</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HbA1c</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Liver Function Test</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Renal Function Test</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Thyroid Function Test</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>High Sensitivity C-reactive Protein (hs-CPR)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Homocysteine Lipoprotein A</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>+ Silver Heart Screening</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>Echocardiogram</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>HbA1c</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>Liver Function Test</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>Renal Function Test</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>Thyroid Function Test</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>High Sensitivity C-reactive Protein (hs-CPR)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>Homocysteine Lipoprotein A</div>
         </div>
-        <a href="#contact" class="btn-gold w-full block text-center">Book Gold Package</a>
-        <div class="click-hint justify-center mt-4" style="color:#D4AF37;opacity:0.8;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
+        <a href="#contact" class="btn-gold-solid w-full block text-center">Book Gold Package</a>
+        <div class="click-hint justify-center mt-4" style="color:rgba(255,255,255,0.65);opacity:1;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
       </div>
 
       <!-- Platinum -->
@@ -468,94 +539,18 @@
         <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦2,150,000</div>
         <div class="text-xs text-gray-400 mb-6">per package</div>
         <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>+ Gold Executive Heart Screening</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Stress Test (Treadmill ECG)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Vitamin D3</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Body Composition Scan</div>
-          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Carotid Doppler</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Personalized Executive Health Report</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>+ Gold Executive Heart Screening</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>Stress Test (Treadmill ECG)</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>Vitamin D3</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>Body Composition Scan</div>
+          <div class="flex items-center gap-2 text-sm text-gray-300"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>Carotid Doppler</div>
+          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gray-800"></div>Personalized Executive Health Report</div>
         </div>
         <a href="#contact" class="btn-outline w-full block text-center">Get Started</a>
         <div class="click-hint justify-center mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
       </div>
     </div>
   </div>
-
-  <div class="grid md:grid-cols-2 gap-4 items-start">
-
-      <!-- Comprehensive Wellwoman Screening Package -->
-      <div class="package-card rounded-2xl border border-gray-200 p-8 reveal cursor-pointer" onclick="openModal('comprehensive-wellwoman')">
-        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Comprehensive Wellwoman Screening</div>
-        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦1,365,000</div>
-        <div class="text-xs text-gray-400 mb-6">per package</div>
-        <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Rest ECG (Electrocardiogram)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Carotid Doppler</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Abdomino Pelvic Scan</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Echocardiography</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Chest X-ray</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Mammography</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Pap Smear (Papanicolaou Test)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Liver Function Test (LFT)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Lipid Profile (FLP)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Plasma Glucose (FPG)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Electrolyte, Urea and Creatinine (E/U/Cr)eGFR</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Urine Analysis</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Uric Acid</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HbA1c (Glycated Hemoglobin)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Oral Glucose Tolerance Test (OGTT)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Thyroid Function Test (TFT)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>ESR</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Blood Grouping (ABO/Rh) (optional)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Genotype (optional)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Urine M/C/S</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Stool M/C/S</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>FOB (Occult Blood)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HIV Screening</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HBsAG</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HCV</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>VDRL</div>
-        </div>
-        <a href="#contact" class="btn-outline w-full block text-center">Get Started</a>
-        <div class="click-hint justify-center mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
-      </div>
-
-      <!-- Comprehensive Wellman Screening Package -->
-      <div class="package-card rounded-2xl border border-gray-200 p-8 reveal cursor-pointer" onclick="openModal('comprehensive-wellman')">
-        <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Comprehensive Wellman Screening</div>
-        <div class="font-display text-4xl font-bold text-gray-900 mb-1">₦1,410,000</div>
-        <div class="text-xs text-gray-400 mb-6">per package</div>
-        <div class="space-y-3 mb-8">
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Rest ECG (Electrocardiogram)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Carotid Doppler</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Abdomino Pelvic Scan</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Echocardiography</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Chest X-ray</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Prostate Specific Antigen (PSA) -Total</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Prostate Specific Antigen (PSA) - Free</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Liver Function Test (LFT)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Lipid Profile (FLP)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Fasting Plasma Glucose (FPG)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Electrolyte, Urea and Creatinine (E/U/Cr)eGFR</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Urine Analysis</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Uric Acid</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HbA1c (Glycated Hemoglobin)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Oral Glucose Tolerance Test (OGTT)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Thyroid Function Test (TFT)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>ESR</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Blood Grouping (ABO/Rh) (optional)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Genotype (optional)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Urine M/C/S</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>Stool M/C/S</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>FOB (Occult Blood)</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HIV Screening</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HBsAG</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>HCV</div>
-          <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-gold-400"></div>VDRL</div>
-        </div>
-        <a href="#contact" class="btn-outline w-full block text-center">Get Started</a>
-        <div class="click-hint justify-center mt-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
-      </div>
 </section>
 
 <!-- ==================== FULL PRICING (TABBED) ==================== -->
@@ -569,12 +564,12 @@
 
     <!-- Tab buttons -->
     <div class="flex flex-wrap justify-center gap-2 mb-10 reveal">
-      <button class="pricing-tab active" onclick="switchTab('cardio', this)">Cardiology</button>
-      <button class="pricing-tab" onclick="switchTab('wellness', this)">Wellness Packages</button>
-      <button class="pricing-tab" onclick="switchTab('medispa', this)">MediSpa</button>
-      <button class="pricing-tab" onclick="switchTab('bodyproducts', this)">Signature Collection</button>
-      <button class="pricing-tab" onclick="switchTab('memberships', this)">Memberships</button>
-      <button class="pricing-tab" onclick="switchTab('training', this)">Life Support Training</button>
+      <button class="pricing-tab active" data-tab="cardio" onclick="switchTab('cardio', this)">Cardiology</button>
+      <button class="pricing-tab" data-tab="wellness" onclick="switchTab('wellness', this)">Wellness Packages</button>
+      <button class="pricing-tab" data-tab="medispa" onclick="switchTab('medispa', this)">MediSpa</button>
+      <button class="pricing-tab" data-tab="screening" onclick="switchTab('screening', this)">Wellwoman &amp; Wellman Screening</button>
+      <button class="pricing-tab" data-tab="memberships" onclick="switchTab('memberships', this)">Memberships</button>
+      <button class="pricing-tab" data-tab="training" onclick="switchTab('training', this)">Life Support Training</button>
     </div>
 
     <!-- ── Clinical Panel ── -->
@@ -582,8 +577,8 @@
       <div class="grid md:grid-cols-2 gap-6">
 
         <!-- Consultations -->
-        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden">
-          <div class="px-6 py-4 border-b border-gold-400/10 bg-warm">
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <div class="px-6 py-4 border-b border-gray-100 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Consultations</div>
           </div>
           <div class="px-4 py-2">
@@ -599,9 +594,9 @@
               <div><div class="price-label">Executive Priority Consultation</div><div class="price-note">Expedited access to senior cardiologist</div></div>
               <div class="price-amount">₦60,000</div>
             </div>
-            <div class="price-row">
+            <div class="price-row" style="align-items:flex-start;">
               <div><div class="price-label">Second Opinion Review</div><div class="price-note">Independent review of existing diagnosis</div></div>
-              <div class="price-amount">To be determined based on SPECIALTY</div>
+              <div class="price-amount" style="white-space:normal;text-align:right;max-width:140px;flex-shrink:0;">To be determined based on SPECIALTY</div>
             </div>
             <div class="price-row">
               <div><div class="price-label">Admissions (12 hours maximum)</div><div class="price-note">Bed and nursing care for up to 12 hours</div></div>
@@ -615,8 +610,8 @@
         </div>
 
         <!-- Diagnostics -->
-        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden">
-          <div class="px-6 py-4 border-b border-gold-400/10 bg-warm">
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+          <div class="px-6 py-4 border-b border-gray-100 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Advanced Cardiac Diagnostics</div>
           </div>
           <div class="px-4 py-2">
@@ -653,56 +648,56 @@
     <div id="tab-wellness" class="pricing-panel">
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Silver -->
-        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gold-400/35 transition-all" onclick="openModal('silver')">
-          <div class="px-6 py-5 border-b border-gold-400/10" style="background:linear-gradient(135deg,#fdf9ee,#f8efcf);">
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gray-300 transition-all" onclick="openModal('silver')">
+          <div class="px-6 py-5 border-b border-gray-100" style="background:linear-gradient(135deg,#f7f7f5,#f0f0ee);">
             <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Silver</div>
             <div class="font-display text-3xl font-bold text-gray-900">₦275,400</div>
             <div class="text-xs text-gray-400">Silver Heart Screening</div>
           </div>
           <div class="px-5 py-4 space-y-2.5">
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Fasting Lipid Profile</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> ECG</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Fasting Blood Glucose</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> BMI & BP Analysis</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Integrated Cardiovascular and Lifestyle Analysis Assessment</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Fasting Lipid Profile</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> ECG</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Fasting Blood Glucose</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> BMI & BP Analysis</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Integrated Cardiovascular and Lifestyle Analysis Assessment</div>
           </div>
           <div class="px-5 pb-5"><a href="#contact" class="btn-outline w-full block text-center text-xs">Book Now</a></div>
         </div>
 
         <!-- Gold -->
-        <div class="rounded-2xl overflow-hidden cursor-pointer hover:shadow-xl transition-all" style="background:linear-gradient(160deg,#1a1510,#2a1f08);border:1px solid rgba(212,175,55,0.30);" onclick="openModal('gold')">
+        <div class="rounded-2xl overflow-hidden cursor-pointer hover:shadow-xl transition-all" style="background:linear-gradient(160deg,#0a0a0a,#171717);border:1px solid rgba(212,175,55,0.30);" onclick="openModal('gold')">
           <div class="px-6 py-5 border-b" style="border-color:rgba(212,175,55,0.15);">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-1">Gold · Most Popular</div>
             <div class="font-display text-3xl font-bold text-white">₦750,000</div>
             <div class="text-xs text-gray-400">Gold Executive Heart Screening Package</div>
           </div>
           <div class="px-5 py-4 space-y-2.5">
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Silver Heart Screening</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Echocardiogram</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> HbA1c</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Liver Function Test</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Renal Function Test</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Thyroid Function Test</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> High Sensitivity C-reactive Protein (hs-CPR)</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Homocysteine Lipoprotein</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Silver Heart Screening</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Echocardiogram</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> HbA1c</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Liver Function Test</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Renal Function Test</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Thyroid Function Test</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> High Sensitivity C-reactive Protein (hs-CPR)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Homocysteine Lipoprotein</div>
           </div>
-          <div class="px-5 pb-5"><a href="#contact" class="btn-gold w-full block text-center text-xs">Book Now</a></div>
+          <div class="px-5 pb-5"><a href="#contact" class="btn-gold-solid w-full block text-center text-xs">Book Now</a></div>
         </div>
 
         <!-- Platinum -->
-        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gold-400/35 transition-all" onclick="openModal('platinum')">
-          <div class="px-6 py-5 border-b border-gold-400/10" style="background:linear-gradient(135deg,#fdf9ee,#f8efcf);">
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gray-300 transition-all" onclick="openModal('platinum')">
+          <div class="px-6 py-5 border-b border-gray-100" style="background:linear-gradient(135deg,#f7f7f5,#f0f0ee);">
             <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Platinum Comprehensive Assessment</div>
             <div class="font-display text-3xl font-bold text-gray-900">₦2,150,000</div>
             <div class="text-xs text-gray-400">Comprehensive Assessment</div>
           </div>
           <div class="px-5 py-4 space-y-2.5">
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Gold Executive Heart Screening Package</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Stress Test (Treadmill ECG)</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Vitamin D3</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Body Composition Scan</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Carotid Doppler</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Personalized Executive Health Report</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Gold Executive Heart Screening Package</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Stress Test (Treadmill ECG)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Vitamin D3</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Body Composition Scan</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Carotid Doppler</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Personalized Executive Health Report</div>
           </div>
           <div class="px-5 pb-5"><a href="#contact" class="btn-outline w-full block text-center text-xs">Book Now</a></div>
         </div>
@@ -715,7 +710,7 @@
 
         <!-- Hammam -->
         <div class="spa-price-card">
-          <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+          <div class="px-5 py-4 border-b border-gray-100 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Traditional Hammam Services</div>
           </div>
           <div class="px-4 py-2">
@@ -737,7 +732,7 @@
 
         <!-- Facials -->
         <div class="spa-price-card">
-          <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+          <div class="px-5 py-4 border-b border-gray-100 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Advanced Facial Treatments</div>
           </div>
           <div class="px-4 py-2">
@@ -761,7 +756,7 @@
         
         <!-- Integra Massage -->
         <div class="spa-price-card">
-          <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+          <div class="px-5 py-4 border-b border-gray-100 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Integra Massage</div>
           </div>
           <div class="px-4 py-2">
@@ -786,7 +781,7 @@
 
         <!-- Integra Wax -->
         <div class="spa-price-card">
-          <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+          <div class="px-5 py-4 border-b border-gray-100 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gold-500">Integra Wax</div>
           </div>
           <div class="px-4 py-2">
@@ -814,7 +809,7 @@
         <!-- IV Therapy & Aesthetic Additions -->
         <div class="space-y-5">
           <div class="spa-price-card">
-            <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+            <div class="px-5 py-4 border-b border-gray-100 bg-warm">
               <div class="text-xs font-bold uppercase tracking-widest text-gold-500">IV Vitamin & Wellness Infusions</div>
             </div>
             <div class="px-4 py-2">
@@ -824,7 +819,7 @@
             </div>
           </div>
           <div class="spa-price-card">
-            <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+            <div class="px-5 py-4 border-b border-gray-100 bg-warm">
               <div class="text-xs font-bold uppercase tracking-widest text-gold-500">High-Margin Aesthetic Procedures</div>
             </div>
             <div class="px-4 py-2">
@@ -837,7 +832,7 @@
         <!-- New Face Machine Slimming -->
         <div class="space-y-5">     
           <div class="spa-price-card">
-            <div class="px-5 py-4 border-b border-gold-400/10 bg-warm">
+            <div class="px-5 py-4 border-b border-gray-100 bg-warm">
               <div class="text-xs font-bold uppercase tracking-widest text-gold-500">New Face Machine Slimming</div>
             </div>
             <div class="px-4 py-2">
@@ -847,25 +842,56 @@
               <div class="price-row"><div><div class="price-label">Thigh</div><div class="price-note"></div></div><div class="price-amount">₦75,250</div></div>
               <div class="price-row"><div><div class="price-label">Chin</div><div class="price-note"></div></div><div class="price-amount">₦75,250</div></div>
               <div class="price-row"><div><div class="price-label">Neck</div><div class="price-note"></div></div><div class="price-amount">₦75,250</div></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── Signature Body Collection Panel ── -->
-    <div id="tab-bodyproducts" class="pricing-panel">
-      <div class="max-w-2xl mx-auto bg-white rounded-2xl border border-gold-400/15 overflow-hidden">
-        <div class="px-6 py-5 border-b border-gold-400/10 bg-warm text-center">
-          <div class="section-tag mb-2">Handcrafted Luxury Wellness Products</div>
-          <p class="text-xs text-gray-500">Extend the spa experience into your home with our curated Integra Signature Collection.</p>
+    <!-- ── Wellwoman & Wellman Screening Panel ── -->
+    <div id="tab-screening" class="pricing-panel">
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Comprehensive Wellwoman Screening -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gray-300 transition-all" onclick="openModal('wellwoman')">
+          <div class="px-6 py-5 border-b border-gray-100" style="background:linear-gradient(135deg,#f7f7f5,#f0f0ee);">
+            <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Comprehensive Wellwoman Screening</div>
+            <div class="font-display text-3xl font-bold text-gray-900">₦1,365,000</div>
+            <div class="text-xs text-gray-400">per package</div>
+          </div>
+          <div class="px-5 py-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Rest ECG, Carotid Doppler &amp; Echocardiography</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Abdomino Pelvic Scan, Chest X-ray &amp; Mammography</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Pap Smear (Papanicolaou Test)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Full Metabolic &amp; Organ Function Panel (LFT, FLP, FPG, E/U/Cr, HbA1c, TFT)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Infection &amp; Screening Panel (HIV, HBsAG, HCV, VDRL)</div>
+          </div>
+          <div class="px-5 pb-5">
+            <a href="#contact" class="btn-outline w-full block text-center text-xs">Get Started</a>
+            <div class="click-hint justify-center mt-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
+          </div>
         </div>
-        <div class="px-6 py-3">
-          
-          <div class="price-row"><div class="price-label">Aromatherapy Oil</div><div class="price-amount">₦23,650</div></div>
-          <div class="price-row"><div><div class="price-label">Stress Relief Gift Box</div><div class="price-note">Curated wellness gift set</div></div><div class="price-amount">₦268,750</div></div>
-          <div class="price-row"><div><div class="price-label">Executive Self-Care Hamper</div><div class="price-note">Premium collection for the discerning executive</div></div><div class="price-amount">₦537,500</div></div>
+
+        <!-- Comprehensive Wellman Screening -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gray-300 transition-all" onclick="openModal('wellman')">
+          <div class="px-6 py-5 border-b border-gray-100" style="background:linear-gradient(135deg,#f7f7f5,#f0f0ee);">
+            <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Comprehensive Wellman Screening</div>
+            <div class="font-display text-3xl font-bold text-gray-900">₦1,410,000</div>
+            <div class="text-xs text-gray-400">per package</div>
+          </div>
+          <div class="px-5 py-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Rest ECG, Carotid Doppler &amp; Echocardiography</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Abdomino Pelvic Scan &amp; Chest X-ray</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Prostate Specific Antigen (PSA) — Total &amp; Free</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Full Metabolic &amp; Organ Function Panel (LFT, FLP, FPG, E/U/Cr, HbA1c, TFT, OGTT)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Infection &amp; Screening Panel (HIV, HBsAG, HCV, VDRL)</div>
+          </div>
+          <div class="px-5 pb-5">
+            <a href="#contact" class="btn-outline w-full block text-center text-xs">Get Started</a>
+            <div class="click-hint justify-center mt-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full Details</div>
+          </div>
         </div>
-        <div class="px-6 py-4 text-center border-t border-gold-400/10"><a href="#contact" class="btn-gold text-xs">Enquire About Products</a></div>
+
       </div>
     </div>
 
@@ -874,31 +900,31 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
         <!-- Integra Elite -->
-        <div class="mem-card border border-gold-400/20 bg-white cursor-pointer hover:shadow-xl transition-all" onclick="openModal('membership')">
-          <div class="px-7 py-6 border-b border-gold-400/12 bg-warm">
+        <div class="mem-card border border-gray-200 bg-white cursor-pointer hover:shadow-xl transition-all" onclick="openModal('membership')">
+          <div class="px-7 py-6 border-b border-gray-100 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Annual Membership</div>
             <div class="font-display text-2xl font-bold text-gray-900 mb-0.5">Integra Elite</div>
             <div class="font-display text-4xl font-bold gold-text">₦1,500,000</div>
             <div class="text-xs text-gray-400 mt-1">per year</div>
           </div>
           <div class="px-6 py-5 space-y-2.5 text-sm text-gray-600">
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span>Consultations (4 visits/1 quarterly)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span>Electrocardiogram (ECG)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Rejuvenation Therapy (IV Optimization Therapies - 2 visits)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Fasting Lipid Profile</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Fasting Blood Sugar</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Echocardiogram (Echo)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> HbA1c</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> E/U/Cr + eGFR</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Uric Acid</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Integrated Cardiovascular RiskAssessment</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Med Spa (Optional Massage Therapy Max. ₦150,000)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span>Consultations (4 visits/1 quarterly)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span>Electrocardiogram (ECG)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Rejuvenation Therapy (IV Optimization Therapies - 2 visits)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Fasting Lipid Profile</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Fasting Blood Sugar</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Echocardiogram (Echo)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> HbA1c</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> E/U/Cr + eGFR</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Uric Acid</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Integrated Cardiovascular RiskAssessment</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Med Spa (Optional Massage Therapy Max. ₦150,000)</div>
           </div>
           <div class="px-6 pb-6"><a href="#contact" class="btn-outline w-full block text-center text-xs">Enquire Now</a></div>
         </div>
 
         <!-- Chairman's Platinum -->
-        <div class="mem-card cursor-pointer" style="background:linear-gradient(160deg,#1a1510,#2a1f08);border:1px solid rgba(212,175,55,0.35);" onclick="openModal('chairmanplatinum')">
+        <div class="mem-card cursor-pointer" style="background:linear-gradient(160deg,#0a0a0a,#171717);border:1px solid rgba(212,175,55,0.35);" onclick="openModal('chairmanplatinum')">
           <div class="px-7 py-6 border-b" style="border-color:rgba(212,175,55,0.15);">
             <div class="mem-badge bg-gold-400 text-white mb-2">Most Exclusive</div>
             <div class="font-display text-2xl font-bold text-white mb-0.5">Chairman's Platinum</div>
@@ -906,70 +932,144 @@
             <div class="text-xs text-gray-400 mt-1">per year</div>
           </div>
           <div class="px-6 py-5 space-y-2.5 text-sm text-gray-300">
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Consultations (4 visits)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Electrocardiogram (ECG)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Rejuvenation Therapy (IV Optimization Therapies - 4 visits)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Liver Function Test (LFT)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Fasting Blood Sugar</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Echocardiogram (Echo)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> HbA1c</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> E/U/Cr + eGFR</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Uric Acid</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Urine Analysis</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Stress Test</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Abdomino Pelvic Scan</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> PSA</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Mammography</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Pap Smear</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> CRP</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Thyroid Function Test</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 MediSpa  Rejuvenation sessions(1 facial + 1 Exfoliating)</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Consultations (4 visits)</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Electrocardiogram (ECG)</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Rejuvenation Therapy (IV Optimization Therapies - 4 visits)</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Liver Function Test (LFT)</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Fasting Blood Sugar</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Echocardiogram (Echo)</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> HbA1c</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> E/U/Cr + eGFR</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Uric Acid</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Urine Analysis</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Stress Test</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Abdomino Pelvic Scan</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> PSA</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Mammography</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Pap Smear</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> CRP</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> Thyroid Function Test</div>
+            <div class="flex items-center gap-2"><span class="text-white/80 font-bold">✓</span> 2 MediSpa  Rejuvenation sessions(1 facial + 1 Exfoliating)</div>
           </div>
-          <div class="px-6 pb-6"><a href="#contact" class="btn-gold w-full block text-center text-xs">Enquire Now</a></div>
+          <div class="px-6 pb-6"><a href="#contact" class="btn-gold-solid w-full block text-center text-xs">Enquire Now</a></div>
         </div>
 
         <!-- Diplomatic / Corporate Retainer -->
-        <div class="mem-card border border-gold-400/20 bg-white cursor-pointer hover:shadow-xl transition-all" onclick="openModal('membership')">
-          <div class="px-7 py-6 border-b border-gold-400/12 bg-warm">
+        <div class="mem-card border border-gray-200 bg-white cursor-pointer hover:shadow-xl transition-all" onclick="openModal('membership')">
+          <div class="px-7 py-6 border-b border-gray-100 bg-warm">
             <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Corporate / Diplomatic</div>
             <div class="font-display text-2xl font-bold text-gray-900 mb-0.5">Retainer Programme</div>
             <div class="font-display text-3xl font-bold gold-text">₦4,000,000</div>
             <div class="text-xs text-gray-400 mt-1">per year</div>
           </div>
           <div class="px-6 py-5 space-y-2.5 text-sm text-gray-600">
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Consultations (4 visits)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Annual Executive Screening</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Electrocardiogram (ECG)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Rejuvenation Therapy (IV Optimization Therapies)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Liver Function Test (LFT)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Fasting Blood Sugar</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Echocardiogram (Echo)</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> HbA1c</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> E/U/Cr + eGFR</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Uric Acid</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Urine Analysis</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Stress Test</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Abdomino Pelvic Scan</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> PSA</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Mammography</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Pap Smear</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> CRP</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Thyroid Function Test</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Vitamin D3</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Homocysteine + Lipoprotein A</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Carotid Doppler</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Troponin T</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> BNP -Nt Pro-BNP</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> Quarterly On Site Visit</div>
-            <div class="flex items-center gap-2"><span class="text-gold-400 font-bold">✓</span> 2 MediSpa  Rejuvenation sessions(1 facial + 1 Exfoliating)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Consultations (4 visits)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Annual Executive Screening</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Electrocardiogram (ECG)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Rejuvenation Therapy (IV Optimization Therapies)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Liver Function Test (LFT)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Fasting Blood Sugar</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Echocardiogram (Echo)</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> HbA1c</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> E/U/Cr + eGFR</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Uric Acid</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Urine Analysis</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Stress Test</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Abdomino Pelvic Scan</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> PSA</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Mammography</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Pap Smear</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> CRP</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Thyroid Function Test</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Vitamin D3</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Homocysteine + Lipoprotein A</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Carotid Doppler</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Troponin T</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> BNP -Nt Pro-BNP</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> Quarterly On Site Visit</div>
+            <div class="flex items-center gap-2"><span class="text-gray-800 font-bold">✓</span> 2 MediSpa  Rejuvenation sessions(1 facial + 1 Exfoliating)</div>
           </div>
           <div class="px-6 pb-6"><a href="#contact" class="btn-outline w-full block text-center text-xs">Contact Us</a></div>
         </div>
       </div>
     </div>
-    
+
+    <!-- ── Life Support Training Panel ── -->
+    <div id="tab-training" class="pricing-panel">
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- BLS Card -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gray-300 transition-all" onclick="openModal('bls')">
+          <div class="px-6 py-5 border-b border-gray-100 bg-warm">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-500 mb-1">Basic Life Support</div>
+            <div class="font-display text-3xl font-bold text-gray-900">₦218,550 + Hardcopy Manual</div>
+            <div class="text-xs text-gray-400">per individual</div>
+          </div>
+          <div class="px-5 py-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> CPR — Adult, Child & Infant</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> AED Operation & Defibrillation</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Choking Relief (Heimlich + Back Blows)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> Two-Rescuer CPR & BVM Ventilation</div>
+            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gray-800">✓</span> AHA-aligned Certification (2-year validity)</div>
+          </div>
+          <div class="px-5 py-3 border-t border-gray-100">
+            <div class="price-row" style="padding:0.4rem 0;">
+              <div class="price-label">Recertification</div><div class="price-amount">₦175,000</div>
+            </div>
+            <div class="price-row" style="padding:0.4rem 0;">
+              <div class="price-label">Group (up to 10)</div><div class="price-amount">₦2,185,500</div>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2">
+            <a href="#contact" class="btn-gold w-full block text-center text-xs">Enquire & Book</a>
+            <div class="click-hint justify-center mt-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full BLS Details</div>
+          </div>
+        </div>
+
+        <!-- ALS Card -->
+        <div class="rounded-2xl overflow-hidden cursor-pointer hover:shadow-xl transition-all" style="background:linear-gradient(160deg,#0a0a0a,#171717);border:1px solid rgba(212,175,55,0.30);" onclick="openModal('als')">
+          <div class="px-6 py-5 border-b" style="border-color:rgba(212,175,55,0.15);">
+            <div class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-1">Advanced Life Support</div>
+            <div class="font-display text-3xl font-bold text-white">₦390,000 + Hardcopy Manual</div>
+            <div class="text-xs text-gray-400">per individual</div>
+          </div>
+          <div class="px-5 py-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Advanced Airway Management (ETT, LMA, i-gel)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> 12-Lead ECG & Shockable Rhythm Interpretation</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Emergency Pharmacology (Adrenaline, Amiodarone)</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Full ALS Algorithms: VF/pVT, PEA, Asystole</div>
+            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-white/80">✓</span> Team Leader Megacode Assessment</div>
+          </div>
+          <div class="px-5 py-3 border-t" style="border-color:rgba(212,175,55,0.12);">
+            <div class="price-row" style="padding:0.4rem 0;border-color:rgba(212,175,55,0.08);">
+              <div class="price-label" style="color:#9ca3af;">Recertification</div><div class="price-amount" style="color:#D4AF37;">₦330,000</div>
+            </div>
+            <div class="price-row" style="padding:0.4rem 0;border-color:rgba(212,175,55,0.08);">
+              <div class="price-label" style="color:#9ca3af;">Group (up to 10)</div><div class="price-amount" style="color:#D4AF37;">₦3,900,000</div>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2">
+            <a href="#contact" class="btn-gold-solid w-full block text-center text-xs">Enquire & Book</a>
+            <div class="click-hint justify-center mt-3" style="color:rgba(255,255,255,0.65);opacity:1;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full ALS Details</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- On-site note -->
+      <div class="mt-6 bg-white rounded-2xl border border-gray-200 p-6 flex items-center justify-between flex-wrap gap-4">
+        <div>
+          <div class="font-display text-lg font-semibold text-gray-900">On-Site Corporate Training</div>
+          <div class="text-sm text-gray-500 mt-0.5">BLS or ALS delivered at your premises. Ideal for hospitals, clinics, corporate offices, and schools. Custom cohort sizes available.</div>
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="font-display text-lg font-bold gold-text">Custom Pricing</div>
+          <a href="#contact" class="btn-gold text-xs">Request a Quote</a>
+        </div>
+      </div>
+
       <!-- Also add home visit -->
-      <div class="mt-6 bg-white rounded-2xl border border-gold-400/15 p-6 flex items-center justify-between flex-wrap gap-4">
+      <div class="mt-6 bg-white rounded-2xl border border-gray-200 p-6 flex items-center justify-between flex-wrap gap-4">
         <div>
           <div class="font-display text-lg font-semibold text-gray-900">Home Visit</div>
           <div class="text-sm text-gray-500">Physician visit to your residence or office — on-demand concierge care.</div>
@@ -989,15 +1089,15 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div class="relative reveal">
-        <div class="rounded-2xl overflow-hidden aspect-[4/5] border border-gold-400/20 relative flex items-end p-0" style="background:linear-gradient(160deg,#1a1510,#2a1f08);">
+        <div class="rounded-2xl overflow-hidden aspect-[4/5] border border-gray-200 relative flex items-end p-0" style="background:linear-gradient(160deg,#0a0a0a,#171717);">
           <img src="founder_photo.png" alt="Dr. Maureen Omolola Chukwura" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;">
           <div class="relative z-10 bg-gradient-to-t from-black/70 to-transparent w-full px-6 pb-6 pt-16">
             <div class="font-display text-xl text-white font-semibold">Dr. Maureen Omolola Chukwurah</div>
             <div class="text-gold-400 text-xs tracking-wider uppercase mt-0.5">Founder & Medical Director · Cardiovascular Specialist</div>
           </div>
         </div>
-        <div class="absolute -bottom-4 -right-4 w-32 h-32 rounded-2xl border border-gold-400/20 -z-10"></div>
-        <div class="absolute -top-4 -left-4 w-24 h-24 rounded-full border border-gold-400/10 -z-10"></div>
+        <div class="absolute -bottom-4 -right-4 w-32 h-32 rounded-2xl border border-gray-200 -z-10"></div>
+        <div class="absolute -top-4 -left-4 w-24 h-24 rounded-full border border-gray-100 -z-10"></div>
       </div>
       <div class="reveal">
         <div class="section-tag mb-6" style="color:#D4AF37;"><span style="background:linear-gradient(90deg,#D4AF37,#E8C84A);width:24px;height:1px;display:inline-block;"></span>Founder Spotlight<span style="background:linear-gradient(90deg,#D4AF37,#E8C84A);width:24px;height:1px;display:inline-block;"></span></div>
@@ -1006,7 +1106,7 @@
           <p class="text-gray-300 text-lg leading-relaxed relative z-10">A seasoned medical executive and cardiovascular specialist, Dr. Maureen Omolola Chukwurah founded Integra to address the critical need for integrated preventive cardiology and holistic wellness in Nigeria.</p>
         </div>
         <p class="text-gray-400 leading-relaxed mb-8">Her approach combines state-of-the-art cardiac care with lifestyle medicine, nutrition, stress management, and personalised health coaching — empowering patients to prevent disease and optimise vitality. Under her leadership, Integra offers a unique one-stop model for heart health and overall wellness, serving professionals and executives seeking proactive, high-quality care.</p>
-        <a href="#contact" class="btn-gold">Book with Dr. Maureen</a>
+        <a href="#contact" class="btn-outline-invert">Book with Dr. Maureen</a>
       </div>
     </div>
   </div>
@@ -1021,123 +1121,47 @@
     </div>
     <div class="grid lg:grid-cols-2 gap-12 items-start">
       <div class="space-y-5 reveal">
-        <div class="bg-white rounded-2xl border border-gold-400/15 p-6 flex gap-5 items-start">
-          <div class="icon-circle flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 flex gap-5 items-start">
+          <div class="icon-circle flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div><div class="font-semibold text-gray-900 mb-1">Address</div><div class="text-gray-500 text-sm">Plot 1372 Cadastral Zone BO7 Katampe By Yemi Osinbanjo road, Katampe District,<br>Abuja, Nigeria</div></div>
         </div>
-        <div class="bg-white rounded-2xl border border-gold-400/15 p-6 flex gap-5 items-start">
-          <div class="icon-circle flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4C1.61 2.3 2.44 1.39 3.54 1.39h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div><div class="font-semibold text-gray-900 mb-1">Phone</div><a href="tel:+2348023021753" class="text-gold-500 text-sm font-medium hover:text-gold-400">+234 814 441 4536</a></div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 flex gap-5 items-start">
+          <div class="icon-circle flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4C1.61 2.3 2.44 1.39 3.54 1.39h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="font-semibold text-gray-900 mb-1">Phone</div><a href="tel:+2348144414536" class="text-gold-500 text-sm font-medium hover:text-gold-400">+234 814 441 4536</a></div>
         </div>
-        <div class="bg-white rounded-2xl border border-gold-400/15 p-6 flex gap-5 items-start">
-          <div class="icon-circle flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 flex gap-5 items-start">
+          <div class="icon-circle flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <div><div class="font-semibold text-gray-900 mb-1">Email</div><a href="mailto:integrawcc@gmail.com" class="text-gold-500 text-sm font-medium hover:text-gold-400">integrawcc@gmail.com</a></div>
         </div>
-        <div class="bg-white rounded-2xl border border-gold-400/15 p-6 flex gap-5 items-start">
-          <div class="icon-circle flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 flex gap-5 items-start">
+          <div class="icon-circle flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div><div class="font-semibold text-gray-900 mb-1">Hours</div><div class="text-gray-500 text-sm">Monday – Saturday: 9:00 AM – 9:00 PM<br><span class="text-gray-400">Sunday: Closed</span></div></div>
         </div>
       </div>
-      <div class="bg-white rounded-2xl border border-gold-400/15 p-8 reveal">
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 reveal">
         <h3 class="font-display text-2xl font-bold text-gray-900 mb-6">Book a Consultation</h3>
-        <div class="space-y-4">
+        <form id="inquiryForm" class="space-y-4" onsubmit="sendInquiryEmail(event)">
           <div class="grid grid-cols-2 gap-4">
-            <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">First Name</label><input type="text" placeholder="Amara" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors"></div>
-            <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">Last Name</label><input type="text" placeholder="Okafor" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors"></div>
+            <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">First Name</label><input id="inqFirstName" type="text" placeholder="Amara" required class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors"></div>
+            <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">Last Name</label><input id="inqLastName" type="text" placeholder="Okafor" required class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors"></div>
           </div>
-          <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">Email</label><input type="email" placeholder="you@email.com" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors"></div>
-          <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">Phone</label><input type="tel" placeholder="+234 ..." class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors"></div>
+          <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">Email</label><input id="inqEmail" type="email" placeholder="you@email.com" required class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors"></div>
+          <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">Phone</label><input id="inqPhone" type="tel" placeholder="+234 ..." class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors"></div>
           <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">Service of Interest</label>
-            <select class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-600 focus:outline-none focus:border-gold-400 transition-colors">
+            <select id="inqService" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-600 focus:outline-none focus:border-gold-400 transition-colors">
               <option>Cardiology Diagnostics</option><option>Executive Wellness Check</option><option>MediSpa & Aesthetics</option><option>Elite Membership</option><option>Lifestyle & Wellness Coaching</option><option>Medical Tourism Concierge</option><option>Executive Burnout Recovery</option><option>Precision Nutrition & Genomics</option><option>Sleep Optimisation</option><option>Longevity & Anti-Aging</option><option>Corporate Health Management</option><option>Mindfulness & Mental Fitness</option>
             </select>
           </div>
-          <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">Message (optional)</label><textarea rows="3" placeholder="Tell us about your health goals..." class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors resize-none"></textarea></div>
-          <button class="btn-gold w-full mt-2">Send Inquiry</button>
-        </div>
+          <div><label class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5 block">Message (optional)</label><textarea id="inqMessage" rows="3" placeholder="Tell us about your health goals..." class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-gold-400 transition-colors resize-none"></textarea></div>
+          <button type="submit" class="btn-gold w-full mt-2">Send Inquiry</button>
+        </form>
       </div>
     </div>
-    <!-- ── Life Support Training Panel ── -->
-    <div id="tab-training" class="pricing-panel">
-      <div class="grid md:grid-cols-2 gap-6">
-
-        <!-- BLS Card -->
-        <div class="bg-white rounded-2xl border border-gold-400/15 overflow-hidden cursor-pointer hover:shadow-lg hover:border-gold-400/35 transition-all" onclick="openModal('bls')">
-          <div class="px-6 py-5 border-b border-gold-400/10 bg-warm">
-            <div class="text-xs font-bold uppercase tracking-widest text-gold-500 mb-1">Basic Life Support</div>
-            <div class="font-display text-3xl font-bold text-gray-900">₦218,550 + Hardcopy Manual</div>
-            <div class="text-xs text-gray-400">per individual</div>
-          </div>
-          <div class="px-5 py-4 space-y-2.5">
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> CPR — Adult, Child & Infant</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> AED Operation & Defibrillation</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Choking Relief (Heimlich + Back Blows)</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> Two-Rescuer CPR & BVM Ventilation</div>
-            <div class="flex items-center gap-2 text-sm text-gray-600"><span class="text-gold-400">✓</span> AHA-aligned Certification (2-year validity)</div>
-          </div>
-          <div class="px-5 py-3 border-t border-gold-400/10">
-            <div class="price-row" style="padding:0.4rem 0;">
-              <div class="price-label">Recertification</div><div class="price-amount">₦175,000</div>
-            </div>
-            <div class="price-row" style="padding:0.4rem 0;">
-              <div class="price-label">Group (up to 10)</div><div class="price-amount">₦2,185,500</div>
-            </div>
-          </div>
-          <div class="px-5 pb-5 pt-2">
-            <a href="#contact" class="btn-gold w-full block text-center text-xs">Enquire & Book</a>
-            <div class="click-hint justify-center mt-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full BLS Details</div>
-          </div>
-        </div>
-
-        <!-- ALS Card -->
-        <div class="rounded-2xl overflow-hidden cursor-pointer hover:shadow-xl transition-all" style="background:linear-gradient(160deg,#1a1510,#2a1f08);border:1px solid rgba(212,175,55,0.30);" onclick="openModal('als')">
-          <div class="px-6 py-5 border-b" style="border-color:rgba(212,175,55,0.15);">
-            <div class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-1">Advanced Life Support</div>
-            <div class="font-display text-3xl font-bold text-white">₦390,000 + Hardcopy Manual</div>
-            <div class="text-xs text-gray-400">per individual</div>
-          </div>
-          <div class="px-5 py-4 space-y-2.5">
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Advanced Airway Management (ETT, LMA, i-gel)</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> 12-Lead ECG & Shockable Rhythm Interpretation</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Emergency Pharmacology (Adrenaline, Amiodarone)</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Full ALS Algorithms: VF/pVT, PEA, Asystole</div>
-            <div class="flex items-center gap-2 text-sm text-gray-300"><span class="text-gold-400">✓</span> Team Leader Megacode Assessment</div>
-          </div>
-          <div class="px-5 py-3 border-t" style="border-color:rgba(212,175,55,0.12);">
-            <div class="price-row" style="padding:0.4rem 0;border-color:rgba(212,175,55,0.08);">
-              <div class="price-label" style="color:#9ca3af;">Recertification</div><div class="price-amount" style="color:#D4AF37;">₦330,000</div>
-            </div>
-            <div class="price-row" style="padding:0.4rem 0;border-color:rgba(212,175,55,0.08);">
-              <div class="price-label" style="color:#9ca3af;">Group (up to 10)</div><div class="price-amount" style="color:#D4AF37;">₦3,900,000</div>
-            </div>
-          </div>
-          <div class="px-5 pb-5 pt-2">
-            <a href="#contact" class="btn-gold w-full block text-center text-xs">Enquire & Book</a>
-            <div class="click-hint justify-center mt-3" style="color:#D4AF37;opacity:0.8;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>View Full ALS Details</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- On-site note -->
-      <div class="mt-6 bg-white rounded-2xl border border-gold-400/15 p-6 flex items-center justify-between flex-wrap gap-4">
-        <div>
-          <div class="font-display text-lg font-semibold text-gray-900">On-Site Corporate Training</div>
-          <div class="text-sm text-gray-500 mt-0.5">BLS or ALS delivered at your premises. Ideal for hospitals, clinics, corporate offices, and schools. Custom cohort sizes available.</div>
-        </div>
-        <div class="flex items-center gap-6">
-          <div class="font-display text-lg font-bold gold-text">Custom Pricing</div>
-          <a href="#contact" class="btn-gold text-xs">Request a Quote</a>
-        </div>
-      </div>
-    </div>
-
-
   </div>
 </section>
 
 <!-- ==================== FOOTER ==================== -->
-<footer class="bg-[#0f0c08] text-gray-400">
+<footer class="bg-[#0a0a0a] text-gray-400">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-14 pb-8">
     <div class="grid md:grid-cols-4 gap-10 mb-10">
 
@@ -1200,7 +1224,7 @@
         <div class="text-xs font-bold uppercase tracking-widest text-gold-500 mb-4">Contact</div>
         <ul class="space-y-3 text-xs">
           <li class="text-gray-500 leading-relaxed">Penthouse 1 Monarch Residence Plot 1372 Cadastral Zone B07, Ajah Nwabueze close,<br>Gishiri road off Yemi Osinbajo Blvd, Katampe, Abuja, Nigeria</li>
-          <li><a href="tel:+2348144414536, +2342092200551" class="hover:text-gold-400 transition-colors">+234 814 441 4536, +234 209 220 0551</a></li>
+          <li><a href="tel:+2348144414536" class="hover:text-gold-400 transition-colors">+234 814 441 4536</a>, <a href="tel:+2342092200551" class="hover:text-gold-400 transition-colors">+234 209 220 0551</a></li>
           <li><a href="mailto:integrawcc@gmail.com" class="hover:text-gold-400 transition-colors">integrawcc@gmail.com</a></li>
           <li class="text-gray-600">Mon–Sat: 9:00 AM – 9:00 PM</li>
           <li class="text-gray-700">Sunday: Closed</li>
@@ -1256,25 +1280,62 @@
 
 <!-- ==================== SCRIPTS ==================== -->
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // ── Navbar scroll
+  // ── Navbar + mobile menu state
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
-
-  // ── Mobile menu
+  const heroSection = document.getElementById('home');
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const bar1 = document.getElementById('bar1'), bar2 = document.getElementById('bar2'), bar3 = document.getElementById('bar3');
   let menuOpen = false;
-  menuToggle.addEventListener('click', () => {
-    menuOpen = !menuOpen;
-    mobileMenu.classList.toggle('open', menuOpen);
-    if (menuOpen) { bar1.style.transform='rotate(45deg) translate(5px,5px)'; bar2.style.opacity='0'; bar3.style.transform='rotate(-45deg) translate(5px,-5px)'; bar3.style.width='24px'; }
-    else { bar1.style.transform=''; bar2.style.opacity='1'; bar3.style.transform=''; bar3.style.width='20px'; }
-  });
-  mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
-    menuOpen = false; mobileMenu.classList.remove('open');
+
+  // Navbar (and its icons) stay in the dark/transparent state for as long as the
+  // hero (first) section is still on screen — only switches to the light/solid
+  // state once the hero has fully scrolled past the navbar.
+  function updateNavbarState() {
+    const heroBottom = heroSection ? heroSection.getBoundingClientRect().bottom : 0;
+    const pastHero = heroBottom <= 80;
+    navbar.classList.toggle('scrolled', pastHero);
+  }
+  window.addEventListener('scroll', updateNavbarState);
+
+  function openMobileMenu() {
+    menuOpen = true;
+    mobileMenu.classList.add('open');
+    bar1.style.transform='rotate(45deg) translate(5px,5px)'; bar2.style.opacity='0'; bar3.style.transform='rotate(-45deg) translate(5px,-5px)'; bar3.style.width='24px';
+  }
+  function closeMobileMenu() {
+    menuOpen = false;
+    mobileMenu.classList.remove('open');
     bar1.style.transform=''; bar2.style.opacity='1'; bar3.style.transform=''; bar3.style.width='20px';
-  }));
+  }
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuOpen ? closeMobileMenu() : openMobileMenu();
+  });
+  mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMobileMenu));
+  document.addEventListener('click', (e) => {
+    if (menuOpen && !mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) closeMobileMenu();
+  });
+
+  updateNavbarState();
+
+  // ── Services: show first 4 by default, reveal the rest on demand
+  let servicesExpanded = false;
+  function toggleServices() {
+    servicesExpanded = !servicesExpanded;
+    document.querySelectorAll('.service-extra').forEach(el => {
+      el.style.display = servicesExpanded ? '' : 'none';
+      if (servicesExpanded) el.classList.add('visible');
+    });
+    const toggleTop = document.getElementById('servicesToggleTop');
+    const toggleBottom = document.getElementById('servicesToggleBottom');
+    toggleTop.style.display = servicesExpanded ? 'none' : 'flex';
+    toggleBottom.style.display = servicesExpanded ? 'flex' : 'none';
+    if (servicesExpanded) toggleBottom.classList.add('visible');
+    if (!servicesExpanded) {
+      document.getElementById('services').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 
   // ── Intersection Observer (scroll reveal)
   const revealObserver = new IntersectionObserver((entries) => {
@@ -1628,20 +1689,78 @@
       expect: 'The Platinum programme spans 2–3 visits over approximately 1–2 weeks. Visit 1 includes consultation, ECG, echocardiogram, and blood sampling. Visit 2 covers the treadmill stress test and body composition scan. The final visit delivers your Executive Health Report alongside a lifestyle medicine session and a personalised forward health plan co-designed with the Medical Director\'s team.'
     },
       wellwoman: {
-      tag: 'Comprehensive Wellwoman Assessment · Wellwoman',
-      title: 'Platinum Comprehensive Assessment',
-      subtitle: 'Our most extensive wellness package — a holistic, in-depth evaluation of cardiovascular and overall health.',
-      price: '₦1,360,000 per package',
-      overview: 'The Platinum Comprehensive Assessment is Integra\'s flagship wellness programme. It builds on the Gold package with a cardiac stress test, advanced metabolic profiling, body composition scanning, and a dedicated lifestyle medicine session — culminating in a personalized Executive Health Report. This is the gold standard in preventive cardiac and wellness care in Nigeria.',
-      expect: 'The Platinum programme spans 2–3 visits over approximately 1–2 weeks. Visit 1 includes consultation, ECG, echocardiogram, and blood sampling. Visit 2 covers the treadmill stress test and body composition scan. The final visit delivers your Executive Health Report alongside a lifestyle medicine session and a personalised forward health plan co-designed with the Medical Director\'s team.'
+      tag: 'Comprehensive Screening · Wellwoman',
+      title: 'Comprehensive Wellwoman Screening',
+      subtitle: 'An extensive, women-focused cardiovascular, gynaecological, and metabolic screening package for proactive long-term health.',
+      price: '₦1,365,000 per package',
+      overview: 'The Comprehensive Wellwoman Screening is Integra\'s complete health assessment for women, combining cardiac imaging, gynaecological and breast screening, and a full metabolic, organ function, and infection panel. It is designed to give a thorough, single-programme view of cardiovascular, reproductive, and overall systemic health.',
+      inclusions: [
+        'Rest ECG (Electrocardiogram)',
+        'Carotid Doppler',
+        'Abdomino Pelvic Scan',
+        'Echocardiography',
+        'Chest X-ray',
+        'Mammography',
+        'Pap Smear (Papanicolaou Test)',
+        'Liver Function Test (LFT)',
+        'Fasting Lipid Profile (FLP)',
+        'Fasting Plasma Glucose (FPG)',
+        'Electrolyte, Urea and Creatinine (E/U/Cr) + eGFR',
+        'Urine Analysis',
+        'Uric Acid',
+        'HbA1c (Glycated Hemoglobin)',
+        'Oral Glucose Tolerance Test (OGTT)',
+        'Thyroid Function Test (TFT)',
+        'ESR',
+        'Blood Grouping (ABO/Rh) (optional)',
+        'Genotype (optional)',
+        'Urine M/C/S',
+        'Stool M/C/S',
+        'FOB (Occult Blood)',
+        'HIV Screening',
+        'HBsAG',
+        'HCV',
+        'VDRL'
+      ],
+      benefits: ['Single-visit programme covering cardiac, gynaecological, and metabolic health', 'Mammography and Pap Smear support early detection of breast and cervical concerns', 'Full organ function and infection panel for complete systemic assessment', 'Written summary with specialist consultation and next-step recommendations', 'Ideal for women seeking a thorough, proactive annual health baseline'],
+      expect: 'Your visit typically spans one extended session or two shorter visits depending on scheduling. It begins with a consultation covering your medical history, followed by ECG, echocardiography, and imaging (abdomino-pelvic scan, chest X-ray, mammography). Blood and other laboratory samples are collected for the full panel. A specialist reviews all findings with you at a follow-up consultation, along with a written summary and personalised recommendations.'
     },
     wellman: {
-      tag: 'Comprehensive Wellman Assessment · Wellman',
-      title: 'Platinum Comprehensive Assessment',
-      subtitle: 'Our most extensive wellness package — a holistic, in-depth evaluation of cardiovascular and overall health.',
+      tag: 'Comprehensive Screening · Wellman',
+      title: 'Comprehensive Wellman Screening',
+      subtitle: 'An extensive, men-focused cardiovascular, prostate, and metabolic screening package for proactive long-term health.',
       price: '₦1,410,000 per package',
-      overview: 'The Platinum Comprehensive Assessment is Integra\'s flagship wellness programme. It builds on the Gold package with a cardiac stress test, advanced metabolic profiling, body composition scanning, and a dedicated lifestyle medicine session — culminating in a personalized Executive Health Report. This is the gold standard in preventive cardiac and wellness care in Nigeria.',
-      expect: 'The Platinum programme spans 2–3 visits over approximately 1–2 weeks. Visit 1 includes consultation, ECG, echocardiogram, and blood sampling. Visit 2 covers the treadmill stress test and body composition scan. The final visit delivers your Executive Health Report alongside a lifestyle medicine session and a personalised forward health plan co-designed with the Medical Director\'s team.'
+      overview: 'The Comprehensive Wellman Screening is Integra\'s complete health assessment for men, combining cardiac imaging, prostate screening, and a full metabolic, organ function, and infection panel. It is designed to give a thorough, single-programme view of cardiovascular, urological, and overall systemic health.',
+      inclusions: [
+        'Rest ECG (Electrocardiogram)',
+        'Carotid Doppler',
+        'Abdomino Pelvic Scan',
+        'Echocardiography',
+        'Chest X-ray',
+        'Prostate Specific Antigen (PSA) — Total',
+        'Prostate Specific Antigen (PSA) — Free',
+        'Liver Function Test (LFT)',
+        'Fasting Lipid Profile (FLP)',
+        'Fasting Plasma Glucose (FPG)',
+        'Electrolyte, Urea and Creatinine (E/U/Cr) + eGFR',
+        'Urine Analysis',
+        'Uric Acid',
+        'HbA1c (Glycated Hemoglobin)',
+        'Oral Glucose Tolerance Test (OGTT)',
+        'Thyroid Function Test (TFT)',
+        'ESR',
+        'Blood Grouping (ABO/Rh) (optional)',
+        'Genotype (optional)',
+        'Urine M/C/S',
+        'Stool M/C/S',
+        'FOB (Occult Blood)',
+        'HIV Screening',
+        'HBsAG',
+        'HCV',
+        'VDRL'
+      ],
+      benefits: ['Single-visit programme covering cardiac, prostate, and metabolic health', 'PSA (Total & Free) supports early detection of prostate concerns', 'Full organ function and infection panel for complete systemic assessment', 'Written summary with specialist consultation and next-step recommendations', 'Ideal for men seeking a thorough, proactive annual health baseline'],
+      expect: 'Your visit typically spans one extended session or two shorter visits depending on scheduling. It begins with a consultation covering your medical history, followed by ECG, echocardiography, and imaging (abdomino-pelvic scan, chest X-ray). Blood and other laboratory samples are collected for the full panel, including PSA. A specialist reviews all findings with you at a follow-up consultation, along with a written summary and personalised recommendations.'
     },
     chairmanplatinum: {
       tag: 'Ultra-Luxury · Annual Membership',
@@ -1672,6 +1791,54 @@
     btn.classList.add('active');
   }
 
+  // ── "See Training Pricing" — jump to pricing section AND select the Life Support Training tab
+  function goToTrainingPricing(e) {
+    if (e) e.preventDefault();
+    const trainingBtn = document.querySelector('.pricing-tab[data-tab="training"]');
+    if (trainingBtn) switchTab('training', trainingBtn);
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) pricingSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // ── Contact form → structured email
+  function sendInquiryEmail(e) {
+    if (e) e.preventDefault();
+
+    const firstName = document.getElementById('inqFirstName').value.trim();
+    const lastName = document.getElementById('inqLastName').value.trim();
+    const email = document.getElementById('inqEmail').value.trim();
+    const phone = document.getElementById('inqPhone').value.trim();
+    const service = document.getElementById('inqService').value;
+    const message = document.getElementById('inqMessage').value.trim();
+
+    if (!firstName || !lastName || !email) {
+      alert('Please fill in your first name, last name, and email before sending.');
+      return;
+    }
+
+    const fullName = firstName + ' ' + lastName;
+    const subject = 'Consultation Inquiry — ' + fullName + ' (' + service + ')';
+
+    const bodyLines = [
+      'New consultation inquiry from the Integra website:',
+      '',
+      'Name: ' + fullName,
+      'Email: ' + email,
+      'Phone: ' + (phone || 'Not provided'),
+      'Service of Interest: ' + service,
+      '',
+      'Message:',
+      message || 'No additional message provided.'
+    ];
+    const body = bodyLines.join('\n');
+
+    const mailto = 'mailto:integrawcc@gmail.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailto;
+  }
+
   // ── Modal open/close
   const overlay = document.getElementById('modalOverlay');
   let currentService = '';
@@ -1687,8 +1854,8 @@
 
     const body = document.getElementById('modalBody');
     body.innerHTML = `
-      <div class="mb-5 inline-flex items-center gap-2 bg-amber-50 border border-gold-400/25 rounded-full px-4 py-1.5">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div class="mb-5 inline-flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-full px-4 py-1.5">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#52524d" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         <span class="text-xs font-semibold text-gold-600">${d.price}</span>
       </div>
 
@@ -1702,23 +1869,23 @@
         <div class="modal-section-title">What this service entails</div>
         <ul style="list-style:none;margin:0;padding:0;">
           ${d.inclusions.map(item => `
-            <li style="display:flex;align-items:flex-start;gap:10px;padding:0.45rem 0;border-bottom:1px solid rgba(212,175,55,0.07);">
-              <span style="flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:3px;background:linear-gradient(135deg,#D4AF37,#C5A059);display:flex;align-items:center;justify-content:center;">
+            <li style="display:flex;align-items:flex-start;gap:10px;padding:0.45rem 0;border-bottom:1px solid rgba(0,0,0,0.06);">
+              <span style="flex-shrink:0;margin-top:2px;width:18px;height:18px;border-radius:3px;background:#0a0a0a;display:flex;align-items:center;justify-content:center;">
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
               <span style="font-size:0.8125rem;line-height:1.55;color:#374151;">${item}</span>
             </li>`).join('')}
         </ul>
       </div>
-      <div style="height:1px;background:linear-gradient(to right,rgba(212,175,55,0.30),transparent);margin-bottom:1.35rem;"></div>
+      <div style="height:1px;background:linear-gradient(to right,rgba(0,0,0,0.12),transparent);margin-bottom:1.35rem;"></div>
       ` : ''}
       <div class="mb-6">
         <div class="modal-section-title">Key Benefits</div>
         <div class="space-y-0">
           ${d.benefits.map(b => `
             <div class="modal-benefit-item">
-              <div style="width:18px;height:18px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,rgba(212,175,55,0.15),rgba(212,175,55,0.05));border:1px solid rgba(212,175,55,0.3);display:flex;align-items:center;justify-content:center;">
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <div style="width:18px;height:18px;flex-shrink:0;border-radius:50%;background:#0a0a0a;display:flex;align-items:center;justify-content:center;">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <span class="text-sm text-gray-600">${b}</span>
             </div>`).join('')}
