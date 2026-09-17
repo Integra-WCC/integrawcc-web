@@ -285,10 +285,10 @@
   <div class="max-w-container mx-auto px-5 sm:px-8">
     <div class="h-[76px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3 group">
-        <span class="nav-logo-badge relative w-10 h-10 rounded-full flex items-center justify-center shrink-0 overflow-hidden">
-          <svg class="w-5 h-5 text-gold"><use href="#i-pulse"/></svg>
-          <img src="logo.png" alt="Integra Wellness &amp; Cardiac Clinics logo" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()">
-        </span>
+        <span class="relative w-10 h-10 flex items-center justify-center shrink-0 overflow-hidden">
+  <img src="logo.png" alt="Integra Wellness &amp; Cardiac Clinics logo" class="w-full h-full object-contain">
+</span>
+
         <span class="leading-tight">
           <span class="nav-logo-text block font-display font-semibold text-[17px] tracking-tight">INTEGRA</span>
           <span class="nav-logo-sub block text-[10.5px] tracking-[0.14em] uppercase">Wellness &amp; Cardiac Clinics</span>
@@ -1801,10 +1801,10 @@
 
       <div>
         <a href="#top" class="flex items-center gap-3">
-          <span class="relative w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0 overflow-hidden">
-            <svg class="w-5 h-5 text-gold"><use href="#i-pulse"/></svg>
-            <img src="logo.png" alt="Integra Wellness &amp; Cardiac Clinics logo" class="absolute inset-0 w-full h-full object-contain" onerror="this.remove()">
-          </span>
+          <span class="relative w-10 h-10 flex items-center justify-center shrink-0 overflow-hidden">
+  <img src="logo.png" alt="Integra Wellness &amp; Cardiac Clinics logo" class="w-full h-full object-contain">
+</span>
+
           <span class="leading-tight">
             <span class="block font-display font-semibold text-[17px] tracking-tight">INTEGRA</span>
             <span class="block text-[10.5px] tracking-[0.14em] text-white/55 uppercase">Wellness &amp; Cardiac Clinics</span>
@@ -2282,13 +2282,16 @@
     });
   });
 
-  /* ===================== EXTERNAL LINK DISCLAIMER ===================== */
+    /* ===================== EXTERNAL LINK DISCLAIMER ===================== */
   var extHost = document.getElementById('ext-modal-host');
   var extContinue = document.getElementById('ext-modal-continue');
+  var pendingExternalUrl = '#';
+
   document.querySelectorAll('a[target="_blank"]:not([data-no-disclaimer])').forEach(function (a) {
     a.addEventListener('click', function (e) {
       e.preventDefault();
       var url = a.getAttribute('href');
+      pendingExternalUrl = url;
       var host = url;
       try { host = new URL(url, window.location.href).hostname.replace(/^www\./, ''); } catch (err) {}
       if (extHost) extHost.textContent = host;
@@ -2296,7 +2299,18 @@
       openModal('modal-external', a);
     });
   });
-  if (extContinue) extContinue.addEventListener('click', function () { closeModal('modal-external'); });
+
+  if (extContinue) {
+    extContinue.addEventListener('click', function (e) {
+      e.preventDefault();
+      var targetUrl = pendingExternalUrl;
+      closeModal('modal-external');
+      if (targetUrl && targetUrl !== '#') {
+        window.open(targetUrl, '_blank', 'noopener');
+      }
+    });
+  }
+
 
   /* ===================== SMART PHONE NUMBER INTERCEPT ===================== */
   var phoneNumberEl = document.getElementById('phone-modal-number');
