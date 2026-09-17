@@ -2132,7 +2132,7 @@
   }
 
   /* ===================== MODALS (shared) ===================== */
-    function openModal(id, triggerEl) {
+      function openModal(id, triggerEl) {
     var el = document.getElementById(id);
     if (!el) return;
     el._lastFocus = document.activeElement;
@@ -2148,11 +2148,17 @@
         ? triggerEl.closest('[data-nav-theme]')
         : null;
 
+      var themedContainer = (triggerEl && typeof triggerEl.closest === 'function')
+        ? triggerEl.closest('[data-theme]')
+        : null;
+
       var theme = 'light';
       if (parentModal && parentModal.hasAttribute('data-modal-theme')) {
         theme = parentModal.getAttribute('data-modal-theme');
       } else if (themeSection) {
         theme = themeSection.getAttribute('data-nav-theme');
+      } else if (themedContainer) {
+        theme = themedContainer.getAttribute('data-theme');
       }
       
       panel.setAttribute('data-modal-theme', theme);
