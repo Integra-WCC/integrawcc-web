@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Integra Wellness &amp; Cardiac Clinics</title>
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="The page you're looking for doesn't exist. Return to Integra Wellness &amp; Cardiac Clinics, Abuja's physician-led preventive cardiology and integrative wellness hub.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C7A248' stroke-width='2'%3E%3Cpath d='M3 12h4l2 8 4-16 2 8h6'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0B0B0C',
+          slate: { DEFAULT: '#3A3A3D', soft: '#6B6B6E' },
+          gold: { DEFAULT: '#C7A248', dim: '#8F7635', pale: '#E8DAB6' },
+        },
+        fontFamily: {
+          display: ['"Outfit"', 'sans-serif'],
+          body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root{ --ease-out: cubic-bezier(0.23, 1, 0.32, 1); }
+  html{ -webkit-font-smoothing: antialiased; }
+  body{ background:#0B0B0C; color:#fff; font-family:'Plus Jakarta Sans', sans-serif; }
+  .font-display{ font-family:'Outfit', sans-serif; letter-spacing:-0.02em; }
+  ::selection{ background:#C7A248; color:#0B0B0C; }
+  a:focus-visible, button:focus-visible{ outline:2px solid #C7A248; outline-offset:3px; border-radius:4px; }
+
+  .press{ transition: transform 160ms var(--ease-out); }
+  .press:active{ transform: scale(0.97); }
+
+  .rise{ opacity:0; transform: translateY(14px); animation: rise 700ms var(--ease-out) both; }
+  @keyframes rise{ to{ opacity:1; transform:translateY(0); } }
+
+  .pulse-line{ stroke-dasharray: 340; stroke-dashoffset: 340; animation: draw 1000ms var(--ease-out) 280ms both; }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .rise{ opacity:1 !important; transform:none !important; animation:none !important; }
+    .pulse-line{ stroke-dashoffset:0 !important; animation:none !important; }
+  }
+</style>
+</head>
+<body class="font-body antialiased min-h-screen relative overflow-hidden">
+
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" style="background-image:radial-gradient(circle,#fff 1px,transparent 1px); background-size:26px 26px;"></div>
+
+  <header class="relative max-w-6xl mx-auto px-6 sm:px-8 pt-8">
+    <a href="/" class="inline-flex items-center gap-3 press">
+            <span class="relative w-10 h-10 flex items-center justify-center shrink-0 overflow-hidden">
+        <img src="logo.png" alt="Integra Wellness &amp; Cardiac Clinics logo" class="w-full h-full object-contain">
+      </span>
+
+      <span class="leading-tight">
+        <span class="block font-display font-semibold text-[15px] tracking-tight text-white">INTEGRA</span>
+        <span class="block text-[9.5px] tracking-[0.14em] text-white/50 uppercase">Wellness &amp; Cardiac Clinics</span>
+      </span>
+    </a>
+  </header>
+
+  <main class="relative flex items-center justify-center min-h-[calc(100vh-96px)] px-6 py-16">
+    <div class="max-w-lg w-full text-center">
+
+      <div class="rise inline-flex w-14 h-14 rounded-full bg-white/5 border border-white/10 items-center justify-center mb-8" style="animation-delay:0ms">
+        <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 3-11 2 4h5"/></svg>
+      </div>
+
+      <div class="rise font-display font-semibold text-[5rem] sm:text-[6.5rem] leading-none tracking-tight" style="font-variant-numeric:tabular-nums; animation-delay:60ms">404</div>
+
+      <svg class="rise mx-auto mt-2 mb-6 w-40 h-8" style="animation-delay:140ms" viewBox="0 0 160 32" fill="none">
+        <path class="pulse-line" d="M0 16h34l6-12 8 24 7-18 5 6h40l6-10 7 20 6-10h41" stroke="#8F7635" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      <h1 class="rise font-display font-semibold text-[1.6rem] sm:text-[1.9rem] tracking-tight text-white" style="animation-delay:200ms">We couldn't find that page</h1>
+      <p class="rise mt-3 text-[15px] sm:text-[16px] text-white/60 leading-relaxed max-w-sm mx-auto" style="animation-delay:260ms">
+        It may have been moved, renamed, or no longer exists. Let's get you back to safe ground.
+      </p>
+
+      <div class="rise mt-9 flex flex-wrap items-center justify-center gap-4" style="animation-delay:320ms">
+        <a href="/" class="inline-flex items-center gap-2 bg-gold text-ink font-semibold text-[15px] pl-6 pr-5 py-3.5 rounded-full hover:bg-gold-pale transition-colors press">
+          Return home
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/#contact" class="inline-flex items-center gap-2 border border-white/25 text-white font-semibold text-[15px] px-6 py-3.5 rounded-full hover:border-white/60 transition-colors press">
+          Contact the clinic
+        </a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

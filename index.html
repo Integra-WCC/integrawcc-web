@@ -3,8 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-403BD1D6BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-403BD1D6BD');
+</script>
+
 <title>Integra Wellness &amp; Cardiac Clinics: Physician-Led Preventive Cardiology, Abuja</title>
 <meta name="description" content="Integra Wellness &amp; Cardiac Clinics is Abuja's physician-led preventive cardiology and integrative wellness hub, offering cardiac diagnostics, executive wellness, MediSpa aesthetics and life-support training.">
+
+<link rel="canonical" href="https://integrawcc.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Integra Wellness &amp; Cardiac Clinics">
+<meta property="og:title" content="Integra Wellness &amp; Cardiac Clinics: Physician-Led Preventive Cardiology, Abuja">
+<meta property="og:description" content="Abuja's physician-led preventive cardiology and integrative wellness hub — cardiac diagnostics, executive wellness, MediSpa aesthetics and life-support training.">
+<meta property="og:url" content="https://integrawcc.com/">
+<meta property="og:image" content="https://integrawcc.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Integra Wellness &amp; Cardiac Clinics — Abuja">
+<meta property="og:locale" content="en_NG">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@integrawcc">
+<meta name="twitter:title" content="Integra Wellness &amp; Cardiac Clinics: Physician-Led Preventive Cardiology, Abuja">
+<meta name="twitter:description" content="Abuja's physician-led preventive cardiology and integrative wellness hub — cardiac diagnostics, executive wellness, MediSpa aesthetics and life-support training.">
+<meta name="twitter:image" content="https://integrawcc.com/og-image.jpg">
+
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C7A248' stroke-width='2'%3E%3Cpath d='M3 12h4l2 8 4-16 2 8h6'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -229,6 +261,51 @@
     *{ scroll-behavior:auto !important; }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "@id": "https://integrawcc.com/#clinic",
+  "name": "Integra Wellness & Cardiac Clinics",
+  "alternateName": "Integra WCC",
+  "description": "Physician-led preventive cardiology and integrative wellness clinic in Abuja, offering cardiac diagnostics, executive wellness, MediSpa aesthetics and life-support training.",
+  "url": "https://integrawcc.com/",
+  "logo": "https://integrawcc.com/logo.png",
+  "image": "https://integrawcc.com/og-image.jpg",
+  "telephone": "+2348144414536",
+  "email": "integrawcc@gmail.com",
+  "priceRange": "$$$",
+  "medicalSpecialty": ["Cardiovascular", "PrimaryCare"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Plot 1372, Cadastral Zone B07, by Yemi Osinbajo Road, Katampe District",
+    "addressLocality": "Katampe",
+    "addressRegion": "FCT",
+    "postalCode": "900108",
+    "addressCountry": "NG"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 9.1050,
+    "longitude": 7.4470
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Integra+Wellness+%26+Cardiac+Clinics+Katampe+Abuja",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  ],
+  "sameAs": [
+    "https://instagram.com/integrawcc",
+    "https://x.com/integrawcc",
+    "https://facebook.com/IntegraWellnessCardiacClinics",
+    "https://linkedin.com/company/integra-wellness-and-cardiac-clinics"
+  ]
+}
+</script>
 </head>
 
 <body class="font-body antialiased">
@@ -1717,14 +1794,12 @@
 
       <!-- form -->
       <div class="reveal rounded-[28px] border border-silver bg-white p-7 sm:p-10" style="transition-delay:100ms">
-        <form id="inquiry-form" novalidate>
-          <div id="form-success" class="hidden text-center py-10">
-            <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center mx-auto">
-              <svg class="w-6 h-6 text-gold-dim"><use href="#i-check"/></svg>
-            </div>
-            <h3 class="font-display font-semibold text-[19px] mt-5">One last step</h3>
-            <p class="text-[14.5px] text-slate-soft mt-2 max-w-sm mx-auto">We've opened a pre-filled enquiry in your email app. Please review it and hit send, our care coordination team will reach out within one business day.</p>
-          </div>
+                <form id="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="3f223db0-f5ad-45f6-aeac-f520915723e9">
+          <input type="hidden" name="subject" value="New consultation enquiry — Integra Wellness">
+          <input type="hidden" name="from_name" value="Integra Wellness website">
+          <input type="hidden" name="redirect" value="https://integrawcc.com/thank-you.html">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
           <div id="form-fields" class="grid sm:grid-cols-2 gap-5">
             <div>
@@ -1792,6 +1867,104 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" data-nav-theme="light" class="bg-mist">
+  <div class="max-w-container mx-auto px-5 sm:px-8 py-20 sm:py-28">
+    <div class="reveal max-w-2xl mx-auto text-center">
+      <h2 class="font-display text-[2rem] sm:text-[2.6rem] font-semibold leading-[1.08] tracking-tight">Frequently asked questions</h2>
+      <p class="mt-4 text-slate-soft text-[16px] leading-relaxed">Answers to what we're asked most before a first visit. For anything else, our care coordination team is a call away.</p>
+    </div>
+
+    <div class="reveal mt-14 max-w-3xl mx-auto divide-y divide-silver border-t border-b border-silver">
+
+      <div class="acc-item py-1" data-open="false">
+        <h3>
+          <button class="acc-trigger w-full flex items-center justify-between gap-6 py-6 text-left group" aria-expanded="false">
+            <span class="font-display font-semibold text-[17px] sm:text-[18px]">Do I need a referral to book a consultation?</span>
+            <span class="w-8 h-8 rounded-full border border-silver flex items-center justify-center shrink-0 group-hover:border-ink transition-colors">
+              <svg class="acc-chevron w-4 h-4 text-slate-soft"><use href="#i-chevron"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="acc-panel">
+          <div>
+            <div class="pb-7 pr-12 sm:pr-16">
+              <p class="text-[15px] text-slate leading-relaxed">No referral is required. You can book directly as a self-pay client or through your corporate wellness programme — simply select the service you're interested in on the enquiry form and our care coordination team will confirm the right specialist and time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item py-1" data-open="false">
+        <h3>
+          <button class="acc-trigger w-full flex items-center justify-between gap-6 py-6 text-left group" aria-expanded="false">
+            <span class="font-display font-semibold text-[17px] sm:text-[18px]">How should I prepare for a cardiac diagnostic visit?</span>
+            <span class="w-8 h-8 rounded-full border border-silver flex items-center justify-center shrink-0 group-hover:border-ink transition-colors">
+              <svg class="acc-chevron w-4 h-4 text-slate-soft"><use href="#i-chevron"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="acc-panel">
+          <div>
+            <div class="pb-7 pr-12 sm:pr-16">
+              <p class="text-[15px] text-slate leading-relaxed">For most diagnostics, including ECG and echocardiography, no special preparation is needed. We recommend avoiding caffeine and strenuous exercise for two to three hours beforehand, wearing comfortable clothing, and bringing any prior cardiac results or a list of current medications so our specialist has full context.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item py-1" data-open="false">
+        <h3>
+          <button class="acc-trigger w-full flex items-center justify-between gap-6 py-6 text-left group" aria-expanded="false">
+            <span class="font-display font-semibold text-[17px] sm:text-[18px]">Do you work with HMOs and corporate health plans?</span>
+            <span class="w-8 h-8 rounded-full border border-silver flex items-center justify-center shrink-0 group-hover:border-ink transition-colors">
+              <svg class="acc-chevron w-4 h-4 text-slate-soft"><use href="#i-chevron"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="acc-panel">
+          <div>
+            <div class="pb-7 pr-12 sm:pr-16">
+              <p class="text-[15px] text-slate leading-relaxed">We accept select HMO and corporate health plans alongside direct self-pay, and offer consolidated invoicing for corporate accounts and Elite Members. Share your provider's details when booking and our team will confirm coverage before your visit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item py-1" data-open="false">
+        <h3>
+          <button class="acc-trigger w-full flex items-center justify-between gap-6 py-6 text-left group" aria-expanded="false">
+            <span class="font-display font-semibold text-[17px] sm:text-[18px]">How quickly can I get an appointment?</span>
+            <span class="w-8 h-8 rounded-full border border-silver flex items-center justify-center shrink-0 group-hover:border-ink transition-colors">
+              <svg class="acc-chevron w-4 h-4 text-slate-soft"><use href="#i-chevron"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="acc-panel">
+          <div>
+            <div class="pb-7 pr-12 sm:pr-16">
+              <p class="text-[15px] text-slate leading-relaxed">Most consultations and diagnostics are available within a few business days, with priority slots for Elite Members and corporate clients. Integra is an outpatient preventive care facility, not an emergency service — in a medical emergency, please contact your local emergency number or proceed to the nearest hospital.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do I need a referral to book a consultation?", "acceptedAnswer": { "@type": "Answer", "text": "No referral is required. You can book directly as a self-pay client or through your corporate wellness programme — simply select the service you're interested in on the enquiry form and our care coordination team will confirm the right specialist and time." } },
+    { "@type": "Question", "name": "How should I prepare for a cardiac diagnostic visit?", "acceptedAnswer": { "@type": "Answer", "text": "For most diagnostics, including ECG and echocardiography, no special preparation is needed. We recommend avoiding caffeine and strenuous exercise for two to three hours beforehand, wearing comfortable clothing, and bringing any prior cardiac results or a list of current medications." } },
+    { "@type": "Question", "name": "Do you work with HMOs and corporate health plans?", "acceptedAnswer": { "@type": "Answer", "text": "We accept select HMO and corporate health plans alongside direct self-pay, and offer consolidated invoicing for corporate accounts and Elite Members. Share your provider's details when booking and our team will confirm coverage before your visit." } },
+    { "@type": "Question", "name": "How quickly can I get an appointment?", "acceptedAnswer": { "@type": "Answer", "text": "Most consultations and diagnostics are available within a few business days, with priority slots for Elite Members and corporate clients. Integra is an outpatient preventive care facility, not an emergency service." } }
+  ]
+}
+</script>
 
 </main>
 
@@ -2616,11 +2789,11 @@
     });
   });
 
-  // Inquiry form
+   // Inquiry form — client-side validation only; a valid submission proceeds
+  // as a real POST to Web3Forms, which redirects to thank-you.html.
   var form = document.getElementById('inquiry-form');
   if (form) {
     form.addEventListener('submit', function (e) {
-      e.preventDefault();
       var valid = true;
       var required = ['f-first', 'f-last', 'f-email'];
       required.forEach(function (id) {
@@ -2639,38 +2812,14 @@
       if (consentError) consentError.classList.toggle('hidden', consentOk);
       if (!consentOk) valid = false;
 
-      if (!valid) return;
-
-      var firstName = document.getElementById('f-first').value.trim();
-      var lastName = document.getElementById('f-last').value.trim();
-      var email = document.getElementById('f-email').value.trim();
-      var phone = document.getElementById('f-phone').value.trim();
-      var service = document.getElementById('f-service').value.trim();
-      var message = document.getElementById('f-message').value.trim();
-
-      var mailSubject = 'New consultation enquiry from ' + firstName + ' ' + lastName + (service ? ' \u2014 ' + service : '');
-      var mailBody = [
-        'New enquiry from the Integra Wellness & Cardiac Clinics website',
-        '',
-        'Name: ' + firstName + ' ' + lastName,
-        'Email: ' + email,
-        'Phone: ' + (phone || 'Not provided'),
-        'Service of interest: ' + (service || 'Not specified'),
-        '',
-        'Message:',
-        message || '(No message provided)'
-      ].join('\n');
-
-      var mailtoLink = 'mailto:integrawcc@gmail.com'
-        + '?subject=' + encodeURIComponent(mailSubject)
-        + '&body=' + encodeURIComponent(mailBody);
-
-      window.location.href = mailtoLink;
-
-      document.getElementById('form-fields').classList.add('hidden');
-      document.getElementById('form-success').classList.remove('hidden');
+      if (!valid) {
+        e.preventDefault();
+        return;
+      }
+      // valid — browser proceeds with the real POST
     });
   }
+  
 })();
 </script>
 
