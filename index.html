@@ -192,6 +192,7 @@
   .modal-backdrop.open .modal-panel{ transform:scale(1); opacity:1; }
   .modal-backdrop:not(.open){ transition-duration: 160ms; }
   .modal-backdrop:not(.open) .modal-panel{ transition-duration: 140ms; }
+  #gallery-viewer-view .relative{ touch-action: pan-y; }
 
   /* Context-aware modal theming: .modal-panel carries data-modal-theme,
      set by openModal() from the data-nav-theme of the trigger's section. */
@@ -1798,7 +1799,6 @@
           <input type="hidden" name="access_key" value="3f223db0-f5ad-45f6-aeac-f520915723e9">
           <input type="hidden" name="subject" value="New consultation enquiry — Integra Wellness">
           <input type="hidden" name="from_name" value="Integra Wellness website">
-          <input type="hidden" name="redirect" value="https://integrawcc.com/thank-you.html">
           <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
           <div id="form-fields" class="grid sm:grid-cols-2 gap-5">
@@ -1818,8 +1818,9 @@
               <p class="field-error hidden text-[12.5px] text-red-600 mt-1.5">Please enter a valid email.</p>
             </div>
             <div>
-              <label for="f-phone" class="block text-[13px] font-semibold text-slate mb-2">Phone</label>
-              <input id="f-phone" name="phone" type="tel" autocomplete="tel" class="w-full rounded-xl border border-silver px-4 py-3 text-[14.5px] focus:border-ink focus:ring-2 focus:ring-ink focus:outline-none transition-colors" placeholder="+234">
+              <label for="f-phone" class="block text-[13px] font-semibold text-slate mb-2">Phone<span class="text-gold-dim">*</span></label>
+              <input id="f-phone" name="phone" type="tel" required autocomplete="tel" class="w-full rounded-xl border border-silver px-4 py-3 text-[14.5px] focus:border-ink focus:ring-2 focus:ring-ink focus:outline-none transition-colors" placeholder="+234">
+              <p class="field-error hidden text-[12.5px] text-red-600 mt-1.5">Please enter a valid phone number.</p>
             </div>
             <div class="sm:col-span-2">
               <label for="f-service" class="block text-[13px] font-semibold text-slate mb-2">Service of interest</label>
@@ -1840,8 +1841,9 @@
               </select>
             </div>
             <div class="sm:col-span-2">
-              <label for="f-message" class="block text-[13px] font-semibold text-slate mb-2">Message</label>
-              <textarea id="f-message" name="message" rows="4" class="w-full rounded-xl border border-silver px-4 py-3 text-[14.5px] focus:border-ink focus:ring-2 focus:ring-ink focus:outline-none transition-colors resize-none" placeholder="Tell us a little about what you're looking for"></textarea>
+              <label for="f-message" class="block text-[13px] font-semibold text-slate mb-2">Message<span class="text-gold-dim">*</span></label>
+              <textarea id="f-message" name="message" rows="4" required class="w-full rounded-xl border border-silver px-4 py-3 text-[14.5px] focus:border-ink focus:ring-2 focus:ring-ink focus:outline-none transition-colors resize-none" placeholder="Tell us a little about what you're looking for"></textarea>
+              <p class="field-error hidden text-[12.5px] text-red-600 mt-1.5">Please enter a message.</p>
             </div>
             <div class="sm:col-span-2 flex items-start gap-3 pt-2">
               <input id="f-consent" name="consent" type="checkbox" required class="consent-checkbox mt-0.5">
@@ -1853,6 +1855,7 @@
               </label>
             </div>
             <p id="consent-error" class="field-error hidden sm:col-span-2 text-[12.5px] text-red-600 -mt-3">Please accept the Privacy Policy and Terms of Service to continue.</p>
+            <p id="form-error" class="field-error hidden sm:col-span-2 text-[12.5px] text-red-600 -mt-1">Something went wrong sending your enquiry. Please try again, or call us directly.</p>
             <div class="sm:col-span-2 flex items-center justify-between flex-wrap gap-4 pt-1">
               <p class="text-[12.5px] text-slate-soft max-w-xs">By submitting, you agree to be contacted by Integra Wellness &amp; Cardiac Clinics about your enquiry.</p>
               <button type="submit" class="inline-flex items-center justify-center gap-2 bg-ink text-white font-semibold text-[14.5px] px-7 py-3.5 rounded-full hover:bg-charcoal transition-colors press shrink-0">
@@ -2606,6 +2609,26 @@
     if (e.key === 'ArrowLeft' && galleryPrev) galleryPrev.click();
   });
 
+  // Swipe navigation (touch)
+  var galleryStage = document.querySelector('#gallery-viewer-view .relative');
+  var gTouchStartX = 0, gTouchStartY = 0;
+  var SWIPE_THRESHOLD = 40;
+  if (galleryStage) {
+    galleryStage.addEventListener('touchstart', function (e) {
+      var t = e.changedTouches[0];
+      gTouchStartX = t.clientX;
+      gTouchStartY = t.clientY;
+    }, { passive: true });
+    galleryStage.addEventListener('touchend', function (e) {
+      var t = e.changedTouches[0];
+      var deltaX = t.clientX - gTouchStartX;
+      var deltaY = t.clientY - gTouchStartY;
+      if (Math.abs(deltaX) < SWIPE_THRESHOLD || Math.abs(deltaX) < Math.abs(deltaY)) return;
+      if (deltaX < 0 && galleryNext) galleryNext.click();
+      else if (deltaX > 0 && galleryPrev) galleryPrev.click();
+    }, { passive: true });
+  }
+
   /* ===================== SMART PRICING LINKS ===================== */
   document.querySelectorAll('[data-activate-price-tab]').forEach(function (el) {
     el.addEventListener('click', function () {
@@ -2791,37 +2814,94 @@
 
    // Inquiry form — client-side validation only; a valid submission proceeds
   // as a real POST to Web3Forms, which redirects to thank-you.html.
-  var form = document.getElementById('inquiry-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      var valid = true;
-      var required = ['f-first', 'f-last', 'f-email'];
-      required.forEach(function (id) {
-        var field = document.getElementById(id);
-        var error = field.parentElement.querySelector('.field-error');
-        var ok = field.value.trim().length > 0 && (field.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value));
-        field.classList.toggle('border-red-400', !ok);
-        field.classList.toggle('border-silver', ok);
-        if (error) error.classList.toggle('hidden', ok);
-        if (!ok) valid = false;
-      });
+  // Inquiry form — validate, then submit via fetch so the redirect works on
+// any domain, plus an automatic confirmation email via EmailJS.
+var form = document.getElementById('inquiry-form');
+if (form) {
+  var formErrorEl = document.getElementById('form-error');
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var submitBtnHTML = submitBtn ? submitBtn.innerHTML : '';
 
-      var consent = document.getElementById('f-consent');
-      var consentError = document.getElementById('consent-error');
-      var consentOk = !consent || consent.checked;
-      if (consentError) consentError.classList.toggle('hidden', consentOk);
-      if (!consentOk) valid = false;
-
-      if (!valid) {
-        e.preventDefault();
-        return;
-      }
-      // valid — browser proceeds with the real POST
-    });
+  function checkField(id, isValid) {
+    var field = document.getElementById(id);
+    var error = field.parentElement.querySelector('.field-error');
+    var ok = isValid(field.value.trim());
+    field.classList.toggle('border-red-400', !ok);
+    field.classList.toggle('border-silver', ok);
+    if (error) error.classList.toggle('hidden', ok);
+    return ok;
   }
+
+  var notEmpty = function (v) { return v.length > 0; };
+  var isEmail = function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); };
+  var isPhone = function (v) {
+    var digits = v.replace(/\D/g, '');
+    return /^[+]?[\d\s().-]{7,20}$/.test(v) && digits.length >= 7 && digits.length <= 15;
+  };
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (formErrorEl) formErrorEl.classList.add('hidden');
+
+    var valid = true;
+    if (!checkField('f-first', notEmpty)) valid = false;
+    if (!checkField('f-last', notEmpty)) valid = false;
+    if (!checkField('f-email', isEmail)) valid = false;
+    if (!checkField('f-phone', isPhone)) valid = false;
+    if (!checkField('f-message', notEmpty)) valid = false;
+
+    var consent = document.getElementById('f-consent');
+    var consentError = document.getElementById('consent-error');
+    var consentOk = !consent || consent.checked;
+    if (consentError) consentError.classList.toggle('hidden', consentOk);
+    if (!consentOk) valid = false;
+
+    if (!valid) return;
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-60', 'pointer-events-none');
+      submitBtn.textContent = 'Sending…';
+    }
+
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (!data.success) throw new Error(data.message || 'Submission failed');
+
+        if (window.emailjs) {
+  emailjs.send('service_9nhkr04', 'template_mrg2tk9', {
+    first_name: document.getElementById('f-first').value.trim(),
+    last_name: document.getElementById('f-last').value.trim(),
+    email: document.getElementById('f-email').value.trim(),
+    phone: document.getElementById('f-phone').value.trim(),
+    service: document.getElementById('f-service').value || 'Not specified',
+    message: document.getElementById('f-message').value.trim()
+  }).catch(function (err) { console.error('Auto-reply failed:', err); });
+}
+
+        window.location.href = window.location.origin + '/thank-you.html';
+      })
+      .catch(function () {
+        if (formErrorEl) formErrorEl.classList.remove('hidden');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-60', 'pointer-events-none');
+          submitBtn.innerHTML = submitBtnHTML;
+        }
+      });
+  });
+}
   
 })();
 </script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init({ publicKey: 'sWO0vJbGdEr09392S' });</script>
 
 </body>
 </html>
