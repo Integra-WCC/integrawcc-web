@@ -390,7 +390,7 @@
           Book a consultation
           <svg class="w-4 h-4"><use href="#i-arrow"/></svg>
         </a>
-        <button id="menu-open" aria-label="Open menu" class="nav-menu-btn lg:hidden p-2.5 rounded-full border press">
+        <button id="menu-open" aria-label="Open menu" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobile-drawer" class="nav-menu-btn lg:hidden p-2.5 rounded-full border press">
           <svg class="w-5 h-5"><use href="#i-menu"/></svg>
         </button>
       </div>
@@ -400,7 +400,7 @@
 
 <!-- MOBILE DRAWER -->
 <div id="drawer-backdrop" class="fixed inset-0 bg-ink/60 z-[60] lg:hidden"></div>
-<div id="mobile-drawer" data-theme="dark" class="fixed top-0 right-0 h-full w-[82%] max-w-sm z-[70] lg:hidden shadow-2xl flex flex-col">
+<div id="mobile-drawer" data-theme="dark" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true" class="fixed top-0 right-0 h-full w-[82%] max-w-sm z-[70] lg:hidden shadow-2xl flex flex-col">
   <div class="drawer-head flex items-center justify-between h-[76px] px-5 border-b">
     <span class="font-display font-semibold">Menu</span>
     <button id="menu-close" aria-label="Close menu" class="p-2.5 rounded-full border border-silver press">
@@ -498,11 +498,11 @@
 
     <!-- category tabs -->
     <div id="svc-tabs" role="tablist" aria-label="Filter services by category" class="reveal relative mt-10 flex flex-wrap gap-2 border-b border-silver pb-5">
-      <button role="tab" aria-selected="true" data-filter="all" class="svc-tab is-active text-[14px] font-semibold px-5 py-2.5 rounded-full bg-ink text-white press">All services</button>
-      <button role="tab" aria-selected="false" data-filter="diagnostics" class="svc-tab text-[14px] font-semibold px-5 py-2.5 rounded-full text-slate hover:bg-mist press">Cardiac Diagnostics</button>
-      <button role="tab" aria-selected="false" data-filter="wellness" class="svc-tab text-[14px] font-semibold px-5 py-2.5 rounded-full text-slate hover:bg-mist press">Wellness &amp; Lifestyle</button>
-      <button role="tab" aria-selected="false" data-filter="specialized" class="svc-tab text-[14px] font-semibold px-5 py-2.5 rounded-full text-slate hover:bg-mist press">Specialised Divisions</button>
-      <button role="tab" aria-selected="false" data-filter="training" class="svc-tab text-[14px] font-semibold px-5 py-2.5 rounded-full text-slate hover:bg-mist press">Emergency Training</button>
+      <button role="tab" aria-selected="true" aria-controls="svc-list" data-filter="all" class="svc-tab is-active text-[14px] font-semibold px-5 py-2.5 rounded-full bg-ink text-white press">All services</button>
+      <button role="tab" aria-selected="false" aria-controls="svc-list" data-filter="diagnostics" class="svc-tab text-[14px] font-semibold px-5 py-2.5 rounded-full text-slate hover:bg-mist press">Cardiac Diagnostics</button>
+      <button role="tab" aria-selected="false" aria-controls="svc-list" data-filter="wellness" class="svc-tab text-[14px] font-semibold px-5 py-2.5 rounded-full text-slate hover:bg-mist press">Wellness &amp; Lifestyle</button>
+      <button role="tab" aria-selected="false" aria-controls="svc-list" data-filter="specialized" class="svc-tab text-[14px] font-semibold px-5 py-2.5 rounded-full text-slate hover:bg-mist press">Specialised Divisions</button>
+      <button role="tab" aria-selected="false" aria-controls="svc-list" data-filter="training" class="svc-tab text-[14px] font-semibold px-5 py-2.5 rounded-full text-slate hover:bg-mist press">Emergency Training</button>
     </div>
 
     <div id="svc-list" class="mt-4">
@@ -1485,20 +1485,20 @@
 
     <!-- pricing tabs -->
     <div id="price-tabs" role="tablist" aria-label="Filter price list by category" class="reveal mt-10 flex gap-2 overflow-x-auto pb-2 -mx-1 px-1 no-scrollbar">
-      <button role="tab" aria-selected="true" data-price="cardiology" class="price-tab is-active shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-ink text-white press">Cardiology</button>
-      <button role="tab" aria-selected="false" data-price="facials" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">MediSpa Facials</button>
-      <button role="tab" aria-selected="false" data-price="hammam" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Hammam</button>
-      <button role="tab" aria-selected="false" data-price="massage" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Massage</button>
-      <button role="tab" aria-selected="false" data-price="wax" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Waxing</button>
-      <button role="tab" aria-selected="false" data-price="iv" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">IV &amp; Aesthetics</button>
-      <button role="tab" aria-selected="false" data-price="slimming" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Slimming</button>
-      <button role="tab" aria-selected="false" data-price="training" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Training</button>
+      <button role="tab" aria-selected="true" id="price-tab-cardiology" aria-controls="price-panel-cardiology" data-price="cardiology" class="price-tab is-active shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-ink text-white press">Cardiology</button>
+      <button role="tab" aria-selected="false" id="price-tab-facials" aria-controls="price-panel-facials" data-price="facials" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">MediSpa Facials</button>
+      <button role="tab" aria-selected="false" id="price-tab-hammam" aria-controls="price-panel-hammam" data-price="hammam" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Hammam</button>
+      <button role="tab" aria-selected="false" id="price-tab-massage" aria-controls="price-panel-massage" data-price="massage" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Massage</button>
+      <button role="tab" aria-selected="false" id="price-tab-wax" aria-controls="price-panel-wax" data-price="wax" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Waxing</button>
+      <button role="tab" aria-selected="false" id="price-tab-iv" aria-controls="price-panel-iv" data-price="iv" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">IV &amp; Aesthetics</button>
+      <button role="tab" aria-selected="false" id="price-tab-slimming" aria-controls="price-panel-slimming" data-price="slimming" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Slimming</button>
+      <button role="tab" aria-selected="false" id="price-tab-training" aria-controls="price-panel-training" data-price="training" class="price-tab shrink-0 text-[13.5px] font-semibold px-4 py-2.5 rounded-full bg-white text-slate border border-silver press">Training</button>
     </div>
 
     <div class="reveal mt-6 bg-white rounded-[28px] border border-silver overflow-hidden">
 
       <!-- CARDIOLOGY -->
-      <div class="price-panel" data-panel="cardiology">
+      <div class="price-panel" id="price-panel-cardiology" role="tabpanel" aria-labelledby="price-tab-cardiology" data-panel="cardiology">
         <div class="px-6 sm:px-9 py-6 border-b border-silver">
           <h3 class="font-display font-semibold text-[19px]">Cardiology consultations &amp; diagnostics</h3>
         </div>
@@ -1521,7 +1521,7 @@
       </div>
 
       <!-- FACIALS -->
-      <div class="price-panel hidden" data-panel="facials">
+      <div class="price-panel hidden" id="price-panel-facials" role="tabpanel" aria-labelledby="price-tab-facials" data-panel="facials">
         <div class="px-6 sm:px-9 py-6 border-b border-silver">
           <h3 class="font-display font-semibold text-[19px]">MediSpa: advanced facials</h3>
         </div>
@@ -1547,7 +1547,7 @@
       </div>
 
       <!-- HAMMAM -->
-      <div class="price-panel hidden" data-panel="hammam">
+      <div class="price-panel hidden" id="price-panel-hammam" role="tabpanel" aria-labelledby="price-tab-hammam" data-panel="hammam">
         <div class="px-6 sm:px-9 py-6 border-b border-silver">
           <h3 class="font-display font-semibold text-[19px]">Traditional Hammam</h3>
         </div>
@@ -1569,7 +1569,7 @@
       </div>
 
       <!-- MASSAGE -->
-      <div class="price-panel hidden" data-panel="massage">
+      <div class="price-panel hidden" id="price-panel-massage" role="tabpanel" aria-labelledby="price-tab-massage" data-panel="massage">
         <div class="px-6 sm:px-9 py-6 border-b border-silver">
           <h3 class="font-display font-semibold text-[19px]">Integra massage</h3>
         </div>
@@ -1593,7 +1593,7 @@
       </div>
 
       <!-- WAX -->
-      <div class="price-panel hidden" data-panel="wax">
+      <div class="price-panel hidden" id="price-panel-wax" role="tabpanel" aria-labelledby="price-tab-wax" data-panel="wax">
         <div class="px-6 sm:px-9 py-6 border-b border-silver">
           <h3 class="font-display font-semibold text-[19px]">Integra wax</h3>
         </div>
@@ -1628,7 +1628,7 @@
       </div>
 
       <!-- IV & AESTHETICS -->
-      <div class="price-panel hidden" data-panel="iv">
+      <div class="price-panel hidden" id="price-panel-iv" role="tabpanel" aria-labelledby="price-tab-iv" data-panel="iv">
         <div class="px-6 sm:px-9 py-6 border-b border-silver">
           <h3 class="font-display font-semibold text-[19px]">IV therapy &amp; injectable aesthetics</h3>
         </div>
@@ -1644,7 +1644,7 @@
       </div>
 
       <!-- SLIMMING -->
-      <div class="price-panel hidden" data-panel="slimming">
+      <div class="price-panel hidden" id="price-panel-slimming" role="tabpanel" aria-labelledby="price-tab-slimming" data-panel="slimming">
         <div class="px-6 sm:px-9 py-6 border-b border-silver">
           <h3 class="font-display font-semibold text-[19px]">New Face machine slimming</h3>
         </div>
@@ -1665,7 +1665,7 @@
       </div>
 
       <!-- TRAINING -->
-      <div class="price-panel hidden" data-panel="training">
+      <div class="price-panel hidden" id="price-panel-training" role="tabpanel" aria-labelledby="price-tab-training" data-panel="training">
         <div class="px-6 sm:px-9 py-6 border-b border-silver">
           <h3 class="font-display font-semibold text-[19px]">Life support training &amp; remote visits</h3>
         </div>
@@ -1799,7 +1799,7 @@
           <input type="hidden" name="access_key" value="3f223db0-f5ad-45f6-aeac-f520915723e9">
           <input type="hidden" name="subject" value="New consultation enquiry — Integra Wellness">
           <input type="hidden" name="from_name" value="Integra Wellness website">
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div id="form-fields" class="grid sm:grid-cols-2 gap-5">
             <div>
@@ -2308,6 +2308,55 @@
   }
 
   /* ===================== MODALS (shared) ===================== */
+
+  // Any modal or the mobile drawer counts as an "overlay". While one is open,
+  // the rest of the page is made inert (removed from the tab order AND from
+  // the accessibility tree) so keyboard and screen-reader users can't wander
+  // into content that's visually covered by the dialog.
+  function openOverlays() {
+    return Array.prototype.slice.call(document.querySelectorAll('.modal-backdrop.open, #mobile-drawer.open'));
+  }
+  function updateOverlayLock() {
+    var locked = openOverlays().length > 0;
+    ['site-header', 'main'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (locked) el.setAttribute('inert', ''); else el.removeAttribute('inert');
+    });
+    var footerEl = document.querySelector('footer');
+    if (footerEl) { if (locked) footerEl.setAttribute('inert', ''); else footerEl.removeAttribute('inert'); }
+  }
+
+  // Keep Tab/Shift+Tab cycling inside whichever overlay is topmost (by
+  // z-index) instead of letting focus escape into the (visually hidden)
+  // rest of the page.
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') return;
+    var overlays = openOverlays();
+    if (!overlays.length) return;
+    var top = overlays.reduce(function (a, b) {
+      var za = parseInt(window.getComputedStyle(a).zIndex, 10) || 0;
+      var zb = parseInt(window.getComputedStyle(b).zIndex, 10) || 0;
+      return zb > za ? b : a;
+    });
+    var focusables = Array.prototype.slice.call(
+      top.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')
+    ).filter(function (el) { return el.offsetParent !== null; });
+    if (!focusables.length) return;
+    var first = focusables[0];
+    var last = focusables[focusables.length - 1];
+    if (!top.contains(document.activeElement)) {
+      e.preventDefault();
+      first.focus();
+    } else if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
       function openModal(id, triggerEl) {
     var el = document.getElementById(id);
     if (!el) return;
@@ -2343,6 +2392,7 @@
     el.classList.add('open');
     el.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    updateOverlayLock();
     var autoFocus = el.querySelector('[data-modal-close]') || el.querySelector('button, a[href], input');
     if (autoFocus) autoFocus.focus();
   }
@@ -2353,6 +2403,7 @@
     el.classList.remove('open');
     el.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    updateOverlayLock();
     if (el._lastFocus && typeof el._lastFocus.focus === 'function') el._lastFocus.focus();
   }
   document.querySelectorAll('.modal-backdrop').forEach(function (m) {
@@ -2563,7 +2614,7 @@
       btn.className = 'relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 press group';
       btn.setAttribute('aria-label', 'Open image: ' + img.caption);
       var fallback = document.createElement('span');
-      fallback.className = 'absolute inset-0 flex items-center justify-center text-white/35';
+      fallback.className = 'absolute inset-0 flex items-center justify-center text-white/45';
       fallback.innerHTML = '<svg class="w-6 h-6"><use href="#i-heart"></use></svg>';
       var image = document.createElement('img');
       image.src = img.src;
@@ -2647,13 +2698,22 @@
   function openDrawer() {
     drawer.setAttribute('data-theme', header.getAttribute('data-theme') || 'dark');
     drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
     backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
+    if (menuOpen) menuOpen.setAttribute('aria-expanded', 'true');
+    updateOverlayLock();
+    if (menuClose) menuClose.focus();
   }
   function closeDrawer() {
+    var wasOpen = drawer.classList.contains('open');
     drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
     backdrop.classList.remove('open');
     document.body.style.overflow = '';
+    if (menuOpen) menuOpen.setAttribute('aria-expanded', 'false');
+    updateOverlayLock();
+    if (wasOpen && menuOpen) menuOpen.focus();
   }
   if (menuOpen) menuOpen.addEventListener('click', openDrawer);
   if (menuClose) menuClose.addEventListener('click', closeDrawer);
