@@ -43,39 +43,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ink: '#0B0B0C',
-          charcoal: '#18181A',
-          slate: {
-            DEFAULT: '#3A3A3D',
-            soft: '#6B6B6E',
-          },
-          silver: '#E4E4E3',
-          mist: '#F1F0EE',
-          paper: '#FAFAF8',
-          gold: {
-            DEFAULT: '#C7A248',
-            dim: '#8F7635',
-            pale: '#E8DAB6',
-          },
-        },
-        fontFamily: {
-          display: ['"Outfit"', 'sans-serif'],
-          body: ['"Plus Jakarta Sans"', 'sans-serif'],
-        },
-        maxWidth: {
-          'container': '1320px',
-        },
-      },
-    },
-  };
-</script>
-
 <style>
   :root{
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -262,6 +229,7 @@
     *{ scroll-behavior:auto !important; }
   }
 </style>
+<link rel="stylesheet" href="/tailwind.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

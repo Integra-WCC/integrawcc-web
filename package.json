@@ -1,0 +1,12 @@
+{
+  "name": "integra-web",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tailwindcss -c tailwind.config.js -i src/input.css -o tailwind.css --minify",
+    "dev": "tailwindcss -c tailwind.config.js -i src/input.css -o tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
